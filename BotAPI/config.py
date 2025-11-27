@@ -13,7 +13,7 @@ class Config:
     API_SECRET = os.getenv('BINANCE_API_SECRET')
     
     if not API_KEY or not API_SECRET:
-        raise ValueError("❌ ERROR: Faltan las API KEYS en el archivo .env")
+        print("⚠️  ADVERTENCIA: API KEYS no detectadas.")
 
     # ==========================================
     # 2. MERCADO
@@ -28,80 +28,120 @@ class Config:
     TIMEFRAME_INIT = '5m'
     
     # ==========================================
-    # 3. GESTIÓN DE CAPITAL Y APALANCAMIENTO
+    # 3. GESTIÓN DE CAPITAL Y SEGURIDAD
     # ==========================================
     CAPITAL_TRABAJO = 1000     
     LEVERAGE = 10 
+    MAX_EXPOSURE_USDT = 5000.0 
     
-    # Apalancamientos Específicos
+    MAX_API_RETRIES = 5        
+    RETRY_DELAY_SECONDS = 2    
+    
     LEVERAGE_SCALP = 5   
     LEVERAGE_SWING = 10  
     LEVERAGE_MOMENTUM = 8  
     
-    SIZE_SCALP = 0.02  
-    SIZE_SWING = 0.10 
-    SIZE_MOMENTUM = 0.05   
+    SIZE_SCALP = 0.02   
+    SIZE_SWING = 0.05   
+    SIZE_MOMENTUM = 0.05 
     
     # ==========================================
-    # 4. ESTRATEGIA SCALPING (1m)
+    # 4. INDICADORES GENERALES
     # ==========================================
-    SCALP_RSI_PERIOD = 7             
-    SCALP_RSI_OB = 70          
-    SCALP_RSI_OS = 30          
+    BB_PERIOD = 20
+    BB_STD_DEV = 2.0
+    RSI_PERIOD = 14
+    STOCH_RSI_PERIOD = 14
+    
+    TRIGGER_PATIENCE = 10 
+
+    # ==========================================
+    # 5. ESTRATEGIA SCALPING (1m / 5m)
+    # ==========================================
+    SCALP_RSI_PERIOD = 14      
     SCALP_VOL_THRESHOLD = 15   
+
+    # Gatillo (Mean Reversion):
+    SCALP_BB_WIDTH_MIN = 2.5
+    SCALP_STOCH_LOW = 10
+    SCALP_STOCH_HIGH = 90
+    SCALP_RSI_LOW = 30
+    SCALP_RSI_HIGH = 60
     
-    SCALP_SL_PCT = 0.002       
-    SCALP_TP_OFFSET = 0.001    
-    SCALP_BE_TRIGGER = 0.0015  
-    SCALP_TRAIL_DIST = 0.001   
+    # Ajuste Volumen
+    SCALP_VOL_MIN = 30
+    SCALP_VOL_MAX = 75
+    
+    # Salida
+    SCALP_SL_PCT = 0.008       
+    SCALP_TP_OFFSET = 0.003    
+    SCALP_BE_TRIGGER = 0.005   
+    SCALP_TRAIL_DIST = 0.002   
     
     # ==========================================
-    # 5. ESTRATEGIA SWING (15m)
+    # 6. ESTRATEGIA SWING (15m)
     # ==========================================
     SWING_RSI_PERIOD = 14
-    SWING_RSI_OB = 70
-    SWING_RSI_OS = 30
+
+    # Gatillo:
+    SWING_BB_WIDTH_MIN = 3.75
+    SWING_STOCH_LOW = 5
+    SWING_STOCH_HIGH = 95
+    SWING_RSI_LOW = 30
+    SWING_RSI_HIGH = 70
     
+    # Ajuste Volumen
+    SWING_VOL_MIN = 30
+    SWING_VOL_MAX = 70
+    
+    # Salida
     SWING_SL = 0.02        
-    SWING_TP = 0.06        
+    SWING_TP_OFFSET = 0.2      
     SWING_BE = 0.01        
     SWING_TRAIL = 0.005    
     
     # ==========================================
-    # 6. AUTO-DCA Y FILTROS
+    # 7. AUTO-DCA Y FILTROS
     # ==========================================
     ENABLE_AUTO_DCA = True     
-    DCA_TRIGGER_PCT = 0.005    
+    DCA_TRIGGER_PCT = 0.010    
     DCA_MULTIPLIER = 1.5       
     MAX_DCA_LEVELS = 3         
     
     ENABLE_TREND_FILTER = True
-    TRIGGER_PATIENCE = 5
-    STOCH_K_OVERSOLD = 0.2
-    STOCH_K_OVERBOUGHT = 0.8
-    VOL_SCORE_THRESHOLD = 15   
-    
+    VOL_SCORE_THRESHOLD = 15
     SR_WINDOW = 20 
 
     # ==========================================
-    # 7. ARCHIVOS
+    # 8. LOGS Y TELEMETRÍA
     # ==========================================
     LOG_FILE = 'system_log.txt'
-    TRADES_FILE = 'reporte_ordenes.csv'
+    TRADES_FILE = 'bitacora_operaciones_blindada.csv'
+    
+    # --- VARIABLES RECUPERADAS (CRÍTICAS) ---
+    TELEMETRY_FILE = 'telemetria_mercado.csv'
+    TELEMETRY_INTERVAL = 15 
+    # ----------------------------------------
 
     # ==========================================
-    # 8. MODO MOMENTUM (ULTRA AGRESIVO - SEGUNDOS)
+    # 9. MODO MOMENTUM (1m)
     # ==========================================
-    # --- VARIABLE RECUPERADA ---
-    MOMENTUM_WINDOW_SECONDS = 10   # Ventana de tiempo para medir el impulso
+    # Gatillo:
+    MOM_BB_WIDTH_MIN = 1.25
+    MOM_STOCH_LOW = 15
+    MOM_STOCH_HIGH = 90
+    MOM_RSI_LOW = 25
+    MOM_RSI_HIGH = 90
     
-    # Entradas: Muy Sensibles
-    MOMENTUM_VOL_MULTIPLIER = 1.2  # (Nota: Este se usa si volviéramos a lógica de velas, pero el modo V2 usa tiempo)
-    MOMENTUM_MIN_CHANGE = 0.0008   # 0.08% de movimiento
+    # Ajuste Volumen
+    MOM_VOL_MIN = 25
+    MOM_VOL_MAX = 65
+
+    MOMENTUM_WINDOW_SECONDS = 10   
+    MOMENTUM_VOL_MULTIPLIER = 1.2  
+    MOMENTUM_MIN_CHANGE = 0.0008   
     
-    # Salidas: "Sniper" 
-    MOMENTUM_SL_PCT = 0.0015       # 0.15% Stop Loss
-    
-    # Gestión de Ganancia
-    MOMENTUM_BE_TRIGGER = 0.0030   # 0.30% activa B/E
-    MOMENTUM_TRAIL_DIST = 0.0010   # 0.10% Trailing
+    MOMENTUM_SL_PCT = 0.006        
+    MOMENTUM_TP_OFFSET = 0.2
+    MOMENTUM_BE_TRIGGER = 0.004    
+    MOMENTUM_TRAIL_DIST = 0.002

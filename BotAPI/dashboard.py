@@ -1,84 +1,181 @@
 # dashboard.py
-from colorama import Fore, Back, Style
-from datetime import datetime 
 import os
-import sys
+from colorama import Fore, Style, Back
 
-_first_run = True
+def limpiar_pantalla():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-def mostrar_panel(df_scalp, df_swing, vol_score, funcion_activa, modo, trader_state, open_orders_real, mom_ratio, mom_chg):
-    global _first_run
-    if _first_run: 
-        os.system('cls' if os.name == 'nt' else 'clear')
-        _first_run = False
+def _pintar_valor(tipo, valor, contexto=None):
+    """
+    Colorea valores numéricos para análisis rápido.
+    """
+    if valor is None: return "N/A"
     
-    print("\033[H", end="")
-    
-    last_s = df_scalp.iloc[-1]
-    last_w = df_swing.iloc[-1]
-    ahora = datetime.now().strftime('%H:%M:%S')
-    
-    trend_s = f"{Fore.GREEN}ALCISTA" if last_s['MA7'] > last_s['MA25'] else f"{Fore.RED}BAJISTA"
-    trend_w = f"{Fore.GREEN}ALCISTA" if last_w['MA7'] > last_w['MA25'] else f"{Fore.RED}BAJISTA"
-    
-    def c_rsi(v, s): 
-        return Fore.RED if (s and v>75) or (not s and v>70) else Fore.GREEN if (s and v<25) or (not s and v<30) else Fore.WHITE
-
-    # HEADER
-    print(f"{Back.BLUE}{Fore.WHITE}=== SENTINEL PRO DUAL ({modo}) - {ahora} ==={Style.RESET_ALL}".center(80))
-    print(f" PRECIO ACTUAL: {Fore.YELLOW}{Style.BRIGHT}{last_s['close']:.2f}{Style.RESET_ALL}".center(80))
-    print("-" * 78)
-    
-    # COLUMNAS TÉCNICAS
-    print(f"{Fore.CYAN}{'   ⚡ MOTOR SCALPING (1m)':<38} | {Fore.MAGENTA}{'   🌊 MOTOR SWING (15m)':<38}{Style.RESET_ALL}")
-    print("-" * 78)
-    
-    print(f" Tendencia: {trend_s:<26}{Style.RESET_ALL} |  Tendencia: {trend_w:<26}{Style.RESET_ALL}")
-    
-    rsi_s_txt = f"{c_rsi(last_s['RSI'],1)}{last_s['RSI']:.1f}"
-    rsi_w_txt = f"{c_rsi(last_w['RSI'],0)}{last_w['RSI']:.1f}"
-    print(f" RSI:       {rsi_s_txt}{Style.RESET_ALL:<26} |  RSI:       {rsi_w_txt}{Style.RESET_ALL}")
-
-    print(f" Stoch K:   {last_s['StochRSI_k']:<26.2f} |  Stoch K:   {last_w['StochRSI_k']:.2f}")
-    print(f" MA99:      {last_s['MA99']:<26.1f} |  MA99:      {last_w['MA99']:.1f}")
-    print("-" * 78)
-
-    # --- NUEVA SECCIÓN MOMENTUM ---
-    # Umbrales visuales (Referencia visual hardcodeada basada en config típica)
-    c_mom_vol = Fore.GREEN if mom_ratio > 2.5 else Fore.WHITE
-    c_mom_chg = Fore.GREEN if abs(mom_chg) > 0.25 else Fore.WHITE
-    
-    print(f"   🚀 {Style.BRIGHT}MOTOR MOMENTUM (Inercia en Tiempo Real):{Style.RESET_ALL}")
-    print(f"      Volumen Relativo: {c_mom_vol}x{mom_ratio:.2f}{Style.RESET_ALL} (Meta: >2.5x)")
-    print(f"      Explosividad 1m:  {c_mom_chg}{mom_chg:+.2f}%{Style.RESET_ALL} (Meta: >0.25%)")
-    print("-" * 78)
-    
-    # FOOTER
-    c_vol = Fore.GREEN if vol_score > 20 else Fore.RED
-    estado = f"{Fore.YELLOW}ARMADO{Style.RESET_ALL}" if "GATILLO" in funcion_activa else "ESPERANDO"
-    print(f" 📊 Score Vol (Scalp): {c_vol}{vol_score}%{Style.RESET_ALL} | STATUS: {estado} | MSG: {funcion_activa}")
-    print("=" * 78)
-    
-    # PANEL POSICIÓN
-    if trader_state:
-        t = trader_state
-        pnl = (last_s['close'] - t['entrada']) * t['cantidad'] * (1 if t['tipo']=='LONG' else -1)
-        bg = Back.GREEN if pnl >= 0 else Back.RED
+    if tipo == 'RSI':
+        val_str = f"{valor:>5.1f}"
+        if valor >= 70: return f"{Fore.RED}{Style.BRIGHT}{val_str}{Style.RESET_ALL}"
+        if valor <= 30: return f"{Fore.GREEN}{Style.BRIGHT}{val_str}{Style.RESET_ALL}"
+        return f"{Fore.WHITE}{val_str}{Style.RESET_ALL}"
         
-        print(f"{bg}{Fore.WHITE}  POSICIÓN INTERNA: {t['tipo']} ({t.get('strategy','UNK')}) {Style.RESET_ALL} PnL: {pnl:.2f}")
-        print(f"  Entrada: {t['entrada']:.2f} | SL: {t['sl']:.2f} | TP: {t['tp']:.2f}")
+    elif tipo == 'K': # Stochastic
+        val_str = f"{valor:>5.1f}"
+        if valor >= 80: return f"{Fore.RED}{Style.BRIGHT}{val_str}{Style.RESET_ALL}"
+        if valor <= 20: return f"{Fore.GREEN}{Style.BRIGHT}{val_str}{Style.RESET_ALL}"
+        return f"{Fore.WHITE}{val_str}{Style.RESET_ALL}"
         
-        print(f"\n  {Fore.YELLOW}>>> ÓRDENES ACTIVAS EN BINANCE:{Style.RESET_ALL}")
-        if open_orders_real:
-            for o in open_orders_real:
-                tipo = o['type']
-                precio = o.get('stopPrice', o.get('price', '0'))
-                print(f"   • {o['side']} {o['origQty']} | {tipo} @ {precio}")
+    elif tipo == 'BB_VAL': # Valores absolutos de bandas (Gris tenue)
+        return f"{Fore.LIGHTBLACK_EX}{valor:>7.2f}{Style.RESET_ALL}"
+        
+    elif tipo == 'BB_DIST': # Distancia a la banda
+        # contexto: 'UPPER' (buscando short) o 'LOWER' (buscando long)
+        val_str = f"{valor:>6.2f}"
+        
+        # Si el valor es negativo o muy cercano a 0, es ruptura inminente
+        if valor <= 0: 
+            bg = Back.RED if contexto == 'UPPER' else Back.GREEN
+            fg = Fore.WHITE
+            return f"{bg}{fg}{Style.BRIGHT}{val_str}{Style.RESET_ALL}"
+            
+        if contexto == 'UPPER': # Acercandose a techo (Rojo)
+            return f"{Fore.RED}{val_str}{Style.RESET_ALL}"
+        else: # Acercandose a piso (Verde)
+            return f"{Fore.GREEN}{val_str}{Style.RESET_ALL}"
+            
+    return f"{Fore.WHITE}{valor}{Style.RESET_ALL}"
+
+def mostrar_mtf_table(matrix):
+    """Imprime tabla comparativa detallada con valores de Bollinger."""
+    print(f"{Fore.BLUE}─" * 94)
+    print(f"{Fore.CYAN}📊 ANÁLISIS MULTI-TEMPORALIDAD (DETALLE BOLLINGER){Style.RESET_ALL}")
+    # Ajustamos el ancho de la tabla para que quepan los precios
+    print(f"{Fore.CYAN}╔════════════╦══════════════════════════════════╦══════════════════════════════════════════════╗")
+    print(f"║ {Style.BRIGHT}INDICADOR {Style.NORMAL} ║             SCALPING             ║                    SWING                     ║")
+    print(f"╠════════════╬────────┬────────┬────────┬───────╬────────┬─────────┬─────────┬─────────┬───────╣")
+    print(f"║ TIMEFRAME  ║   1m   │   3m   │   5m   │       ║   15m  │   30m   │    1H   │    4H   │       ║")
+    print(f"╠════════════╬────────┼────────┼────────┼───────╬────────┼─────────┼─────────┼─────────┼───────╣")
+    
+    timeframes = ['1m', '3m', '5m', '15m', '30m', '1h', '4h']
+    
+    # 1. RSI
+    row_rsi = f"║ RSI (14)   ║"
+    for tf in timeframes:
+        if tf == '15m': row_rsi += "       ║" # Espaciador visual para separar grupos
+        val = matrix.get(tf, {}).get('RSI', 0)
+        row_rsi += f" {_pintar_valor('RSI', val)}  │"
+    print(row_rsi[:-2] + "║") # Cierre de linea
+    
+    # 2. STOCH
+    row_k = f"║ STOCH K    ║"
+    for tf in timeframes:
+        if tf == '15m': row_k += "       ║"
+        val = matrix.get(tf, {}).get('K', 0)
+        row_k += f" {_pintar_valor('K', val)}  │"
+    print(row_k[:-2] + "║")
+    
+    print(f"╠════════════╬────────┼────────┼────────┼───────╬────────┼─────────┼─────────┼─────────┼───────╣")
+    
+    # 3. BB UPPER
+    row_upp = f"║ BB HIGH    ║"
+    for tf in timeframes:
+        if tf == '15m': row_upp += "       ║"
+        val = matrix.get(tf, {}).get('BB_UPPER', 0)
+        row_upp += f" {_pintar_valor('BB_VAL', val)} │"
+    print(row_upp[:-2] + "║")
+    
+    # 4. BB MID
+    row_mid = f"║ BB MID     ║"
+    for tf in timeframes:
+        if tf == '15m': row_mid += "       ║"
+        val = matrix.get(tf, {}).get('BB_MID', 0)
+        row_mid += f" {_pintar_valor('BB_VAL', val)} │"
+    print(row_mid[:-2] + "║")
+
+    # 5. BB LOW
+    row_low = f"║ BB LOW     ║"
+    for tf in timeframes:
+        if tf == '15m': row_low += "       ║"
+        val = matrix.get(tf, {}).get('BB_LOWER', 0)
+        row_low += f" {_pintar_valor('BB_VAL', val)} │"
+    print(row_low[:-2] + "║")
+    
+    # 6. DISTANCIA (La Fila Mágica)
+    print(f"╠════════════╬────────┼────────┼────────┼───────╬────────┼─────────┼─────────┼─────────┼───────╣")
+    row_dist = f"║ DISTANCIA  ║"
+    for tf in timeframes:
+        if tf == '15m': row_dist += "       ║"
+        data = matrix.get(tf, {})
+        price = data.get('CLOSE', 0)
+        mid = data.get('BB_MID', 0)
+        upper = data.get('BB_UPPER', 0)
+        lower = data.get('BB_LOWER', 0)
+        
+        dist = 0
+        contexto = 'MID'
+        
+        if price > mid:
+            # Está en la mitad superior, medimos distancia al techo
+            dist = upper - price
+            contexto = 'UPPER'
         else:
-            print(f"   {Fore.RED}[ALERTA] No hay órdenes de protección en Binance.{Style.RESET_ALL}")
-    else:
-        print(f"{Style.DIM}\n       [ NO HAY POSICIONES ABIERTAS ]\n{Style.RESET_ALL}")
+            # Está en la mitad inferior, medimos distancia al piso
+            dist = price - lower
+            contexto = 'LOWER'
+            
+        row_dist += f" {_pintar_valor('BB_DIST', dist, contexto)} │"
+    print(row_dist[:-2] + "║")
+    
+    print(f"╚════════════╩════════┴════════┴════════╩═══════╩════════┴═════════┴═════════┴═════════╩═══════╝{Style.RESET_ALL}")
 
-    print("=" * 78)
-    print("\033[J", end="")
-    sys.stdout.flush()
+def mostrar_panel(df_scalp, df_swing, vol_score, mensaje_estrategia, modo, posicion, ordenes, mom_ratio, mom_chg, mtf_data=None):
+    limpiar_pantalla()
+    
+    last_p = df_scalp.iloc[-1]['close']
+    rsi_s = df_scalp.iloc[-1]['RSI']
+    rsi_w = df_swing.iloc[-1]['RSI']
+    
+    color_rsi_s = Fore.GREEN if rsi_s < 30 else (Fore.RED if rsi_s > 70 else Fore.WHITE)
+    color_rsi_w = Fore.GREEN if rsi_w < 30 else (Fore.RED if rsi_w > 70 else Fore.WHITE)
+
+    print(f"{Fore.BLUE}==============================================================================================")
+    print(f"   SENTINEL AI - {modo} | {Fore.YELLOW}PRECIO: {last_p:.2f}{Fore.BLUE} | VOL SCORE: {vol_score}")
+    print(f"=============================================================================================={Style.RESET_ALL}")
+
+    print(f"\n{Fore.MAGENTA}🔎 ESTADO DEL SISTEMA:{Style.RESET_ALL}")
+    print(f"   • Momentum Chg (10s): {mom_chg:+.4f}%")
+    print(f"   • Scalp RSI: {color_rsi_s}{rsi_s:.1f}{Style.RESET_ALL}")
+    print(f"   • Swing RSI: {color_rsi_w}{rsi_w:.1f}{Style.RESET_ALL}")
+    print(f"   • Acción Actual: {Style.BRIGHT}{mensaje_estrategia}{Style.RESET_ALL}")
+
+    if posicion:
+        pnl_u = (last_p - posicion['entrada']) * posicion['cantidad']
+        if posicion['tipo'] == 'SHORT': pnl_u *= -1
+        c_pnl = Fore.GREEN if pnl_u > 0 else Fore.RED
+        
+        tp_display = posicion['tp']
+        sl_display = posicion['sl']
+        if ordenes:
+            for o in ordenes:
+                trig_price = float(o.get('stopPrice', 0))
+                if trig_price == 0: continue
+                if o['type'] == 'TAKE_PROFIT_MARKET': tp_display = trig_price
+                elif o['type'] == 'STOP_MARKET': sl_display = trig_price
+
+        print(f"\n{Fore.GREEN}💎 POSICIÓN ABIERTA ({posicion['strategy']}):{Style.RESET_ALL}")
+        print(f"   {posicion['tipo']} x{posicion.get('cantidad',0)} @ {posicion['entrada']:.2f}")
+        print(f"   TP: {tp_display:.2f} | SL: {sl_display:.2f}")
+        print(f"   PnL: {c_pnl}{pnl_u:.2f} USDT{Style.RESET_ALL} | B/E Activo: {posicion['break_even_activado']}")
+    else:
+        print(f"\n{Fore.CYAN}💤 ESPERANDO OPORTUNIDAD...{Style.RESET_ALL}")
+        
+    if ordenes:
+        print(f"\n{Fore.YELLOW}📜 Órdenes Pendientes ({len(ordenes)}):{Style.RESET_ALL}")
+        for o in ordenes[:5]:
+            tipo = o['type']
+            lado = o['side']
+            precio_final = float(o.get('price', 0))
+            if precio_final == 0: precio_final = float(o.get('stopPrice', 0))
+            print(f"   [{tipo}] {lado} @ {precio_final:.2f}")
+
+    if mtf_data:
+        print("\n")
+        mostrar_mtf_table(mtf_data)

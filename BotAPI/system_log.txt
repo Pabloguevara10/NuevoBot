@@ -940,3 +940,383 @@ ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
 INFO:audit_orders:INTENTO MARKET: BUY 2.3
 INFO:audit_orders:EXITO MARKET ID: 69779822
 INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69812238
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.35
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.25
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.24
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.22
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.20
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.19
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69812467
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.85
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.52
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 180.09
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.52
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69812518
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.16
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.49
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.06
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.49
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.05
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.49
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69812715
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 180.22
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.90
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69812729
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.13
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.46
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69813466
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.14
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.47
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69814160
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.71
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.81
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.89
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.93
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69814460
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.74
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.41
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.84
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.41
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.90
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.41
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69814896
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.67
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.80
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.87
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.95
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.97
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69814977
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.06
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.40
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69819621
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 178.67
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 184.77
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
+INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
+INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
+INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
+INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
+INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69821091
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 179.49
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 179.01
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.99
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.98
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.96
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.94
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.92
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.91
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.81
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.80
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.73
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.66
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.64
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69821656
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.77
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.10
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.06
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.00
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.98
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.84
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.78
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.75
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.67
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.66
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.65
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.64
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.63
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.61
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.59
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.58
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.57
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:EXITO MARKET ID: 69823683
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.59
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.14
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.13
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.12
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.11
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.08
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.07
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.06
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.05
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:EXITO MARKET ID: 69824865
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.23
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 182.25
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.17
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.17
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.17
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.68
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.69
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.71
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.72
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.73
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.75
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.76
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.77
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.79
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.84
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.86
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.88
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.89
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.92
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.93
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.96
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.98
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 178.01
+INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
+INFO:audit_orders:LIMPIEZA COMPLETADA
+INFO:audit_orders:INTENTO MARKET: SELL 1.8
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 1.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: BUY 2.3
+INFO:audit_orders:INTENTO MARKET: SELL 5.5
+INFO:audit_orders:INTENTO MARKET: SELL 5.4
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 67, in main
+    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\strategies.py", line 453, in ejecutar_estrategia
+    scalp_sig, scalp_info = self.scalp_mode.evaluar(df_scalp, precio)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\modes.py", line 92, in evaluar
+    self.gatillo = {'tipo': 'LONG', 'price': precio, 'ticks': self.cfg.TRIGGER_PATIENCE}
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Config' object has no attribute 'TRIGGER_PATIENCE'
+
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 0.6
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 64, in main
+    ana_s = MarketAnalyzer(df_scalp); df_s = ana_s.calcular_todo(cfg.SCALP_RSI_PERIOD)
+                                                                 ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Config' object has no attribute 'SCALP_RSI_PERIOD'. Did you mean: 'STOCH_RSI_PERIOD'?
+
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 64, in main
+    ana_s = MarketAnalyzer(df_scalp); df_s = ana_s.calcular_todo(cfg.SCALP_RSI_PERIOD)
+                                                                 ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Config' object has no attribute 'SCALP_RSI_PERIOD'. Did you mean: 'STOCH_RSI_PERIOD'?
+
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 74, in main
+    mom_chg = strategy.mom_mode.obtener_datos_tiempo_real()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MomentumMode' object has no attribute 'obtener_datos_tiempo_real'
+
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'RSI'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        mtf_data=mtf_data # Pasamos la matriz para la tabla detallada inferior
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\dashboard.py", line 133, in mostrar_panel
+    rsi_s = df_scalp.iloc[-1]['RSI']
+            ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'RSI'
+
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: SELL 0.6
+INFO:audit_orders:INTENTO MARKET: BUY 0.6
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 64, in main
+    ana_s = MarketAnalyzer(df_scalp); df_s = ana_s.calcular_todo(cfg.SCALP_RSI_PERIOD)
+                                                                 ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Config' object has no attribute 'SCALP_RSI_PERIOD'. Did you mean: 'STOCH_RSI_PERIOD'?
+
+INFO:audit_orders:INTENTO MARKET: SELL 0.3
+INFO:audit_orders:INTENTO MARKET: SELL 0.3
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 69, in main
+    msg = strategy.ejecutar_estrategia(mtf_data, precio)
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\strategies.py", line 485, in ejecutar_estrategia
+    self.trader.abrir_orden(swing_sig, precio, swing_info['tp_price'], swing_info['sl_price'], swing_info['motivo'], swing_info['tp_mid'], 'SWING')
+                                               ~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'tp_price'
+
+INFO:audit_orders:INTENTO MARKET: SELL 2.2
+INFO:audit_orders:INTENTO MARKET: BUY 2.2
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 78, in main
+    dashboard.mostrar_panel(
+    ^^^^^^^^^
+NameError: name 'dashboard' is not defined
+

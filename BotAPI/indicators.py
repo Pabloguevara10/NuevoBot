@@ -1,45 +1,123 @@
 # indicators.py
 import pandas as pd
-from ta.momentum import RSIIndicator, StochRSIIndicator
-from ta.trend import SMAIndicator, MACD
-from ta.volume import OnBalanceVolumeIndicator, AccDistIndexIndicator, VolumeWeightedAveragePrice
-from config import Config
+import numpy as np
 
 class MarketAnalyzer:
+    """(Legacy) Mantenido para compatibilidad con visualización."""
     def __init__(self, df):
         self.df = df
-        self.SR_WINDOW = getattr(Config, 'SR_WINDOW', 20)
-
+    
     def calcular_todo(self, rsi_period=14):
         if self.df.empty: return self.df
-
-        self.df['MA7'] = SMAIndicator(self.df['close'], window=7).sma_indicator()
-        self.df['MA25'] = SMAIndicator(self.df['close'], window=25).sma_indicator()
-        self.df['MA99'] = SMAIndicator(self.df['close'], window=99).sma_indicator()
-
-        self.df['RSI'] = RSIIndicator(self.df['close'], window=rsi_period).rsi()
-        stoch = StochRSIIndicator(self.df['close'], window=14, smooth1=3, smooth2=3)
-        self.df['StochRSI_k'] = stoch.stochrsi_k()
-
-        self.df['OBV'] = OnBalanceVolumeIndicator(self.df['close'], self.df['volume']).on_balance_volume()
-        self.df['ADI'] = AccDistIndexIndicator(self.df['high'], self.df['low'], self.df['close'], self.df['volume']).acc_dist_index()
+        df = self.df.copy()
         
-        try:
-            vwap = VolumeWeightedAveragePrice(self.df['high'], self.df['low'], self.df['close'], self.df['volume'])
-            self.df['VWAP'] = vwap.volume_weighted_average_price()
-        except:
-            self.df['VWAP'] = self.df['close']
+        # RSI para visualización
+        delta = df['close'].diff()
+        gain = (delta.where(delta > 0, 0)).rolling(window=rsi_period).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(window=rsi_period).mean()
+        rs = gain / loss
+        df['RSI'] = 100 - (100 / (1 + rs))
+        return df.fillna(0)
 
-        self.df['Roll_Max'] = self.df['high'].rolling(window=self.SR_WINDOW).max()
-        self.df['Roll_Min'] = self.df['low'].rolling(window=self.SR_WINDOW).min()
+    def obtener_extremos_locales(self, window=20):
+        if self.df.empty: return 0, 0
+        return self.df['low'].tail(window).min(), self.df['high'].tail(window).max()
 
-        self.df.bfill(inplace=True)
-        self.df.ffill(inplace=True)
-        self.df['VWAP'] = self.df['VWAP'].fillna(self.df['close'])
+class MTFAnalyzer:
+    """
+    Generador de Matriz Multi-Temporalidad Robustecido.
+    """
+    def __init__(self, df_1m, df_15m):
+        self.df_1m = df_1m
+        self.df_15m = df_15m
+        self.data = {}
+
+    def _resample(self, df_origin, timeframe_rule):
+        if df_origin.empty: return pd.DataFrame()
+        df = df_origin.copy()
+        if 'timestamp' in df.columns:
+            df.set_index('timestamp', inplace=True)
+        agg_rules = {'open': 'first', 'high': 'max', 'low': 'min', 'close': 'last', 'volume': 'sum'}
+        try: return df.resample(timeframe_rule).agg(agg_rules).dropna()
+        except: return pd.DataFrame()
+
+    def _calc_metrics(self, df):
+        # --- PROTECCIÓN CONTRA DATA INSUFICIENTE ---
+        # Si hay menos de 20 velas, devolvemos un diccionario neutro COMPLETO
+        # para evitar KeyError en modes.py
+        if len(df) < 20: 
+            return {
+                'RSI': 50.0, 
+                'STOCH_RSI': 50.0, 
+                'K': 50.0,
+                'BB_UPPER': 0.0, 
+                'BB_MID': 0.0, 
+                'BB_LOWER': 0.0,
+                'BB_WIDTH': 0.0, 
+                'VOL_SCORE': 0.0, 
+                'CLOSE': 0.0,
+                'BB_POS': 'MID'
+            }
         
-        return self.df
+        # 1. RSI
+        delta = df['close'].diff()
+        gain = (delta.where(delta > 0, 0)).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / loss
+        rsi = 100 - (100 / (1 + rs))
+        
+        # 2. StochRSI
+        min_rsi = rsi.rolling(14).min()
+        max_rsi = rsi.rolling(14).max()
+        stoch_rsi = (rsi - min_rsi) / (max_rsi - min_rsi) * 100
+        
+        # 3. Stoch K
+        low14 = df['low'].rolling(14).min()
+        high14 = df['high'].rolling(14).max()
+        k = 100 * ((df['close'] - low14) / (high14 - low14))
+        
+        # 4. Bollinger Bands
+        sma = df['close'].rolling(20).mean()
+        std = df['close'].rolling(20).std()
+        upper = sma + (std * 2)
+        lower = sma - (std * 2)
+        width = upper - lower
+        
+        # 5. Volume Score
+        vol_ma = df['volume'].rolling(20).mean()
+        # Evitar división por cero
+        vol_ref = vol_ma.iloc[-1] if vol_ma.iloc[-1] > 0 else 1
+        vol_score = (df['volume'].iloc[-1] / vol_ref) * 50
+        vol_score = min(100, max(0, vol_score))
 
-    def obtener_extremos_locales(self):
-        if self.df.empty or 'Roll_Max' not in self.df.columns: return 0, 0
-        last = self.df.iloc[-1]
-        return last['Roll_Min'], last['Roll_Max']
+        # Estado BB
+        last_c = df['close'].iloc[-1]
+        last_u = upper.iloc[-1]
+        last_l = lower.iloc[-1]
+        
+        bb_pos = 'MID'
+        if last_c >= last_u: bb_pos = 'UPPER'
+        elif last_c <= last_l: bb_pos = 'LOWER'
+        
+        return {
+            'RSI': float(rsi.iloc[-1]),
+            'STOCH_RSI': float(stoch_rsi.iloc[-1]), 
+            'K': float(k.iloc[-1]),
+            'BB_UPPER': float(last_u),
+            'BB_MID': float(sma.iloc[-1]), # Agregado para dashboard
+            'BB_LOWER': float(last_l),
+            'BB_WIDTH': float(width.iloc[-1]),
+            'VOL_SCORE': float(vol_score),
+            'CLOSE': float(last_c),
+            'BB_POS': bb_pos
+        }
+
+    def generar_matriz(self):
+        self.data['1m'] = self._calc_metrics(self.df_1m)
+        self.data['3m'] = self._calc_metrics(self._resample(self.df_1m, '3min'))
+        self.data['5m'] = self._calc_metrics(self._resample(self.df_1m, '5min'))
+        self.data['15m'] = self._calc_metrics(self.df_15m)
+        self.data['30m'] = self._calc_metrics(self._resample(self.df_15m, '30min'))
+        self.data['1h'] = self._calc_metrics(self._resample(self.df_15m, '1h'))
+        self.data['4h'] = self._calc_metrics(self._resample(self.df_15m, '4h'))
+        return self.data
