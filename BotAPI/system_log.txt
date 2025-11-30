@@ -1,1322 +1,152 @@
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 58, in main
-    roll_min, roll_max = analyzer.obtener_extremos_locales()
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'MarketAnalyzer' object has no attribute 'obtener_extremos_locales'
+  File "C:\Users\fullt\Desktop\BotTRADING\main.py", line 74, in main
+    ops_count = strategy.trader.stats.total_trades
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradingStats' object has no attribute 'total_trades'
 
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
-    return self._engine.get_loc(casted_key)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'volume'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 46, in main
-    df_calc = analyzer.calcular_todo()
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\indicators.py", line 29, in calcular_todo
-    self.df['OBV'] = OnBalanceVolumeIndicator(self.df['close'], self.df['volume']).on_balance_volume()
-                                                                ~~~~~~~^^^^^^^^^^
-  File "C:\Users\Santi\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
-    indexer = self.columns.get_loc(key)
-  File "C:\Users\Santi\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
-    raise KeyError(key) from err
-KeyError: 'volume'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 34, in main
-    df = client.obtener_velas()
-TypeError: BinanceClient.obtener_velas() missing 1 required positional argument: 'timeframe'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 49, in main
-    log_accion = strategy.ejecutar_estrategia(df_calc, roll_min, roll_max, precio_real)
-TypeError: StrategyEngine.ejecutar_estrategia() missing 1 required positional argument: 'precio'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 34, in main
-    df_scalp = client.obtener_velas(cfg.TF_SCALP)
-                                    ^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'TF_SCALP'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 52, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-TypeError: StrategyEngine.ejecutar_estrategia() takes 5 positional arguments but 6 were given
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 52, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 266, in ejecutar_estrategia
-    tp = roll_max * 0.999; sl = precio * (1-self.cfg.SCALP_SL_PCT)
-                                            ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'SCALP_SL_PCT'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 52, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 236, in ejecutar_estrategia
-    trend_ok_long = precio > ma99
-                    ^^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'float' and 'NoneType'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 52, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 228, in ejecutar_estrategia
-    tp = roll_min * 1.001; sl = precio * (1+self.cfg.SCALP_SL_PCT)
-                                            ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'SCALP_SL_PCT'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 60, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 316, in ejecutar_estrategia
-    trend_ok_long = precio > ma99
-                    ^^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'float' and 'NoneType'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 61, in main
-    dashboard.mostrar_panel(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        df_s_calc,
-        ^^^^^^^^^^
-    ...<4 lines>...
-        strategy.trader.posicion_abierta
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\dashboard.py", line 105, in mostrar_panel
-    print(f"{Fore.DIM}\n       [ NO HAY POSICIONES ABIERTAS ]\n{Style.RESET_ALL}")
-             ^^^^^^^^
-AttributeError: 'AnsiFore' object has no attribute 'DIM'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 56, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 359, in ejecutar_estrategia
-    trend_ok_long = precio > ma99
-                    ^^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'float' and 'NoneType'
-
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10616366892
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.003 BTCUSDT Trigger: 88163.0 (Raw: 88163.02200) PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Binance Error Code: -1106, Msg: Parameter 'reduceonly' sent when not required.
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.003 BTCUSDT Trigger: 86847.2 (Raw: 86847.15600) PosSide: SHORT
-ERROR:audit_orders:RECHAZO TAKE_PROFIT_MARKET: Binance Error Code: -1106, Msg: Parameter 'reduceonly' sent when not required.
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.003 BTCUSDT Trigger: 87408.9 (Raw: 87408.91700) PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Binance Error Code: -1106, Msg: Parameter 'reduceonly' sent when not required.
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.003 BTCUSDT Trigger: 86847.2 (Raw: 86847.15600) PosSide: SHORT
-ERROR:audit_orders:RECHAZO TAKE_PROFIT_MARKET: Binance Error Code: -1106, Msg: Parameter 'reduceonly' sent when not required.
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 56, in main
-    log_accion = strategy.ejecutar_estrategia(df_s_calc, df_w_calc, roll_min, roll_max, precio_real)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 359, in ejecutar_estrategia
-    trend_ok_long = precio > ma99
-                    ^^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'float' and 'NoneType'
-
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10616851590
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 48, in main
-    dashboard.mostrar_panel(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        df_s, df_w, vol, msg, cfg.MODE,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        strategy.trader.posicion_abierta,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        ordenes_reales # Pasamos la data real
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\dashboard.py", line 28, in mostrar_panel
-    print(f" Stoch K:   {last_s['StochRSI_k']:.2f:<26} |  Stoch K:   {last_w['StochRSI_k']:.2f}")
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: Invalid format specifier '.2f:<26' for object of type 'float'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 48, in main
-    dashboard.mostrar_panel(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        df_s, df_w, vol, msg, cfg.MODE,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        strategy.trader.posicion_abierta,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        ordenes_reales
-        ^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\dashboard.py", line 28, in mostrar_panel
-    print(f" Stoch K:   {last_s['StochRSI_k']:.2f:<26} |  Stoch K:   {last_w['StochRSI_k']:.2f}")
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: Invalid format specifier '.2f:<26' for object of type 'float'
-
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10617103986
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10617124218
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10617223252
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.037 BTCUSDT Trigger: 88426.0 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 10617287957
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.037 BTCUSDT Trigger: 87193.0 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 10617287962
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 42, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 330, in ejecutar_estrategia
-    trend_ok_long = precio > ma99; trend_ok_short = precio < ma99
-                    ^^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'float' and 'NoneType'
-
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10617506578
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.003 Trigger: 88717.4 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 10617506690
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.003 Trigger: 87393.2 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 10617506971
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.003 Trigger: 88135.0 PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.003 Trigger: 87393.2 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 10617545110
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.003 Trigger: 88132.0 PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.003 Trigger: 87393.2 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 10617609941
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de BTCUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.003 BTCUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 10618221562
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.003 Trigger: 88588.2 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.003 Trigger: 87266.0 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 10618221769
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 10618221993
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69678580
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 180.82 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 178.12 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69678581
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69678585
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 179.69 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 178.12 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69678766
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69678770
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 179.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 178.12 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69678942
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69678945
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 179.56 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 178.12 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69678961
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69678962
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69680442
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 0.6 Trigger: 177.91 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 0.6 Trigger: 180.59 PosSide: LONG
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69680443
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69680452
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 0.6 Trigger: 178.98 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 0.6 Trigger: 180.59 PosSide: LONG
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69680697
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69680699
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69681125
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 180.33 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 177.64 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69681129
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69681132
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 179.25 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 177.64 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69681310
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69681314
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69682340
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 179.59 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 176.91 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69682344
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69682352
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69683170
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.2 Trigger: 179.59 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.2 Trigger: 176.91 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69683175
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69683177
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69683333
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.7999999999999998 Trigger: 179.59 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.7999999999999998 Trigger: 176.91 PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -1111 Msg Precision is over the maximum defined for this asset.
-ERROR:audit_orders:RECHAZO TAKE_PROFIT_MARKET: Code -1111 Msg Precision is over the maximum defined for this asset.
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.8 Trigger: 178.90 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.8 Trigger: 176.75 PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69683524
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69683649
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.4 Trigger: 178.90 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.4 Trigger: 176.75 PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69683653
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69683858
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 3.0 Trigger: 178.90 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 3.0 Trigger: 176.75 PosSide: SHORT
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69683865
-INFO:audit_orders:INTENTO MARKET: BUY 3.0 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69684038
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69684089
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 177.92 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69684093
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69684097
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69685794
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.2 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.2 Trigger: 177.92 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69685802
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69685823
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69685832
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.7999999999999998 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.7999999999999998 Trigger: 177.92 PosSide: SHORT
-ERROR:audit_orders:RECHAZO TAKE_PROFIT_MARKET: Code -1111 Msg Precision is over the maximum defined for this asset.
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -1111 Msg Precision is over the maximum defined for this asset.
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69685955
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.4 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.4 Trigger: 177.92 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69685959
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69685964
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69686034
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 3.0 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 3.0 Trigger: 177.92 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69686043
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69686045
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69686235
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 3.6 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 3.6 Trigger: 177.92 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69686238
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69686240
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69686351
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 4.2 Trigger: 180.62 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 4.2 Trigger: 177.92 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69686357
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69686377
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 42, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 341, in ejecutar_estrategia
-    res = self.trader.verificar_salidas(precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 192, in verificar_salidas
-    (pos['tipo'] == 'SHORT' and precio >= pos['entrada']*trigger):
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: '>=' not supported between instances of 'NoneType' and 'float'
-
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 4.2 Trigger: 180.33 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 4.2 Trigger: 178.17 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69687145
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69687157
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 4.2 Trigger: 179.79 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 4.2 Trigger: 178.17 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69687199
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69687200
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 4.2 Trigger: 180.33 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 4.2 Trigger: 178.17 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69687508
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69687511
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 4.2 Trigger: 179.79 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 4.2 Trigger: 178.17 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69687522
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69687523
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69694141
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 179.55 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 179.02 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69694142
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69694147
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69694210
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.2 Trigger: 179.55 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.2 Trigger: 179.02 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69694214
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69694218
-INFO:audit_orders:LIMPIEZA: Canceladas todas las órdenes de AAVEUSDT
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 43, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 348, in ejecutar_estrategia
-    signal, info = self.scalp_mode.evaluar(df_scalp, precio)
-                   ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\modes.py", line 85, in evaluar
-    trend_bull = precio_actual > ma99
-                 ^^^^^^^^^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'float' and 'NoneType'
-
-INFO:audit_orders:INTENTO MARKET: SELL 2.3 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69699924
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.51 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69699926
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69699943
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.46 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69700002
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69700006
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.43 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69700035
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69700036
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.41 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69700081
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69700083
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.26 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69700131
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69700132
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.25 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69700228
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69700229
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 AAVEUSDT Trigger: 178.24 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 AAVEUSDT Trigger: 172.81 PosSide: SHORT
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69700336
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69700337
-INFO:audit_orders:LIMPIEZA COMPLETADA: 0 órdenes activas en AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69716188
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 0.6 AAVEUSDT Trigger: 177.22 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 0.6 AAVEUSDT Trigger: 177.94 PosSide: LONG
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69716189
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69716192
-INFO:audit_orders:LIMPIEZA COMPLETADA: 0 órdenes activas en AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69721306
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 AAVEUSDT Trigger: 177.49 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 AAVEUSDT Trigger: 176.77 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69721308
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69721314
-INFO:audit_orders:LIMPIEZA COMPLETADA: 0 órdenes activas en AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: BUY 2.3 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69724933
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.50 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69724937
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.56 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725054
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.60 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725086
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.67 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725115
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.68 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725657
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.69 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725833
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.70 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725853
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.71 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725910
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.74 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725922
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.76 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69725936
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.78 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726003
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.79 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726034
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.82 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726075
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.83 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726089
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.85 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726130
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.88 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726146
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.89 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726236
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.96 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726279
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 177.97 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726320
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.08 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726338
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.13 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726378
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.17 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726390
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.20 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726438
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.28 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726481
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.45 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726511
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.61 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726537
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.63 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726626
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.64 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726912
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.68 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69726931
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.69 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727163
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.70 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727210
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.73 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727288
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.75 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727336
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.76 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727395
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.77 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727413
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.78 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727453
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.80 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727498
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.84 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727515
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.86 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727536
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.89 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727591
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.91 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727615
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.92 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727655
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 178.98 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727667
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.02 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727708
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.05 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727742
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.07 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727776
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.11 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727795
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.12 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69727844
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.13 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728040
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.14 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728060
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.16 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728096
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.17 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728132
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.20 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728153
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.21 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728213
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.26 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728240
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.29 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728275
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.34 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728317
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.41 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728330
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.42 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728414
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.44 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728428
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.45 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728496
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.49 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728530
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.50 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728565
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.51 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69728609
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.52 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69731228
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.54 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69731253
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 AAVEUSDT Trigger: 179.55 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 AAVEUSDT Trigger: 183.20 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69731276
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69732486
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69732579
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69741793
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69741839
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69743450
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69743519
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69749790
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69749884
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69749891
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 5.3 AAVEUSDT Trigger: 177.14 PosSide: LONG
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 5.3 AAVEUSDT Trigger: 179.27 PosSide: LONG
-ERROR:audit_orders:RECHAZO STOP_MARKET: Code -2021 Msg Order would immediately trigger.
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69750137
-INFO:audit_orders:INTENTO MARKET: BUY 0.6 AAVEUSDT (LONG)
-INFO:audit_orders:EXITO MARKET: ID 69750619
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750792
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750795
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750868
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750879
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750880
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750924
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750957
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69750959
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69751001
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69751108
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69751110
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69751114
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69751410
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69751743
-INFO:audit_orders:LIMPIEZA COMPLETADA: 0 órdenes activas en AAVEUSDT
-INFO:audit_orders:INTENTO MARKET: SELL 0.6 AAVEUSDT (SHORT)
-INFO:audit_orders:EXITO MARKET: ID 69762011
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 178.21 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 175.55 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69762015
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69762014
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 Trigger: 177.14 PosSide: SHORT
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 Trigger: 175.55 PosSide: SHORT
-INFO:audit_orders:EXITO STOP_MARKET: OrderID 69762460
-INFO:audit_orders:EXITO TAKE_PROFIT_MARKET: OrderID 69762461
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 42, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 254, in ejecutar_estrategia
-    mom_signal, mom_data = self.mom_mode.evaluar(df_scalp, precio)
-                           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\modes.py", line 74, in evaluar
-    ratio, chg = self.obtener_datos_tiempo_real(df, precio)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\modes.py", line 69, in obtener_datos_tiempo_real
-    chg = ((precio - op)/op)*100 if op>0 else 0
-            ~~~~~~~^~~~
-TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
-
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69769252
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 178.31
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 184.03
-ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 178.31
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 180.46
-ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.32
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.32
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.28
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.17
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 44, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 346, in ejecutar_estrategia
-    res = self.trader.verificar_salidas(precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 236, in verificar_salidas
-    return self._gestionar_riesgo(precio, pos)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 257, in _gestionar_riesgo
-    pnl_pct = (precio - pos['entrada'])/pos['entrada'] if pos['tipo']=='LONG' else (pos['entrada'] - precio)/pos['entrada']
-               ~~~~~~~^~~~~~~~~~~~~~~~
-TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
-
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 11.7 @ 177.42
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 11.7 @ 179.56
-ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 177.00
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.99
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.89
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.89
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.89
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 25.8 @ 177.08
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 25.8 @ 179.21
-ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 25.8 @ 177.08
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 25.8 @ 179.21
-ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
-INFO:audit_orders:INTENTO MARKET: SELL 25.8
-INFO:audit_orders:EXITO MARKET ID: 69772704
-INFO:audit_orders:LIMPIEZA COMPLETADA
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 44, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 353, in ejecutar_estrategia
-    mom_signal, mom_data = self.mom_mode.evaluar(precio) # Momentum usa datos de tiempo real
-                           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\modes.py", line 106, in evaluar
-    change_pct = self.obtener_datos_tiempo_real()
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\modes.py", line 96, in obtener_datos_tiempo_real
-    change_pct = ((precio_actual - precio_base) / precio_base) * 100
-                   ~~~~~~~~~~~~~~^~~~~~~~~~~~~
-TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 60, in main
-    mom_ratio, mom_chg = strategy.mom_mode.obtener_datos_tiempo_real()
-    ^^^^^^^^^^^^^^^^^^
-TypeError: cannot unpack non-iterable float object
-
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69773745
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 175.94
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 181.58
-INFO:audit_orders:LIMPIEZA COMPLETADA
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 61, in main
-    mom_chg = strategy.mom_mode.obtener_datos_tiempo_real()
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\modes.py", line 87, in obtener_datos_tiempo_real
-    if now - ts <= self.cfg.MOMENTUM_WINDOW_SECONDS:
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'MOMENTUM_WINDOW_SECONDS'
-
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69775220
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 174.56
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 180.06
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 174.66
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 180.06
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 174.71
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 180.06
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 174.80
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 180.06
-INFO:audit_orders:LIMPIEZA COMPLETADA
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 54, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 283, in ejecutar_estrategia
-    res = self.trader.verificar_salidas(precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 152, in verificar_salidas
-    if self._verificar_cierre_externo(precio): return "CERRADO_POR_BINANCE"
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 183, in _verificar_cierre_externo
-    self.stats.registrar(pos['tipo'], pnl, pos.get('strategy', 'SCALP'))
-    ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'TradingStats' object has no attribute 'registrar'
-
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69775805
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 175.57
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 170.05
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 175.47
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 170.05
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 175.43
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 170.05
-INFO:audit_orders:LIMPIEZA COMPLETADA
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\main.py", line 54, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 283, in ejecutar_estrategia
-    res = self.trader.verificar_salidas(precio)
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 152, in verificar_salidas
-    if self._verificar_cierre_externo(precio): return "CERRADO_POR_BINANCE"
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Santi\Downloads\pablo\python\BotAPI\strategies.py", line 183, in _verificar_cierre_externo
-    self.stats.registrar(pos['tipo'], pnl, pos.get('strategy', 'SCALP'))
-    ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'TradingStats' object has no attribute 'registrar'
-
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.03
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.03
-INFO:audit_orders:INTENTO LIMIT: BUY 0.6 @ 176.03
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.09
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.09
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.09
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.09
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.09
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 0.6 @ 176.44
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 0.6 @ 174.74
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.10
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.10
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.10
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.10
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 176.10
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 1.2 @ 176.44
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 1.2 @ 174.74
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69778869
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.87
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.27
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.69
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.27
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69779054
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.76
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.17
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69779220
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.76
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.17
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.58
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.17
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.57
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.17
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.54
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.17
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69779363
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.85
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.25
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.75
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.25
-ERROR:audit_orders:RECHAZO STOP_MARKET: Order would immediately trigger.
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69779822
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69812238
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.35
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.25
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.24
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.22
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.20
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.19
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.68
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69812467
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.85
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.52
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 180.09
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.52
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69812518
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.16
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.49
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.06
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.49
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.05
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.49
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69812715
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 180.22
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.90
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69812729
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.13
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.46
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69813466
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.14
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.47
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69814160
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.71
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.81
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.89
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.93
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.38
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69814460
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.74
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.41
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.84
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.41
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.90
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.41
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69814896
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.67
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.80
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.87
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.95
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 179.97
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 185.34
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69814977
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 180.06
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 174.40
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69819621
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 178.67
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 184.77
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
-INFO:audit_orders:INTENTO LIMIT: SELL 0.6 @ 179.39
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69821091
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 179.49
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 179.01
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.99
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.98
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.96
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.94
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.92
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.91
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.81
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.80
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.73
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.66
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.64
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 173.41
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69821656
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.77
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.10
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.06
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 178.00
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.98
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.84
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.78
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.75
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.67
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.66
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.65
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.64
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.63
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.61
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.59
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.58
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.57
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 172.72
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:EXITO MARKET ID: 69823683
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.59
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.14
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.13
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.12
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.11
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.08
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.07
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.06
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:INTENTO STOP_MARKET: BUY 2.3 @ 177.05
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: BUY 2.3 @ 171.57
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:EXITO MARKET ID: 69824865
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.23
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 182.25
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.17
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.17
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 176.17
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.68
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.69
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.71
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.72
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.73
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.75
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.76
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.77
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.79
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.84
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.86
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.88
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.89
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.92
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.93
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.96
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 177.98
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:INTENTO STOP_MARKET: SELL 2.3 @ 178.01
-INFO:audit_orders:INTENTO TAKE_PROFIT_MARKET: SELL 2.3 @ 179.00
-INFO:audit_orders:LIMPIEZA COMPLETADA
-INFO:audit_orders:INTENTO MARKET: SELL 1.8
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 1.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: BUY 2.3
-INFO:audit_orders:INTENTO MARKET: SELL 5.5
-INFO:audit_orders:INTENTO MARKET: SELL 5.4
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 67, in main
-    msg = strategy.ejecutar_estrategia(df_s, df_w, rmin, rmax, precio)
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\strategies.py", line 453, in ejecutar_estrategia
-    scalp_sig, scalp_info = self.scalp_mode.evaluar(df_scalp, precio)
-                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\modes.py", line 92, in evaluar
-    self.gatillo = {'tipo': 'LONG', 'price': precio, 'ticks': self.cfg.TRIGGER_PATIENCE}
-                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'TRIGGER_PATIENCE'
-
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 0.6
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 64, in main
-    ana_s = MarketAnalyzer(df_scalp); df_s = ana_s.calcular_todo(cfg.SCALP_RSI_PERIOD)
-                                                                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'SCALP_RSI_PERIOD'. Did you mean: 'STOCH_RSI_PERIOD'?
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 64, in main
-    ana_s = MarketAnalyzer(df_scalp); df_s = ana_s.calcular_todo(cfg.SCALP_RSI_PERIOD)
-                                                                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'SCALP_RSI_PERIOD'. Did you mean: 'STOCH_RSI_PERIOD'?
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 74, in main
-    mom_chg = strategy.mom_mode.obtener_datos_tiempo_real()
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'MomentumMode' object has no attribute 'obtener_datos_tiempo_real'
-
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
-    return self._engine.get_loc(casted_key)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'RSI'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 79, in main
-    dashboard.mostrar_panel(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        df_s, df_w, vol_score, msg, cfg.MODE,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-        mtf_data=mtf_data # Pasamos la matriz para la tabla detallada inferior
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\dashboard.py", line 133, in mostrar_panel
-    rsi_s = df_scalp.iloc[-1]['RSI']
-            ~~~~~~~~~~~~~~~~~^^^^^^^
-  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\series.py", line 1133, in __getitem__
-    return self._get_value(key)
-           ~~~~~~~~~~~~~~~^^^^^
-  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\series.py", line 1249, in _get_value
-    loc = self.index.get_loc(label)
-  File "C:\Users\fullt\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
-    raise KeyError(key) from err
-KeyError: 'RSI'
-
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: SELL 0.6
-INFO:audit_orders:INTENTO MARKET: BUY 0.6
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 64, in main
-    ana_s = MarketAnalyzer(df_scalp); df_s = ana_s.calcular_todo(cfg.SCALP_RSI_PERIOD)
-                                                                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Config' object has no attribute 'SCALP_RSI_PERIOD'. Did you mean: 'STOCH_RSI_PERIOD'?
-
-INFO:audit_orders:INTENTO MARKET: SELL 0.3
-INFO:audit_orders:INTENTO MARKET: SELL 0.3
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 69, in main
+  File "C:\Users\fullt\Desktop\BotTRADING\main.py", line 66, in main
     msg = strategy.ejecutar_estrategia(mtf_data, precio)
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\strategies.py", line 485, in ejecutar_estrategia
-    self.trader.abrir_orden(swing_sig, precio, swing_info['tp_price'], swing_info['sl_price'], swing_info['motivo'], swing_info['tp_mid'], 'SWING')
-                                               ~~~~~~~~~~^^^^^^^^^^^^
-KeyError: 'tp_price'
+  File "C:\Users\fullt\Desktop\BotTRADING\engine.py", line 69, in ejecutar_estrategia
+    swing_sig, swing_info = self.swing_mode.evaluar(data_15m)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\fullt\Desktop\BotTRADING\modes.py", line 178, in evaluar
+    res, info = self.gestionar_gatillo(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        data_15m, precio, bb_mid,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        tp_offset_usd=self.cfg.SWING_TP_OFFSET
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BaseMode.gestionar_gatillo() got an unexpected keyword argument 'bb_opposite'
 
-INFO:audit_orders:INTENTO MARKET: SELL 2.2
-INFO:audit_orders:INTENTO MARKET: BUY 2.2
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\fullt\Desktop\NuevoBot\BotAPI\main.py", line 78, in main
-    dashboard.mostrar_panel(
-    ^^^^^^^^^
-NameError: name 'dashboard' is not defined
+  File "C:\Users\fullt\Desktop\BotTRADING\main.py", line 66, in main
+    msg = strategy.ejecutar_estrategia(mtf_data, precio)
+  File "C:\Users\fullt\Desktop\BotTRADING\engine.py", line 69, in ejecutar_estrategia
+    swing_sig, swing_info = self.swing_mode.evaluar(data_15m)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\fullt\Desktop\BotTRADING\modes.py", line 189, in evaluar
+    res, info = self.gestionar_gatillo(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        data_15m, precio, bb_mid,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        tp_offset_usd=self.cfg.SWING_TP_OFFSET
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BaseMode.gestionar_gatillo() got an unexpected keyword argument 'bb_opposite'
 
+INFO:audit_orders:INTENTO MARKET: BUY 2.1
+INFO:audit_orders:INTENTO MARKET: SELL 2.1
+INFO:audit_orders:INTENTO MARKET: SELL 0.5
+INFO:audit_orders:INTENTO MARKET: SELL 0.5
+INFO:audit_orders:INTENTO MARKET: SELL 0.5
+INFO:audit_orders:INTENTO MARKET: SELL 0.5
+INFO:audit_orders:INTENTO MARKET: SELL 0.5
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.94
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 187.09
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 187.28
+INFO:audit_orders:INTENTO MARKET: BUY 1.5
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.30
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.60
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.81
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.76
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.84
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.93
+INFO:audit_orders:INTENTO MARKET: BUY 1.5
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.50
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.79
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 186.05
+INFO:audit_orders:INTENTO MARKET: SELL 0.5
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.42
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.43
+INFO:audit_orders:INTENTO MARKET: BUY 0.5
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.80
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.63
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.78
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.62
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.64
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.64
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 186.65
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.05
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 185.33
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 185.18
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 185.23
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 185.38
+INFO:audit_orders:INTENTO MARKET: SELL 0.2
+INFO:audit_orders:INTENTO MARKET: SELL 0.1
+INFO:audit_orders:INTENTO MARKET: SELL 0.1
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.38
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.73
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 185.69
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.32
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 182.62
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 182.66
+INFO:audit_orders:INTENTO MARKET: BUY 0.5
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 182.76
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.14
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.21
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.29
+INFO:audit_orders:INTENTO MARKET: BUY 0.5
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.74
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 184.01
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 184.09
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 184.26
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 184.43
+INFO:audit_orders:INTENTO MARKET: BUY 1.5
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.96
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.98
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.94
+INFO:audit_orders:INTENTO MARKET: BUY 1.3
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 183.47
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.52
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.49
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.55
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.51
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.38
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.22
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.26
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.29
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.19
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.22
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 182.43
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.51
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 182.55
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.51
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.52
+INFO:audit_orders:INTENTO LIMIT: BUY 0.5 @ 182.53
+INFO:audit_orders:INTENTO LIMIT: SELL 0.5 @ 182.62
+INFO:audit_orders:INTENTO LIMIT: SELL 2.6 @ 182.38
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 182.03
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.02
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 181.68
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 181.70
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 181.66
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 181.62
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 181.96
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.13
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.15
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.27
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 182.36
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 182.27
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 182.17
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.07
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.08
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.13
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.12
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.04
+INFO:audit_orders:INTENTO MARKET: SELL 2.7
+INFO:audit_orders:INTENTO LIMIT: BUY 2.6 @ 182.63
+INFO:audit_orders:INTENTO LIMIT: BUY 2.6 @ 182.53
+INFO:audit_orders:INTENTO LIMIT: BUY 2.6 @ 182.45
+INFO:audit_orders:INTENTO LIMIT: BUY 2.6 @ 182.51
+INFO:audit_orders:INTENTO LIMIT: BUY 2.6 @ 182.40
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.26
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.23
+INFO:audit_orders:INTENTO MARKET: SELL 15.7
+INFO:audit_orders:INTENTO LIMIT: SELL 2.7 @ 182.26
+INFO:audit_orders:INTENTO LIMIT: BUY 2.7 @ 182.05

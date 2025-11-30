@@ -1,4 +1,3 @@
-# connectors.py
 import math
 import logging
 import time
@@ -7,6 +6,7 @@ from colorama import Fore, Style
 from binance.client import Client
 from binance.exceptions import BinanceAPIException
 
+# Configuración de Logs internos de conexión
 logger_ordenes = logging.getLogger('audit_orders')
 logger_ordenes.setLevel(logging.INFO)
 fh = logging.FileHandler('debug_ordenes.log')
@@ -42,7 +42,6 @@ class BinanceClient:
                     for f in s['filters']:
                         if f['filterType'] == 'LOT_SIZE': self.step_size = float(f['stepSize'])
                         if f['filterType'] == 'PRICE_FILTER': self.tick_size = float(f['tickSize'])
-                    # print(f"[INFO] Reglas {symbol}: Step={self.step_size}, Tick={self.tick_size}")
                     break
         except Exception as e: print(f"[WARN] Error reglas: {e}")
 
@@ -60,11 +59,19 @@ class BinanceClient:
             self.client.futures_change_leverage(symbol=self._formatear_simbolo(), leverage=self.cfg.LEVERAGE)
         except: pass
 
-    def obtener_mejor_precio_libro(self, side):
+    # --- NUEVO: OBTENER SALDO USDT ---
+    def obtener_saldo_usdt(self):
         try:
-            depth = self.client.futures_order_book(symbol=self._formatear_simbolo(), limit=5)
-            return float(depth['bids'][0][0]) if side == 'BUY' else float(depth['asks'][0][0])
-        except: return None
+            balances = self.client.futures_account_balance()
+            for asset in balances:
+                if asset['asset'] == 'USDT':
+                    return float(asset['balance'])
+            return 0.0
+        except Exception as e:
+            print(f"[WARN] No se pudo leer saldo: {e}")
+            return 0.0
+
+    # --- GESTIÓN DE ÓRDENES ---
 
     def colocar_orden_market(self, side, quantity, position_side):
         try:
@@ -79,11 +86,18 @@ class BinanceClient:
     def colocar_orden_limit(self, side, quantity, price, position_side):
         try:
             p_final = self._redondear_precio(price)
+            logger_ordenes.info(f"INTENTO LIMIT: {side} {quantity} @ {p_final}")
             return self.client.futures_create_order(
-                symbol=self._formatear_simbolo(), side=side, positionSide=position_side, type='LIMIT',
-                price=p_final, quantity=quantity, timeInForce='GTC'
+                symbol=self._formatear_simbolo(), 
+                side=side, 
+                positionSide=position_side, 
+                type='LIMIT',
+                price=p_final, 
+                quantity=quantity, 
+                timeInForce='GTC'
             )
         except Exception as e:
+            print(f"{Fore.RED}[ERROR API] Limit: {e}{Style.RESET_ALL}")
             return None
 
     def colocar_orden_sl_tp(self, side, quantity, stop_price, position_side, tipo):
@@ -97,7 +111,8 @@ class BinanceClient:
             return None
 
     def verificar_estado_orden(self, order_id):
-        try: return self.client.futures_get_order(symbol=self._formatear_simbolo(), orderId=order_id)['status']
+        try: 
+            return self.client.futures_get_order(symbol=self._formatear_simbolo(), orderId=order_id)['status']
         except: return None
 
     def cancelar_orden(self, order_id):
@@ -109,49 +124,11 @@ class BinanceClient:
         try: self.client.futures_cancel_all_open_orders(symbol=symbol); return True
         except: return False
 
+    # --- GESTIÓN DE DATOS ---
+
     def obtener_precio_real(self):
         try: return float(self.client.futures_symbol_ticker(symbol=self._formatear_simbolo())['price'])
         except: return None
-
-    def obtener_velas(self, timeframe=None, limit=None):
-        """
-        Lógica Inteligente:
-        1. Si es la primera vez (arranque), pide 1000 velas (MAX) para construir base histórica sólida.
-        2. Si ya tiene datos, pide solo las últimas 50 para actualizar rápido.
-        """
-        try:
-            if timeframe is None: timeframe = self.cfg.TF_SCALP
-            
-            # --- LÓGICA DE CARGA MASIVA ---
-            if timeframe not in self._cache_velas:
-                req_limit = 1000 # <--- BASE REAL MÁXIMA AL INICIO
-                # print(f"[DEBUG] Carga Inicial Masiva: {timeframe} (1000 velas)")
-            else:
-                req_limit = 50   # Mantenimiento ligero
-            
-            # Override manual si se especifica
-            if limit: req_limit = limit
-
-            k = self.client.futures_klines(symbol=self._formatear_simbolo(), interval=timeframe, limit=req_limit)
-            
-            new_df = pd.DataFrame(k, columns=['ts','open','high','low','close','volume','x','y','z','w','v','u'])
-            new_df = new_df[['ts','open','high','low','close','volume']]
-            new_df['timestamp'] = pd.to_datetime(new_df['ts'], unit='ms')
-            cols = ['open','high','low','close','volume']
-            new_df[cols] = new_df[cols].astype(float)
-            
-            if timeframe not in self._cache_velas: 
-                self._cache_velas[timeframe] = new_df
-            else:
-                # Fusión inteligente de datos: Base antigua + Datos nuevos
-                combined = pd.concat([self._cache_velas[timeframe], new_df]).drop_duplicates(subset=['ts'], keep='last')
-                # Mantenemos un buffer grande (1000) en memoria para permitir cálculos de 4H
-                self._cache_velas[timeframe] = combined.iloc[-1000:].sort_values('ts').reset_index(drop=True)
-                
-            return self._cache_velas[timeframe]
-        except Exception as e: 
-            print(f"Error Velas: {e}")
-            return self._cache_velas.get(timeframe, pd.DataFrame())
 
     def obtener_posicion_abierta(self):
         try:
@@ -166,22 +143,56 @@ class BinanceClient:
         try: return self.client.futures_get_open_orders(symbol=self._formatear_simbolo())
         except: return []
 
-    def obtener_ordenes_historicas(self, start_time_ms):
-        try: return self.client.futures_get_all_orders(symbol=self._formatear_simbolo(), startTime=int(start_time_ms))
-        except: return []
+    def obtener_velas(self, timeframe=None, limit=None):
+        try:
+            if timeframe is None: timeframe = self.cfg.TF_SCALP
+            if timeframe not in self._cache_velas: req_limit = 1000 
+            else: req_limit = 50   
+            if limit: req_limit = limit
+
+            k = self.client.futures_klines(symbol=self._formatear_simbolo(), interval=timeframe, limit=req_limit)
+            new_df = pd.DataFrame(k, columns=['ts','open','high','low','close','volume','x','y','z','w','v','u'])
+            new_df = new_df[['ts','open','high','low','close','volume']]
+            new_df['timestamp'] = pd.to_datetime(new_df['ts'], unit='ms')
+            cols = ['open','high','low','close','volume']
+            new_df[cols] = new_df[cols].astype(float)
+            
+            if timeframe not in self._cache_velas: self._cache_velas[timeframe] = new_df
+            else:
+                combined = pd.concat([self._cache_velas[timeframe], new_df]).drop_duplicates(subset=['ts'], keep='last')
+                self._cache_velas[timeframe] = combined.iloc[-1000:].sort_values('ts').reset_index(drop=True)
+            return self._cache_velas[timeframe]
+        except Exception as e: 
+            return self._cache_velas.get(timeframe, pd.DataFrame())
 
     def obtener_trades_historicos(self, start_time_ms):
         try: return self.client.futures_account_trades(symbol=self._formatear_simbolo(), startTime=int(start_time_ms))
         except: return []
 
+    def obtener_ordenes_historicas(self, start_time_ms):
+        try: return self.client.futures_get_all_orders(symbol=self._formatear_simbolo(), startTime=int(start_time_ms))
+        except: return []
+
+# --- CLIENTE SIMULADO (MOCK) ---
 class MockClient:
     def __init__(self, config): 
         self.cfg = config
         self.step_size = 0.01
+        self.simulated_balance = self.cfg.CAPITAL_TRABAJO
+    
     def inicializar(self): pass
     def obtener_precio_real(self): return 100.0
     def obtener_velas(self, timeframe=None, limit=None): return pd.DataFrame()
     def obtener_ordenes_abiertas(self): return []
     def obtener_posicion_abierta(self): return {}
-    def obtener_ordenes_historicas(self, x): return []
     def obtener_trades_historicos(self, x): return []
+    
+    # NUEVO: Saldo simulado
+    def obtener_saldo_usdt(self): return self.simulated_balance
+    
+    def colocar_orden_market(self, side, qty, pos_side): return {'orderId': 1}
+    def colocar_orden_limit(self, side, qty, price, pos_side): return {'orderId': 2} 
+    def colocar_orden_sl_tp(self, side, qty, stop, pos, tipo): return {'orderId': 3}
+    def verificar_estado_orden(self, oid): return 'FILLED'
+    def cancelar_orden(self, oid): return True
+    def cancelar_todas_ordenes(self): return True

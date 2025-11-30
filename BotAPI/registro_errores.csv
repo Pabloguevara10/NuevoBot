@@ -1,0 +1,201 @@
+Fecha_Hora,Modulo,Tipo_Error,Mensaje,Traceback
+2025-11-28 09:38:08,GESTION_LIMIT,AttributeError,'BinanceClient' object has no attribute 'colocar_orden_limit',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 236, in _gestionar_entrada_limit
+    order = self.conn.colocar_orden_limit(side, qty, precio_limit, pos_side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceClient' object has no attribute 'colocar_orden_limit'. Did you mean: 'colocar_orden_market'?
+"
+2025-11-28 09:38:36,GESTION_LIMIT,AttributeError,'BinanceClient' object has no attribute 'colocar_orden_limit',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 236, in _gestionar_entrada_limit
+    order = self.conn.colocar_orden_limit(side, qty, precio_limit, pos_side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceClient' object has no attribute 'colocar_orden_limit'. Did you mean: 'colocar_orden_market'?
+"
+2025-11-28 10:31:47,MAIN_LOOP,AttributeError,'TradingManager' object has no attribute '_colocar_protecciones',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 63, in main
+    msg = strategy.ejecutar_estrategia(mtf_data, precio)
+  File ""C:\Users\fullt\Desktop\BotTRADING\engine.py"", line 58, in ejecutar_estrategia
+    res = self.trader.verificar_salidas(precio)
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 309, in verificar_salidas
+    return self._gestionar_riesgo(precio, self.posicion_abierta)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 346, in _gestionar_riesgo
+    if changed: self._actualizar_ordenes_proteccion(pos)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 352, in _actualizar_ordenes_proteccion
+    self._colocar_protecciones(pos['tipo'], pos['cantidad'], pos['entrada'], pos['tp'], pos['sl'], 'LONG' if pos['tipo']=='LONG' else 'SHORT')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradingManager' object has no attribute '_colocar_protecciones'
+"
+2025-11-28 10:32:02,MAIN_LOOP,AttributeError,'TradingManager' object has no attribute '_colocar_protecciones',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 63, in main
+    msg = strategy.ejecutar_estrategia(mtf_data, precio)
+  File ""C:\Users\fullt\Desktop\BotTRADING\engine.py"", line 58, in ejecutar_estrategia
+    res = self.trader.verificar_salidas(precio)
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 309, in verificar_salidas
+    return self._gestionar_riesgo(precio, self.posicion_abierta)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 346, in _gestionar_riesgo
+    if changed: self._actualizar_ordenes_proteccion(pos)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 352, in _actualizar_ordenes_proteccion
+    self._colocar_protecciones(pos['tipo'], pos['cantidad'], pos['entrada'], pos['tp'], pos['sl'], 'LONG' if pos['tipo']=='LONG' else 'SHORT')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TradingManager' object has no attribute '_colocar_protecciones'
+"
+2025-11-28 18:16:43,MAIN_LOOP,TypeError,'NoneType' object is not subscriptable,"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 63, in main
+    msg = strategy.ejecutar_estrategia(mtf_data, precio)
+  File ""C:\Users\fullt\Desktop\BotTRADING\engine.py"", line 58, in ejecutar_estrategia
+    res = self.trader.verificar_salidas(precio)
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 309, in verificar_salidas
+    return self._gestionar_riesgo(precio, self.posicion_abierta)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\fullt\Desktop\BotTRADING\execution.py"", line 320, in _gestionar_riesgo
+    if not pos['tp_parcial_ejecutado']:
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+"
+2025-11-29 13:43:55,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:43:57,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:01,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:04,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:07,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:10,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:13,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:16,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:20,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:23,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
+2025-11-29 13:44:26,MAIN_LOOP,TypeError,mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op',"Traceback (most recent call last):
+  File ""C:\Users\fullt\Desktop\BotTRADING\main.py"", line 79, in main
+    dashboard.mostrar_panel(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        df_s, df_w, vol_score, msg, cfg.MODE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ordenes_pendientes_op=ordenes_pendientes # <--- PASO FINAL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: mostrar_panel() got an unexpected keyword argument 'ordenes_pendientes_op'
+"
