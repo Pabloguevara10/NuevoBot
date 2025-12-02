@@ -1,0 +1,95 @@
+Timestamp,Modulo,Mensaje
+2025-12-01 00:06:35,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:07:15,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:07:40,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:08:25,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:09:35,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:10:46,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:11:50,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:12:05,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:13:51,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 00:25:28,API_DATA,"Error descarga velas: HTTPSConnectionPool(host='testnet.binancefuture.com', port=443): Read timed out. (read timeout=10)"
+2025-12-01 00:25:53,API_DATA,"Error descarga velas: HTTPSConnectionPool(host='testnet.binancefuture.com', port=443): Max retries exceeded with url: /fapi/v1/klines?interval=1m&limit=1000&startTime=1764563100000&symbol=AAVEUSDT (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x00000227CA59EE90>: Failed to resolve 'testnet.binancefuture.com' ([Errno 11001] getaddrinfo failed)""))"
+2025-12-01 00:26:08,API_DATA,"Error descarga velas: HTTPSConnectionPool(host='testnet.binancefuture.com', port=443): Max retries exceeded with url: /fapi/v1/klines?interval=1m&limit=1000&startTime=1764563100000&symbol=AAVEUSDT (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x00000227CA23AD50>: Failed to resolve 'testnet.binancefuture.com' ([Errno 11001] getaddrinfo failed)""))"
+2025-12-01 01:51:41,GESTOR,Error Ejecución: APIError(code=-4061): Order's position side does not match user's setting.
+2025-12-01 01:51:56,GESTOR,Error Ejecución: APIError(code=-4061): Order's position side does not match user's setting.
+2025-12-01 03:31:00,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:06,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:12,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:18,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:24,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:30,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:36,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:43,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 03:31:49,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 04:46:46,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:10:21,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:10:27,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:10:35,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:10:41,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:10:48,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:10:54,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:00,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:06,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:13,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:19,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:25,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:31,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:38,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:44,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:51,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:11:57,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:12:03,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:12:10,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:12:17,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:46:53,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:46:59,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:47:05,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:47:11,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:47:18,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 05:47:24,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:46:39,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:46:45,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:46:53,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:47:00,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:47:06,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:47:12,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:47:19,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:47:31,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 07:47:37,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 09:56:30,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 10:02:13,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 10:31:35,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 10:31:47,GESTOR,Error Ejecución: APIError(code=-1111): Precision is over the maximum defined for this asset.
+2025-12-01 11:37:33,GESTOR,Fallo Crítico: Binance no devolvió ID.
+2025-12-01 11:43:04,GESTOR,Fallo Intento 1: APIError(code=-4061): Order's position side does not match user's setting.
+2025-12-01 11:43:05,GESTOR,Fallo Intento 2: APIError(code=-4061): Order's position side does not match user's setting.
+2025-12-01 11:43:05,GESTOR,Fallo Crítico: Binance no devolvió ID.
+2025-12-01 21:49:08,API_DATA,Error descarga velas: APIError(code=-1003): Way too many requests; IP(15.158.210.74) banned until 1764641817671. Please use the websocket for live updates to avoid bans.
+2025-12-01 21:57:08,GESTOR,Error leyendo posición real: APIError(code=-1003): Way too many requests; IP(15.158.210.74) banned until 1764641697204. Please use the websocket for live updates to avoid bans.
+2025-12-02 02:28:21,GESTOR,Fallo al ejecutar TP Parcial: APIError(code=-1106): Parameter 'reduceonly' sent when not required.
+2025-12-02 13:05:19,MAIN,'usdt_value'
+2025-12-02 13:05:27,MAIN,'usdt_value'
+2025-12-02 13:05:34,MAIN,'usdt_value'
+2025-12-02 13:05:42,MAIN,'usdt_value'
+2025-12-02 13:05:50,MAIN,'usdt_value'
+2025-12-02 13:05:59,MAIN,'usdt_value'
+2025-12-02 13:06:06,MAIN,'usdt_value'
+2025-12-02 13:06:15,MAIN,'usdt_value'
+2025-12-02 13:06:22,MAIN,'usdt_value'
+2025-12-02 13:06:30,MAIN,'usdt_value'
+2025-12-02 13:06:39,MAIN,'usdt_value'
+2025-12-02 13:06:47,MAIN,'usdt_value'
+2025-12-02 13:06:55,MAIN,'usdt_value'
+2025-12-02 13:07:05,MAIN,'usdt_value'
+2025-12-02 13:07:14,MAIN,'usdt_value'
+2025-12-02 13:07:21,MAIN,'usdt_value'
+2025-12-02 13:07:32,MAIN,'usdt_value'
+2025-12-02 13:07:43,MAIN,'usdt_value'
+2025-12-02 13:07:52,MAIN,'usdt_value'
+2025-12-02 13:08:00,MAIN,'usdt_value'
+2025-12-02 13:08:08,MAIN,'usdt_value'
+2025-12-02 13:08:15,MAIN,'usdt_value'
+2025-12-02 13:08:24,MAIN,'usdt_value'
+2025-12-02 13:08:33,GESTOR,Fallo TP Parcial: APIError(code=-1106): Parameter 'reduceonly' sent when not required.
+2025-12-02 13:08:33,MAIN,'usdt_value'

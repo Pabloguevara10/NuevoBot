@@ -1,3 +1,0 @@
-id,type,price,amount,dist_pct,active,strategy
-1764438558,LONG,175.0,30.0,2.0,False,PENDING_LIMIT
-1764438663,SHORT,199.0,20.0,2.0,True,PENDING_LIMIT
