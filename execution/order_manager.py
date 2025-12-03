@@ -1,201 +1,167 @@
 import csv
-import os
 import time
-import math
+import threading
 from datetime import datetime
-from binance.exceptions import BinanceAPIException
 
 class OrderManager:
+    """
+    GESTOR DE ÓRDENES (ORDER MANAGER)
+    Responsabilidad: Ejecución atómica y segura de operaciones.
+    Protocolo: Orden -> Validar -> Log -> Proteger -> Validar -> Log -> Entregar.
+    """
     def __init__(self, config, api_conn, logger):
         self.cfg = config
         self.conn = api_conn
         self.log = logger
-        self.qty_precision = 3 
-        self._init_db()
-        self._configurar_cuenta()
-        self._cargar_reglas_simbolo() 
+        self.lock = threading.Lock() # SEGURIDAD DE HILOS
+        self._verificar_archivo_ordenes()
 
-    def _init_db(self):
-        if not os.path.exists(self.cfg.FILE_ORDERS):
+    def _verificar_archivo_ordenes(self):
+        try:
+            with open(self.cfg.FILE_ORDERS, 'a') as f: pass
+        except:
             with open(self.cfg.FILE_ORDERS, 'w', newline='') as f:
-                csv.writer(f).writerow(['ID','Time','Side','Price','Qty','Status','Real_Entry','Real_Qty'])
+                writer = csv.writer(f)
+                writer.writerow(['ID', 'Timestamp', 'Symbol', 'Side', 'Type', 'Price', 'Qty', 'Status', 'Message'])
 
-    def _cargar_reglas_simbolo(self):
-        if self.cfg.MODE == 'SIMULATION': return
+    def ejecutar_estrategia(self, plan_de_tiro):
+        """
+        Ejecuta una secuencia completa de entrada al mercado con protección.
+        Retorna: (bool_exito, dict_datos_confirmados)
+        """
+        # 1. BLOQUEO DE RECURSOS (Thread Safety)
+        if not self.lock.acquire(blocking=False):
+            return False, "⚠️ Gestor ocupado. Intento rechazado."
+        
         try:
-            info = self.conn.client.futures_exchange_info()
-            for s in info['symbols']:
-                if s['symbol'] == self.cfg.SYMBOL:
-                    for f in s['filters']:
-                        if f['filterType'] == 'LOT_SIZE':
-                            self.qty_precision = int(round(-math.log(float(f['stepSize']), 10), 0))
-                            self.log.log_operational("GESTOR", f"Precisión: {self.qty_precision}")
-                            return
-        except: pass
+            order_id = plan_de_tiro['id']
+            side = plan_de_tiro['side']
+            qty = plan_de_tiro['qty']
+            sl_price = plan_de_tiro['sl_price']
+            
+            self.log.log_operational("GESTOR", f"Iniciando secuencia para {order_id} ({side})")
 
-    def _formatear_cantidad(self, qty): return "{:.{}f}".format(qty, self.qty_precision)
+            # ---------------------------------------------------------
+            # PASO 1: COLOCAR ORDEN DE ENTRADA (MARKET)
+            # ---------------------------------------------------------
+            ok_entry, resp_entry = self.conn.place_market_order(side, qty)
+            if not ok_entry:
+                self.log.log_error("GESTOR", f"Fallo entrada {order_id}: {resp_entry}")
+                return False, f"Error Entrada: {resp_entry}"
 
-    def _configurar_cuenta(self):
-        if self.cfg.MODE == 'SIMULATION': return
-        try:
-            self.conn.client.futures_change_leverage(symbol=self.cfg.SYMBOL, leverage=self.cfg.LEVERAGE)
-            try: self.conn.client.futures_change_margin_type(symbol=self.cfg.SYMBOL, marginType='ISOLATED')
-            except: pass
-            try: self.conn.client.futures_change_position_mode(dualSidePosition=True)
-            except: pass
-        except: pass
+            # ---------------------------------------------------------
+            # PASO 2: VALIDAR ORDEN DE ENTRADA (Binance Confirmation)
+            # ---------------------------------------------------------
+            # Esperamos confirmación de 'FILLED' y obtenemos precio real promedio
+            real_entry_price, real_qty = self._esperar_confirmacion_fill(resp_entry)
+            
+            if real_entry_price == 0:
+                self.log.log_error("GESTOR", "Orden enviada pero no confirmada (Timeout). Cancelando todo.")
+                self.conn.cancel_all_orders()
+                return False, "Timeout esperando confirmación ENTRY"
 
-    def obtener_posicion_real(self):
-        if self.cfg.MODE == 'SIMULATION': return 0.0, 0.0
-        try:
-            positions = self.conn.client.futures_position_information(symbol=self.cfg.SYMBOL)
-            for p in positions:
-                amt = float(p['positionAmt'])
-                if amt != 0: return amt, float(p['entryPrice'])
-            return 0.0, 0.0
-        except: return 0.0, 0.0
+            # ---------------------------------------------------------
+            # PASO 3: REGISTRO PRIMARIO (Log)
+            # ---------------------------------------------------------
+            self._registrar_en_csv(order_id, side, "ENTRY", real_entry_price, real_qty, "FILLED")
+            self.log.log_operational("GESTOR", f"Entrada confirmada: {real_qty} @ {real_entry_price}")
 
-    def _verificar_orden_filled(self, order_id):
-        if self.cfg.MODE == 'SIMULATION': return True, 0, 0
-        for _ in range(3):
+            # ---------------------------------------------------------
+            # PASO 4: COLOCAR PROTECCIÓN (STOP LOSS)
+            # ---------------------------------------------------------
+            # El SL va en dirección contraria a la entrada
+            sl_side = 'SELL' if side == 'LONG' else 'BUY'
+            ok_sl, resp_sl = self.conn.place_stop_loss(sl_side, sl_price)
+
+            # ---------------------------------------------------------
+            # PASO 5: VALIDAR PROTECCIÓN Y ROLLBACK (Safety Net)
+            # ---------------------------------------------------------
+            if not ok_sl:
+                self.log.log_error("GESTOR", f"❌ FALLO CRÍTICO AL PONER SL: {resp_sl}. EJECUTANDO ROLLBACK.")
+                # ROLLBACK: Cerrar la posición inmediatamente porque está desprotegida
+                self._rollback_emergencia(sl_side, real_qty)
+                return False, "Fallo SL -> Rollback Ejecutado"
+
+            # ---------------------------------------------------------
+            # PASO 6: REGISTRO FINAL Y ENTREGA (Handover)
+            # ---------------------------------------------------------
+            self._registrar_en_csv(order_id, sl_side, "STOP_LOSS", sl_price, real_qty, "NEW")
+            
+            # Paquete final para el Contralor
+            paquete_confirmado = plan_de_tiro.copy()
+            paquete_confirmado['entry_price'] = real_entry_price
+            paquete_confirmado['qty'] = real_qty
+            paquete_confirmado['status'] = 'OPEN'
+            paquete_confirmado['open_time'] = time.time()
+            
+            return True, paquete_confirmado
+
+        except Exception as e:
+            self.log.log_error("GESTOR", f"Excepción No Manejada: {e}")
+            return False, f"Excepción: {e}"
+        finally:
+            self.lock.release()
+
+    def _esperar_confirmacion_fill(self, order_response):
+        """Consulta repetidamente a Binance hasta ver status='FILLED'."""
+        if self.cfg.MODE == 'SIMULATION':
+            return float(order_response.get('avgPrice', 0) or 0), float(order_response.get('cumQty', 0) or 0)
+
+        oid = order_response.get('orderId')
+        if not oid: return 0.0, 0.0
+
+        retries = 5
+        for _ in range(retries):
             try:
-                ord_stat = self.conn.client.futures_get_order(symbol=self.cfg.SYMBOL, orderId=order_id)
-                if ord_stat['status'] == 'FILLED':
-                    return True, float(ord_stat['avgPrice']), float(ord_stat['executedQty'])
-                elif ord_stat['status'] in ['CANCELED', 'REJECTED']: return False, 0, 0
+                # Usamos el cliente raw de la conexión para verificar estado
+                ord_status = self.conn.client.futures_get_order(symbol=self.cfg.SYMBOL, orderId=oid)
+                if ord_status['status'] == 'FILLED':
+                    return float(ord_status['avgPrice']), float(ord_status['executedQty'])
+                elif ord_status['status'] in ['CANCELED', 'REJECTED', 'EXPIRED']:
+                    return 0.0, 0.0
             except: pass
-            time.sleep(1)
-        return False, 0, 0
+            time.sleep(1) # Espera 1 seg entre chequeos
+        return 0.0, 0.0
 
-    def _rollback_emergencia(self, position_side, qty):
+    def _rollback_emergencia(self, close_side, qty):
+        """Cierra la posición a mercado inmediatamente."""
+        self.log.log_operational("GESTOR", "⚠️ EJECUTANDO CIERRE DE EMERGENCIA.")
+        self.conn.place_market_order(close_side, qty, reduce_only=True)
+        self.conn.cancel_all_orders()
+
+    def _registrar_en_csv(self, oid, side, type_, price, qty, status):
         try:
-            action_side = 'SELL' if position_side == 'LONG' else 'BUY'
-            self.conn.client.futures_create_order(
-                symbol=self.cfg.SYMBOL, side=action_side, positionSide=position_side,
-                type='MARKET', quantity=self._formatear_cantidad(qty), reduceOnly=True
-            )
-            self.log.log_operational("GESTOR", "ROLLBACK EXITOSO.")
-        except Exception as e:
-            self.log.log_error("GESTOR", f"FALLO ROLLBACK: {e}")
+            with open(self.cfg.FILE_ORDERS, 'a', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow([
+                    oid, datetime.now().isoformat(), self.cfg.SYMBOL,
+                    side, type_, f"{price:.4f}", qty, status, ""
+                ])
+        except: pass
 
-    def ejecutar_plan(self, plan):
+    def ejecutar_cierre_parcial(self, pos_data, pct_cierre):
+        """Ejecuta un Take Profit parcial (Reduce Only)."""
+        if not self.lock.acquire(blocking=False): return False
+
         try:
-            qty_str = self._formatear_cantidad(plan['qty'])
-            pos_side = plan['side']
-            side_ord = 'BUY' if pos_side == 'LONG' else 'SELL'
+            qty_total = pos_data['qty']
+            qty_to_close = qty_total * pct_cierre
+            # Formatear cantidad según precisión (simplificado, idealmente usar stepSize)
+            qty_to_close = round(qty_to_close, 3) 
             
-            resp_main = {}
-            if self.cfg.MODE == 'SIMULATION':
-                resp_main = {'orderId': 'SIM', 'status': 'FILLED', 'avgPrice': str(plan['entry_price']), 'cumQty': qty_str}
-            else:
-                for _ in range(2):
-                    try:
-                        resp_main = self.conn.client.futures_create_order(
-                            symbol=self.cfg.SYMBOL, side=side_ord, positionSide=pos_side,
-                            type='MARKET', quantity=qty_str
-                        )
-                        break
-                    except Exception as e:
-                        if "Precision" in str(e): return None
-                        time.sleep(0.5)
+            if qty_to_close <= 0: return False
 
-            if 'orderId' not in resp_main: return None
+            close_side = 'SELL' if pos_data['side'] == 'LONG' else 'BUY'
             
-            real_price = float(resp_main.get('avgPrice', 0))
-            real_qty = float(resp_main.get('cumQty', 0))
-            if real_qty == 0 and self.cfg.MODE != 'SIMULATION':
-                filled, rp, rq = self._verificar_orden_filled(resp_main['orderId'])
-                if not filled: return None
-                real_price, real_qty = rp, rq
-            
-            plan['entry_price'] = real_price
-            plan['qty'] = real_qty
-            self.log.log_operational("GESTOR", f"Orden confirmada: {real_qty} @ {real_price}")
-
-            # SL
-            sl_ok = False
-            if self.cfg.MODE != 'SIMULATION':
-                for _ in range(3):
-                    try:
-                        sl_side = 'SELL' if pos_side == 'LONG' else 'BUY'
-                        self.conn.client.futures_create_order(
-                            symbol=self.cfg.SYMBOL, side=sl_side, positionSide=pos_side,
-                            type='STOP_MARKET', stopPrice="{:.2f}".format(plan['sl']), closePosition=True
-                        )
-                        sl_ok = True
-                        break
-                    except: time.sleep(1)
-            else: sl_ok = True
-
-            if sl_ok:
-                with open(self.cfg.FILE_ORDERS, 'a', newline='') as f:
-                    csv.writer(f).writerow([plan['id'], datetime.now(), plan['side'], real_price, real_qty, "FILLED", real_price, real_qty])
-                return plan
-            else:
-                self._rollback_emergencia(pos_side, real_qty)
-                return None
-        except Exception as e:
-            self.log.log_error("GESTOR", f"Excepción Crítica: {e}")
-            return None
-
-    def cancelar_todas_ordenes(self):
-        if self.cfg.MODE != 'SIMULATION':
-            try: self.conn.client.futures_cancel_all_open_orders(symbol=self.cfg.SYMBOL)
-            except: pass
-
-    def forzar_cierre_mercado(self, side, qty):
-        if self.cfg.MODE == 'SIMULATION': return True
-        try:
-            # side aqui es la posicion (LONG/SHORT)
-            action_side = 'SELL' if side == 'LONG' else 'BUY'
-            self.conn.client.futures_create_order(
-                symbol=self.cfg.SYMBOL, side=action_side, positionSide=side,
-                type='MARKET', quantity=self._formatear_cantidad(qty), reduceOnly=True
-            )
-            return True
-        except BinanceAPIException as e: return e.code == -2022
-        except: return False
-
-    def ejecutar_dca(self, plan_original, current_price):
-        try:
-            qty_str = self._formatear_cantidad(plan_original['qty'])
-            pos_side = plan_original['side']
-            action_side = 'BUY' if pos_side == 'LONG' else 'SELL'
-            
-            if self.cfg.MODE == 'SIMULATION': return True
-            
-            resp = self.conn.client.futures_create_order(
-                symbol=self.cfg.SYMBOL, side=action_side, positionSide=pos_side,
-                type='MARKET', quantity=qty_str
-            )
-            if 'orderId' not in resp: return False
-            
-            self.conn.client.futures_cancel_all_open_orders(symbol=self.cfg.SYMBOL)
-            sl_side = 'SELL' if pos_side == 'LONG' else 'BUY'
-            self.conn.client.futures_create_order(
-                symbol=self.cfg.SYMBOL, side=sl_side, positionSide=pos_side,
-                type='STOP_MARKET', stopPrice="{:.2f}".format(plan_original['sl']), closePosition=True
-            )
-            return True
-        except: return False
-
-    def ejecutar_cierre_parcial(self, pid, qty, price):
-        """Ejecuta cierre parcial."""
-        try:
-            net_qty, _ = self.obtener_posicion_real()
-            if net_qty == 0: return False
-            
-            pos_side = 'LONG' if net_qty > 0 else 'SHORT'
-            action_side = 'SELL' if pos_side == 'LONG' else 'BUY'
-            
-            if self.cfg.MODE == 'SIMULATION': return True
-            
-            self.conn.client.futures_create_order(
-                symbol=self.cfg.SYMBOL, side=action_side, positionSide=pos_side,
-                type='MARKET', quantity=self._formatear_cantidad(qty), reduceOnly=True
-            )
-            self.log.log_operational("GESTOR", f"TP Parcial {pid} ejecutado.")
-            return True
-        except Exception as e:
-            self.log.log_error("GESTOR", f"Fallo TP Parcial: {e}")
+            ok, resp = self.conn.place_market_order(close_side, qty_to_close, reduce_only=True)
+            if ok:
+                self.log.log_operational("GESTOR", f"Cierre Parcial Ejecutado: {qty_to_close}")
+                self._registrar_en_csv(pos_data['id'], close_side, "TP_PARTIAL", 0, qty_to_close, "FILLED")
+                return True
             return False
+        finally:
+            self.lock.release()
+            
+    def cancelar_todo(self):
+        with self.lock:
+            self.conn.cancel_all_orders()
