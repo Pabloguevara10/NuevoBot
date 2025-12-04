@@ -33,9 +33,13 @@ class Config:
     # ==========================================
     # 3. GESTIÓN DE RIESGO (CAPITAL)
     # ==========================================
-    # Capital Base para cálculos de riesgo
+    # Capital Base para cálculos de riesgo (Valor Inicial)
     USE_FIXED_CAPITAL = True
     FIXED_CAPITAL_AMOUNT = 1000.0 
+    
+    # [NUEVO] INTERÉS COMPUESTO (Crecimiento Dinámico)
+    # Si es True, el capital base crecerá/decrecerá con cada operación cerrada.
+    ENABLE_COMPOUND_INTEREST = True  
     
     # Límites de Seguridad Global (Circuit Breakers)
     MAX_DAILY_LOSS_PCT = 0.04    # 4% Pérdida diaria máxima (apaga el bot)
@@ -103,7 +107,9 @@ class Config:
     LOG_PATH = os.path.join(BASE_DIR, 'logs', 'bitacoras')
     
     # Archivos Críticos
-    FILE_STATE = os.path.join(LOG_PATH, 'bot_state.json') # NUEVO: Persistencia de estado
+    FILE_STATE = os.path.join(LOG_PATH, 'bot_state.json') # Persistencia de estado
+    FILE_METRICS = os.path.join(LOG_PATH, 'metrics_history.csv') # Histórico de Precios
+    FILE_WALLET = os.path.join(LOG_PATH, 'virtual_wallet.json') # <--- ESTA FALTABA (Billetera Dinámica)
     FILE_ORDERS = os.path.join(LOG_PATH, 'orders_positions.csv')
     FILE_ERRORS = os.path.join(LOG_PATH, 'system_errors.csv')
     FILE_ACTIVITY = os.path.join(LOG_PATH, 'bot_activity.log')

@@ -1278,3 +1278,992 @@
 [2025-12-02 18:59:42] [CONTRALOR] EJECUTANDO CIERRE DE PÁNICO.
 [2025-12-02 18:59:43] [CONTRALOR] Cartera limpia.
 [2025-12-02 20:12:01] [API] Conectado a Binance (TESTNET)
+[2025-12-03 07:56:13] [API] Conectado a Binance (TESTNET)
+[2025-12-03 07:58:50] [API] Conectado a Binance (TESTNET)
+[2025-12-03 07:58:50] [TELEGRAM] Escuchando comandos...
+[2025-12-03 07:58:50] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 07:59:04] [MAIN] Apagado por usuario.
+[2025-12-03 08:17:38] [API] Conectado a Binance (TESTNET)
+[2025-12-03 08:17:38] [TELEGRAM] Escuchando comandos...
+[2025-12-03 08:17:38] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 08:17:42] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:42] [GESTOR] Iniciando secuencia para 11A5211F (LONG)
+[2025-12-03 08:17:43] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:43] [GESTOR] Iniciando secuencia para 7EF8CC39 (LONG)
+[2025-12-03 08:17:44] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:44] [GESTOR] Iniciando secuencia para 9899460E (LONG)
+[2025-12-03 08:17:45] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:45] [GESTOR] Iniciando secuencia para 60A4686D (LONG)
+[2025-12-03 08:17:47] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:47] [GESTOR] Iniciando secuencia para 94A5FF2A (LONG)
+[2025-12-03 08:17:48] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:48] [GESTOR] Iniciando secuencia para BEBFAB22 (LONG)
+[2025-12-03 08:17:51] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:51] [GESTOR] Iniciando secuencia para 09365A6C (LONG)
+[2025-12-03 08:17:53] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:53] [GESTOR] Iniciando secuencia para FEFE7C0E (LONG)
+[2025-12-03 08:17:55] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:55] [GESTOR] Iniciando secuencia para 10E093B1 (LONG)
+[2025-12-03 08:17:57] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:57] [GESTOR] Iniciando secuencia para 46E70274 (LONG)
+[2025-12-03 08:17:58] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:17:58] [GESTOR] Iniciando secuencia para 925D7851 (LONG)
+[2025-12-03 08:18:00] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:00] [GESTOR] Iniciando secuencia para D653D1D8 (LONG)
+[2025-12-03 08:18:02] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:02] [GESTOR] Iniciando secuencia para 228E0E46 (LONG)
+[2025-12-03 08:18:04] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:04] [GESTOR] Iniciando secuencia para BC1A2BCA (LONG)
+[2025-12-03 08:18:05] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:05] [GESTOR] Iniciando secuencia para 39062235 (LONG)
+[2025-12-03 08:18:07] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:07] [GESTOR] Iniciando secuencia para D69A4587 (LONG)
+[2025-12-03 08:18:08] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:08] [GESTOR] Iniciando secuencia para 22F6CE5A (LONG)
+[2025-12-03 08:18:10] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:10] [GESTOR] Iniciando secuencia para 147EAEB5 (LONG)
+[2025-12-03 08:18:11] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:11] [GESTOR] Iniciando secuencia para C5C708FA (LONG)
+[2025-12-03 08:18:14] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:14] [GESTOR] Iniciando secuencia para 758CC194 (LONG)
+[2025-12-03 08:18:16] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:16] [GESTOR] Iniciando secuencia para AD2ABFB2 (LONG)
+[2025-12-03 08:18:17] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:17] [GESTOR] Iniciando secuencia para BE8CDE5D (LONG)
+[2025-12-03 08:18:19] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:19] [GESTOR] Iniciando secuencia para 683559E2 (LONG)
+[2025-12-03 08:18:20] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:20] [GESTOR] Iniciando secuencia para 60C85D08 (LONG)
+[2025-12-03 08:18:22] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:22] [GESTOR] Iniciando secuencia para 2D13A2AC (LONG)
+[2025-12-03 08:18:23] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:23] [GESTOR] Iniciando secuencia para 18D2B671 (LONG)
+[2025-12-03 08:18:26] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:26] [GESTOR] Iniciando secuencia para 2E521417 (LONG)
+[2025-12-03 08:18:27] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:27] [GESTOR] Iniciando secuencia para 1EAB13FD (LONG)
+[2025-12-03 08:18:29] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:29] [GESTOR] Iniciando secuencia para 341BE40A (LONG)
+[2025-12-03 08:18:30] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:30] [GESTOR] Iniciando secuencia para 0B5951B5 (LONG)
+[2025-12-03 08:18:32] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:32] [GESTOR] Iniciando secuencia para 149E7DC3 (LONG)
+[2025-12-03 08:18:34] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:34] [GESTOR] Iniciando secuencia para 101FAFFC (LONG)
+[2025-12-03 08:18:36] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:36] [GESTOR] Iniciando secuencia para F42749B3 (LONG)
+[2025-12-03 08:18:38] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:38] [GESTOR] Iniciando secuencia para F32033FE (LONG)
+[2025-12-03 08:18:40] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:40] [GESTOR] Iniciando secuencia para F2C3BD99 (LONG)
+[2025-12-03 08:18:42] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:42] [GESTOR] Iniciando secuencia para 10553762 (LONG)
+[2025-12-03 08:18:44] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:44] [GESTOR] Iniciando secuencia para 70FFA1BF (LONG)
+[2025-12-03 08:18:46] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:46] [GESTOR] Iniciando secuencia para 1FC2175F (LONG)
+[2025-12-03 08:18:49] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:49] [GESTOR] Iniciando secuencia para 0366C0EB (LONG)
+[2025-12-03 08:18:51] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:51] [GESTOR] Iniciando secuencia para 85AEC1D8 (LONG)
+[2025-12-03 08:18:53] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:53] [GESTOR] Iniciando secuencia para 2957AD9F (LONG)
+[2025-12-03 08:18:55] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:55] [GESTOR] Iniciando secuencia para 6CDCB65B (LONG)
+[2025-12-03 08:18:56] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:56] [GESTOR] Iniciando secuencia para 96C56865 (LONG)
+[2025-12-03 08:18:58] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:18:58] [GESTOR] Iniciando secuencia para 5DA0DAAA (LONG)
+[2025-12-03 08:19:00] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:00] [GESTOR] Iniciando secuencia para F9A52268 (LONG)
+[2025-12-03 08:19:01] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:01] [GESTOR] Iniciando secuencia para 57C92502 (LONG)
+[2025-12-03 08:19:03] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:03] [GESTOR] Iniciando secuencia para 8611AEE8 (LONG)
+[2025-12-03 08:19:05] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:05] [GESTOR] Iniciando secuencia para B752ADF7 (LONG)
+[2025-12-03 08:19:06] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:06] [GESTOR] Iniciando secuencia para 3771C955 (LONG)
+[2025-12-03 08:19:09] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:09] [GESTOR] Iniciando secuencia para 6380F1B3 (LONG)
+[2025-12-03 08:19:11] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:11] [GESTOR] Iniciando secuencia para 7BD6B8B7 (LONG)
+[2025-12-03 08:19:12] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:12] [GESTOR] Iniciando secuencia para 537282DF (LONG)
+[2025-12-03 08:19:14] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:14] [GESTOR] Iniciando secuencia para 36682458 (LONG)
+[2025-12-03 08:19:16] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:16] [GESTOR] Iniciando secuencia para 71508E9B (LONG)
+[2025-12-03 08:19:18] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:18] [GESTOR] Iniciando secuencia para BD1CACC3 (LONG)
+[2025-12-03 08:19:20] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:20] [GESTOR] Iniciando secuencia para C6EA13CA (LONG)
+[2025-12-03 08:19:22] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:22] [GESTOR] Iniciando secuencia para D16B636C (LONG)
+[2025-12-03 08:19:24] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:24] [GESTOR] Iniciando secuencia para E9B6B79F (LONG)
+[2025-12-03 08:19:25] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:25] [GESTOR] Iniciando secuencia para 10BCB8F8 (LONG)
+[2025-12-03 08:19:27] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:27] [GESTOR] Iniciando secuencia para 79CAACDC (LONG)
+[2025-12-03 08:19:28] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:28] [GESTOR] Iniciando secuencia para 8DFF2A6A (LONG)
+[2025-12-03 08:19:31] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:31] [GESTOR] Iniciando secuencia para 18394FD5 (LONG)
+[2025-12-03 08:19:32] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:32] [GESTOR] Iniciando secuencia para 4B364E0A (LONG)
+[2025-12-03 08:19:33] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:33] [GESTOR] Iniciando secuencia para 639A2057 (LONG)
+[2025-12-03 08:19:35] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:35] [GESTOR] Iniciando secuencia para 6805D9D3 (LONG)
+[2025-12-03 08:19:37] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:37] [GESTOR] Iniciando secuencia para 26639C04 (LONG)
+[2025-12-03 08:19:39] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:39] [GESTOR] Iniciando secuencia para 3B46E4F3 (LONG)
+[2025-12-03 08:19:41] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:41] [GESTOR] Iniciando secuencia para 17966991 (LONG)
+[2025-12-03 08:19:42] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:42] [GESTOR] Iniciando secuencia para FE27106E (LONG)
+[2025-12-03 08:19:43] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:43] [GESTOR] Iniciando secuencia para DC612F32 (LONG)
+[2025-12-03 08:19:45] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:45] [GESTOR] Iniciando secuencia para 6C691F59 (LONG)
+[2025-12-03 08:19:46] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:46] [GESTOR] Iniciando secuencia para 15D1B528 (LONG)
+[2025-12-03 08:19:48] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:48] [GESTOR] Iniciando secuencia para 83C4FE40 (LONG)
+[2025-12-03 08:19:49] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:49] [GESTOR] Iniciando secuencia para 406D8B8F (LONG)
+[2025-12-03 08:19:51] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:51] [GESTOR] Iniciando secuencia para C5B29D34 (LONG)
+[2025-12-03 08:19:52] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:52] [GESTOR] Iniciando secuencia para 09D07702 (LONG)
+[2025-12-03 08:19:54] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:54] [GESTOR] Iniciando secuencia para 51E6A338 (LONG)
+[2025-12-03 08:19:55] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:55] [GESTOR] Iniciando secuencia para 956E9A62 (LONG)
+[2025-12-03 08:19:57] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:57] [GESTOR] Iniciando secuencia para 68BFD0F5 (LONG)
+[2025-12-03 08:19:58] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:19:58] [GESTOR] Iniciando secuencia para 04C687BE (LONG)
+[2025-12-03 08:20:00] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:20:00] [GESTOR] Iniciando secuencia para 5D9EBF99 (LONG)
+[2025-12-03 08:20:03] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:20:03] [GESTOR] Iniciando secuencia para 7FC72519 (LONG)
+[2025-12-03 08:20:05] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:20:05] [GESTOR] Iniciando secuencia para 0CD3E51C (LONG)
+[2025-12-03 08:20:06] [MAIN] Apagado por usuario.
+[2025-12-03 08:28:27] [API] Conectado a Binance (TESTNET)
+[2025-12-03 08:28:28] [TELEGRAM] Escuchando comandos...
+[2025-12-03 08:28:28] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 08:28:31] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:31] [GESTOR] Iniciando secuencia para 2F0BB3F9 (LONG)
+[2025-12-03 08:28:32] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:32] [GESTOR] Iniciando secuencia para 3A3727A4 (LONG)
+[2025-12-03 08:28:34] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:34] [GESTOR] Iniciando secuencia para 9670E8CF (LONG)
+[2025-12-03 08:28:35] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:35] [GESTOR] Iniciando secuencia para 6B5F7BC6 (LONG)
+[2025-12-03 08:28:37] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:37] [GESTOR] Iniciando secuencia para 21A517FB (LONG)
+[2025-12-03 08:28:39] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:39] [GESTOR] Iniciando secuencia para 19445493 (LONG)
+[2025-12-03 08:28:41] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:41] [GESTOR] Iniciando secuencia para 35357284 (LONG)
+[2025-12-03 08:28:42] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:42] [GESTOR] Iniciando secuencia para 3CF9C012 (LONG)
+[2025-12-03 08:28:44] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:44] [GESTOR] Iniciando secuencia para 6C6A7AC3 (LONG)
+[2025-12-03 08:28:45] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:45] [GESTOR] Iniciando secuencia para 4AC4A609 (LONG)
+[2025-12-03 08:28:46] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:46] [GESTOR] Iniciando secuencia para B13EE3C3 (LONG)
+[2025-12-03 08:28:48] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:48] [GESTOR] Iniciando secuencia para 83D03426 (LONG)
+[2025-12-03 08:28:50] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 08:28:50] [GESTOR] Iniciando secuencia para E6CD995E (LONG)
+[2025-12-03 08:28:54] [MAIN] Apagado por usuario.
+[2025-12-03 09:44:05] [API] Conectado a Binance (TESTNET)
+[2025-12-03 09:44:07] [TELEGRAM] Escuchando comandos...
+[2025-12-03 09:44:07] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 09:44:38] [MAIN] Apagado por usuario.
+[2025-12-03 09:46:21] [API] Conectado a Binance (TESTNET)
+[2025-12-03 09:46:22] [TELEGRAM] Escuchando comandos...
+[2025-12-03 09:46:22] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 09:48:41] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 09:48:42] [TIRADOR] Preparando SHORT (MANUAL). Margen: 50.0 USDT
+[2025-12-03 09:48:42] [GESTOR] Iniciando secuencia para 436144A2 (SHORT)
+[2025-12-03 09:53:56] [MAIN] Apagado por usuario.
+[2025-12-03 09:54:01] [API] Conectado a Binance (TESTNET)
+[2025-12-03 09:54:02] [GESTOR] Calibrado AAVEUSDT: Qty=1 dec, Price=2 dec
+[2025-12-03 09:54:02] [TELEGRAM] Escuchando comandos...
+[2025-12-03 09:54:02] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 09:54:14] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 09:54:14] [GESTOR] Iniciando secuencia para 89AF85B0 (SHORT). Qty: 3.8
+[2025-12-03 09:54:14] [GESTOR] Entrada confirmada: 3.8 @ 193.31
+[2025-12-03 09:54:15] [CONTRALOR] Posición 89AF85B0 bajo custodia.
+[2025-12-03 09:54:20] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 09:54:21] [TIRADOR] Preparando SHORT (MANUAL). Margen: 50.0 USDT
+[2025-12-03 09:54:21] [GESTOR] Iniciando secuencia para 77DC927A (SHORT). Qty: 1.2
+[2025-12-03 09:54:22] [GESTOR] Entrada confirmada: 1.2 @ 193.31
+[2025-12-03 09:54:23] [CONTRALOR] Posición 77DC927A bajo custodia.
+[2025-12-03 09:58:58] [API] Conectado a Binance (TESTNET)
+[2025-12-03 09:58:59] [GESTOR] Calibrado AAVEUSDT: Qty=1 dec, Price=2 dec
+[2025-12-03 09:58:59] [CONTRALOR] Estado recuperado: 2 posiciones activas.
+[2025-12-03 09:58:59] [TELEGRAM] Escuchando comandos...
+[2025-12-03 09:58:59] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 10:04:51] [CONTRALOR] 🎯 TP1 Alcanzado para 89AF85B0
+[2025-12-03 10:04:52] [GESTOR] Cierre Parcial Ejecutado: 1.1
+[2025-12-03 10:04:53] [CONTRALOR] 🎯 TP1 Alcanzado para 77DC927A
+[2025-12-03 10:04:53] [GESTOR] Cierre Parcial Ejecutado: 0.3
+[2025-12-03 10:06:30] [TELEGRAM] CMD Recibido: /report
+[2025-12-03 10:43:28] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 10:43:28] [GESTOR] Iniciando secuencia para 38F386F4 (LONG). Qty: 2.5
+[2025-12-03 10:43:29] [GESTOR] Entrada confirmada: 2.5 @ 194.66
+[2025-12-03 10:43:30] [CONTRALOR] Posición 38F386F4 bajo custodia.
+[2025-12-03 10:52:41] [MAIN] Apagado por usuario.
+[2025-12-03 10:52:46] [API] Conectado a Binance (TESTNET)
+[2025-12-03 10:52:47] [GESTOR] Calibrado AAVEUSDT: Qty=1 dec, Price=2 dec
+[2025-12-03 10:52:47] [CONTRALOR] Estado recuperado: 3 posiciones activas.
+[2025-12-03 10:52:47] [TELEGRAM] Escuchando comandos...
+[2025-12-03 10:52:47] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 11:17:39] [MAIN] Apagado por usuario.
+[2025-12-03 11:19:47] [API] Conectado a Binance (TESTNET)
+[2025-12-03 11:19:49] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 11:19:49] [TELEGRAM] Escuchando comandos...
+[2025-12-03 11:19:49] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 11:19:51] [CONTRALOR] ⚠️ Huérfana SHORT detectada. Adoptando...
+[2025-12-03 11:19:51] [CONTRALOR] Posición REC_1764775191 registrada. SL ID: None
+[2025-12-03 11:19:51] [CONTRALOR] 🚨 ¡ALERTA! Posición REC_1764775191 DESNUDA (SL None no existe).
+[2025-12-03 11:19:59] [CONTRALOR] 🚨 ¡ALERTA! Posición REC_1764775191 DESNUDA (SL None no existe).
+[2025-12-03 11:20:07] [CONTRALOR] 🚨 ¡ALERTA! Posición REC_1764775191 DESNUDA (SL None no existe).
+[2025-12-03 11:20:14] [CONTRALOR] 🚨 ¡ALERTA! Posición REC_1764775191 DESNUDA (SL None no existe).
+[2025-12-03 11:20:22] [CONTRALOR] 🚨 ¡ALERTA! Posición REC_1764775191 DESNUDA (SL None no existe).
+[2025-12-03 11:42:26] [API] Conectado a Binance (TESTNET)
+[2025-12-03 11:42:27] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 11:42:28] [TELEGRAM] Escuchando comandos...
+[2025-12-03 11:42:28] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 11:42:29] [CONTRALOR] 🚨 ¡ALERTA! Posición REC_1764775191 DESNUDA (SL None no existe).
+[2025-12-03 11:42:40] [CONTRALOR] 👻 Fantasma detectado REC_1764775191. Limpiando.
+[2025-12-03 11:47:26] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 11:47:26] [GESTOR] Iniciando DEADFD89 (LONG) Qty:2.5
+[2025-12-03 11:47:27] [CONTRALOR] Posición DEADFD89 registrada. SL ID: 70985264
+[2025-12-03 11:58:16] [MAIN] Apagado por usuario.
+[2025-12-03 11:58:43] [API] Conectado a Binance (TESTNET)
+[2025-12-03 11:58:44] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 11:58:44] [TELEGRAM] Escuchando comandos...
+[2025-12-03 11:58:44] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 12:05:06] [TELEGRAM] CMD Recibido: /report
+[2025-12-03 12:17:40] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 12:17:42] [TIRADOR] Preparando SHORT (MANUAL). Margen: 50.0 USDT
+[2025-12-03 12:17:42] [GESTOR] Iniciando D0728D67 (SHORT) Qty:1.3
+[2025-12-03 12:17:43] [CONTRALOR] Posición D0728D67 registrada. SL ID: 70988390
+[2025-12-03 12:18:01] [TELEGRAM] CMD Recibido: /report
+[2025-12-03 12:18:42] [TELEGRAM] CMD Recibido: /panic
+[2025-12-03 12:19:02] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 12:19:04] [TIRADOR] Preparando SHORT (MANUAL). Margen: 50.0 USDT
+[2025-12-03 12:19:04] [GESTOR] Iniciando 5D21EB9A (SHORT) Qty:1.3
+[2025-12-03 12:19:06] [CONTRALOR] Posición 5D21EB9A registrada. SL ID: 70988501
+[2025-12-03 12:20:08] [TELEGRAM] CMD Recibido: /report
+[2025-12-03 13:17:14] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 13:28:59] [MAIN] Apagado por usuario.
+[2025-12-03 13:29:10] [API] Conectado a Binance (TESTNET)
+[2025-12-03 13:31:16] [API] Conectado a Binance (TESTNET)
+[2025-12-03 13:31:17] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 13:31:17] [TELEGRAM] Escuchando comandos...
+[2025-12-03 13:31:17] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 14:02:47] [MAIN] Apagado por usuario.
+[2025-12-03 14:03:06] [API] Conectado a Binance (TESTNET)
+[2025-12-03 14:03:08] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 14:03:08] [TELEGRAM] Escuchando comandos...
+[2025-12-03 14:03:08] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 14:10:38] [GESTOR] Orden 70985264 cancelada quirúrgicamente.
+[2025-12-03 14:10:47] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70985264 no existe).
+[2025-12-03 14:10:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70996898
+[2025-12-03 14:10:48] [GESTOR] Orden 70996898 cancelada quirúrgicamente.
+[2025-12-03 14:10:58] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70996898 no existe).
+[2025-12-03 14:10:58] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70996909
+[2025-12-03 14:10:58] [GESTOR] Orden 70996909 cancelada quirúrgicamente.
+[2025-12-03 14:11:08] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70996909 no existe).
+[2025-12-03 14:11:09] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70996919
+[2025-12-03 14:11:09] [GESTOR] Orden 70996919 cancelada quirúrgicamente.
+[2025-12-03 14:11:18] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70996919 no existe).
+[2025-12-03 14:11:18] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70996945
+[2025-12-03 14:11:18] [GESTOR] Orden 70996945 cancelada quirúrgicamente.
+[2025-12-03 14:11:31] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70996945 no existe).
+[2025-12-03 14:11:31] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70996975
+[2025-12-03 14:11:32] [GESTOR] Orden 70996975 cancelada quirúrgicamente.
+[2025-12-03 14:11:42] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70996975 no existe).
+[2025-12-03 14:11:42] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70996990
+[2025-12-03 14:11:42] [GESTOR] Orden 70996990 cancelada quirúrgicamente.
+[2025-12-03 14:11:52] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70996990 no existe).
+[2025-12-03 14:11:52] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997021
+[2025-12-03 14:11:53] [GESTOR] Orden 70997021 cancelada quirúrgicamente.
+[2025-12-03 14:12:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997021 no existe).
+[2025-12-03 14:12:04] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997033
+[2025-12-03 14:12:04] [GESTOR] Orden 70997033 cancelada quirúrgicamente.
+[2025-12-03 14:12:16] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997033 no existe).
+[2025-12-03 14:12:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997060
+[2025-12-03 14:12:16] [GESTOR] Orden 70997060 cancelada quirúrgicamente.
+[2025-12-03 14:12:26] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997060 no existe).
+[2025-12-03 14:12:27] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997103
+[2025-12-03 14:12:27] [GESTOR] Orden 70997103 cancelada quirúrgicamente.
+[2025-12-03 14:12:36] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997103 no existe).
+[2025-12-03 14:12:37] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997113
+[2025-12-03 14:12:37] [GESTOR] Orden 70997113 cancelada quirúrgicamente.
+[2025-12-03 14:12:46] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997113 no existe).
+[2025-12-03 14:12:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997151
+[2025-12-03 14:12:48] [GESTOR] Orden 70997151 cancelada quirúrgicamente.
+[2025-12-03 14:12:58] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997151 no existe).
+[2025-12-03 14:12:58] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997179
+[2025-12-03 14:12:58] [GESTOR] Orden 70997179 cancelada quirúrgicamente.
+[2025-12-03 14:13:08] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997179 no existe).
+[2025-12-03 14:13:09] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997211
+[2025-12-03 14:13:09] [GESTOR] Orden 70997211 cancelada quirúrgicamente.
+[2025-12-03 14:13:18] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997211 no existe).
+[2025-12-03 14:13:19] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997246
+[2025-12-03 14:13:19] [GESTOR] Orden 70997246 cancelada quirúrgicamente.
+[2025-12-03 14:13:30] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997246 no existe).
+[2025-12-03 14:13:31] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997286
+[2025-12-03 14:13:32] [GESTOR] Orden 70997286 cancelada quirúrgicamente.
+[2025-12-03 14:13:41] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997286 no existe).
+[2025-12-03 14:13:41] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997299
+[2025-12-03 14:13:41] [GESTOR] Orden 70997299 cancelada quirúrgicamente.
+[2025-12-03 14:13:52] [MAIN] Apagado por usuario.
+[2025-12-03 14:14:06] [API] Conectado a Binance (TESTNET)
+[2025-12-03 14:14:07] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 14:14:07] [TELEGRAM] Escuchando comandos...
+[2025-12-03 14:14:07] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 14:14:10] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997299 no existe).
+[2025-12-03 14:14:11] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997363
+[2025-12-03 14:14:11] [GESTOR] Orden 70997363 cancelada quirúrgicamente.
+[2025-12-03 14:14:21] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997363 no existe).
+[2025-12-03 14:14:21] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997376
+[2025-12-03 14:14:21] [GESTOR] Orden 70997376 cancelada quirúrgicamente.
+[2025-12-03 14:14:32] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997376 no existe).
+[2025-12-03 14:14:32] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997390
+[2025-12-03 14:14:33] [GESTOR] Orden 70997390 cancelada quirúrgicamente.
+[2025-12-03 14:14:42] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997390 no existe).
+[2025-12-03 14:14:42] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997399
+[2025-12-03 14:14:43] [GESTOR] Orden 70997399 cancelada quirúrgicamente.
+[2025-12-03 14:14:53] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997399 no existe).
+[2025-12-03 14:14:54] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997408
+[2025-12-03 14:14:54] [GESTOR] Orden 70997408 cancelada quirúrgicamente.
+[2025-12-03 14:15:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997408 no existe).
+[2025-12-03 14:15:04] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997419
+[2025-12-03 14:15:05] [GESTOR] Orden 70997419 cancelada quirúrgicamente.
+[2025-12-03 14:15:15] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997419 no existe).
+[2025-12-03 14:15:15] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997428
+[2025-12-03 14:15:15] [GESTOR] Orden 70997428 cancelada quirúrgicamente.
+[2025-12-03 14:15:25] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997428 no existe).
+[2025-12-03 14:15:25] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997438
+[2025-12-03 14:15:26] [GESTOR] Orden 70997438 cancelada quirúrgicamente.
+[2025-12-03 14:15:36] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997438 no existe).
+[2025-12-03 14:15:36] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997450
+[2025-12-03 14:15:37] [GESTOR] Orden 70997450 cancelada quirúrgicamente.
+[2025-12-03 14:15:47] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997450 no existe).
+[2025-12-03 14:15:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997461
+[2025-12-03 14:15:47] [GESTOR] Orden 70997461 cancelada quirúrgicamente.
+[2025-12-03 14:15:59] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997461 no existe).
+[2025-12-03 14:16:00] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997476
+[2025-12-03 14:16:00] [GESTOR] Orden 70997476 cancelada quirúrgicamente.
+[2025-12-03 14:16:10] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997476 no existe).
+[2025-12-03 14:16:10] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997487
+[2025-12-03 14:16:11] [GESTOR] Orden 70997487 cancelada quirúrgicamente.
+[2025-12-03 14:16:21] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997487 no existe).
+[2025-12-03 14:16:21] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997498
+[2025-12-03 14:16:22] [GESTOR] Orden 70997498 cancelada quirúrgicamente.
+[2025-12-03 14:16:32] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997498 no existe).
+[2025-12-03 14:16:33] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997509
+[2025-12-03 14:16:33] [GESTOR] Orden 70997509 cancelada quirúrgicamente.
+[2025-12-03 14:16:42] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997509 no existe).
+[2025-12-03 14:16:43] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997523
+[2025-12-03 14:16:43] [GESTOR] Orden 70997523 cancelada quirúrgicamente.
+[2025-12-03 14:16:55] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997523 no existe).
+[2025-12-03 14:16:56] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997540
+[2025-12-03 14:16:56] [GESTOR] Orden 70997540 cancelada quirúrgicamente.
+[2025-12-03 14:17:05] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997540 no existe).
+[2025-12-03 14:17:05] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997558
+[2025-12-03 14:17:06] [GESTOR] Orden 70997558 cancelada quirúrgicamente.
+[2025-12-03 14:17:17] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997558 no existe).
+[2025-12-03 14:17:17] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997576
+[2025-12-03 14:18:49] [GESTOR] Orden 70997576 cancelada quirúrgicamente.
+[2025-12-03 14:18:52] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997576 no existe).
+[2025-12-03 14:18:53] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70997685
+[2025-12-03 14:25:46] [GESTOR] Orden 70997685 cancelada quirúrgicamente.
+[2025-12-03 14:25:52] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70997685 no existe).
+[2025-12-03 14:25:53] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998132
+[2025-12-03 14:25:53] [GESTOR] Orden 70998132 cancelada quirúrgicamente.
+[2025-12-03 14:26:03] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998132 no existe).
+[2025-12-03 14:26:03] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998143
+[2025-12-03 14:26:04] [GESTOR] Orden 70998143 cancelada quirúrgicamente.
+[2025-12-03 14:26:13] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998143 no existe).
+[2025-12-03 14:26:13] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998154
+[2025-12-03 14:27:08] [GESTOR] Orden 70998154 cancelada quirúrgicamente.
+[2025-12-03 14:27:16] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998154 no existe).
+[2025-12-03 14:27:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998222
+[2025-12-03 14:27:16] [GESTOR] Orden 70998222 cancelada quirúrgicamente.
+[2025-12-03 14:27:28] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998222 no existe).
+[2025-12-03 14:27:29] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998239
+[2025-12-03 14:27:30] [GESTOR] Orden 70998239 cancelada quirúrgicamente.
+[2025-12-03 14:27:39] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998239 no existe).
+[2025-12-03 14:27:40] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998250
+[2025-12-03 14:27:40] [GESTOR] Orden 70998250 cancelada quirúrgicamente.
+[2025-12-03 14:27:48] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998250 no existe).
+[2025-12-03 14:27:49] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998259
+[2025-12-03 14:27:49] [GESTOR] Orden 70998259 cancelada quirúrgicamente.
+[2025-12-03 14:27:59] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998259 no existe).
+[2025-12-03 14:27:59] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998272
+[2025-12-03 14:28:00] [GESTOR] Orden 70998272 cancelada quirúrgicamente.
+[2025-12-03 14:28:11] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998272 no existe).
+[2025-12-03 14:28:12] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998285
+[2025-12-03 14:28:12] [GESTOR] Orden 70998285 cancelada quirúrgicamente.
+[2025-12-03 14:28:22] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998285 no existe).
+[2025-12-03 14:28:22] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998300
+[2025-12-03 14:28:23] [GESTOR] Orden 70998300 cancelada quirúrgicamente.
+[2025-12-03 14:28:32] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998300 no existe).
+[2025-12-03 14:28:32] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998311
+[2025-12-03 14:30:26] [GESTOR] Orden 70998311 cancelada quirúrgicamente.
+[2025-12-03 14:30:28] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998311 no existe).
+[2025-12-03 14:30:28] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998424
+[2025-12-03 14:30:29] [GESTOR] Orden 70998424 cancelada quirúrgicamente.
+[2025-12-03 14:30:41] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998424 no existe).
+[2025-12-03 14:30:41] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998435
+[2025-12-03 14:30:42] [GESTOR] Orden 70998435 cancelada quirúrgicamente.
+[2025-12-03 14:30:51] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998435 no existe).
+[2025-12-03 14:30:52] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998446
+[2025-12-03 14:30:53] [GESTOR] Orden 70998446 cancelada quirúrgicamente.
+[2025-12-03 14:31:01] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998446 no existe).
+[2025-12-03 14:31:02] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998459
+[2025-12-03 14:31:26] [GESTOR] Orden 70998459 cancelada quirúrgicamente.
+[2025-12-03 14:31:34] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998459 no existe).
+[2025-12-03 14:31:35] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998490
+[2025-12-03 14:31:35] [GESTOR] Orden 70998490 cancelada quirúrgicamente.
+[2025-12-03 14:31:46] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998490 no existe).
+[2025-12-03 14:31:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998503
+[2025-12-03 14:31:59] [GESTOR] Orden 70998503 cancelada quirúrgicamente.
+[2025-12-03 14:32:07] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998503 no existe).
+[2025-12-03 14:32:08] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998524
+[2025-12-03 14:33:15] [GESTOR] Orden 70998524 cancelada quirúrgicamente.
+[2025-12-03 14:33:21] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998524 no existe).
+[2025-12-03 14:33:22] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998602
+[2025-12-03 14:33:22] [GESTOR] Orden 70998602 cancelada quirúrgicamente.
+[2025-12-03 14:33:32] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998602 no existe).
+[2025-12-03 14:33:32] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998616
+[2025-12-03 14:33:37] [GESTOR] Orden 70998616 cancelada quirúrgicamente.
+[2025-12-03 14:33:43] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998616 no existe).
+[2025-12-03 14:33:43] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998631
+[2025-12-03 14:33:43] [GESTOR] Orden 70998631 cancelada quirúrgicamente.
+[2025-12-03 14:33:55] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998631 no existe).
+[2025-12-03 14:33:55] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998646
+[2025-12-03 14:33:56] [GESTOR] Orden 70998646 cancelada quirúrgicamente.
+[2025-12-03 14:34:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998646 no existe).
+[2025-12-03 14:34:05] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998655
+[2025-12-03 14:34:05] [GESTOR] Orden 70998655 cancelada quirúrgicamente.
+[2025-12-03 14:34:16] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998655 no existe).
+[2025-12-03 14:34:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998664
+[2025-12-03 14:34:16] [GESTOR] Orden 70998664 cancelada quirúrgicamente.
+[2025-12-03 14:34:26] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998664 no existe).
+[2025-12-03 14:34:26] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998677
+[2025-12-03 14:34:27] [GESTOR] Orden 70998677 cancelada quirúrgicamente.
+[2025-12-03 14:34:36] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998677 no existe).
+[2025-12-03 14:34:36] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998686
+[2025-12-03 14:34:37] [GESTOR] Orden 70998686 cancelada quirúrgicamente.
+[2025-12-03 14:34:48] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998686 no existe).
+[2025-12-03 14:34:48] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998693
+[2025-12-03 14:34:49] [GESTOR] Orden 70998693 cancelada quirúrgicamente.
+[2025-12-03 14:34:59] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998693 no existe).
+[2025-12-03 14:34:59] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998710
+[2025-12-03 14:34:59] [GESTOR] Orden 70998710 cancelada quirúrgicamente.
+[2025-12-03 14:35:09] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998710 no existe).
+[2025-12-03 14:35:10] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998719
+[2025-12-03 14:35:10] [GESTOR] Orden 70998719 cancelada quirúrgicamente.
+[2025-12-03 14:35:19] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998719 no existe).
+[2025-12-03 14:35:20] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998737
+[2025-12-03 14:35:20] [GESTOR] Orden 70998737 cancelada quirúrgicamente.
+[2025-12-03 14:35:31] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998737 no existe).
+[2025-12-03 14:35:31] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998748
+[2025-12-03 14:35:32] [GESTOR] Orden 70998748 cancelada quirúrgicamente.
+[2025-12-03 14:35:43] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998748 no existe).
+[2025-12-03 14:35:44] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998761
+[2025-12-03 14:35:44] [GESTOR] Orden 70998761 cancelada quirúrgicamente.
+[2025-12-03 14:35:54] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998761 no existe).
+[2025-12-03 14:35:54] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998770
+[2025-12-03 14:35:54] [GESTOR] Orden 70998770 cancelada quirúrgicamente.
+[2025-12-03 14:36:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998770 no existe).
+[2025-12-03 14:36:05] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998781
+[2025-12-03 14:36:05] [GESTOR] Orden 70998781 cancelada quirúrgicamente.
+[2025-12-03 14:36:16] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998781 no existe).
+[2025-12-03 14:36:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998794
+[2025-12-03 14:36:17] [GESTOR] Orden 70998794 cancelada quirúrgicamente.
+[2025-12-03 14:36:27] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998794 no existe).
+[2025-12-03 14:36:28] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998803
+[2025-12-03 14:36:28] [GESTOR] Orden 70998803 cancelada quirúrgicamente.
+[2025-12-03 14:36:38] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998803 no existe).
+[2025-12-03 14:36:38] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998819
+[2025-12-03 14:36:38] [GESTOR] Orden 70998819 cancelada quirúrgicamente.
+[2025-12-03 14:36:47] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998819 no existe).
+[2025-12-03 14:36:48] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998826
+[2025-12-03 14:37:00] [GESTOR] Orden 70998826 cancelada quirúrgicamente.
+[2025-12-03 14:37:08] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998826 no existe).
+[2025-12-03 14:37:09] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998850
+[2025-12-03 14:37:09] [GESTOR] Orden 70998850 cancelada quirúrgicamente.
+[2025-12-03 14:37:20] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998850 no existe).
+[2025-12-03 14:37:20] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998859
+[2025-12-03 14:37:20] [GESTOR] Orden 70998859 cancelada quirúrgicamente.
+[2025-12-03 14:37:32] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998859 no existe).
+[2025-12-03 14:37:33] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998878
+[2025-12-03 14:37:33] [GESTOR] Orden 70998878 cancelada quirúrgicamente.
+[2025-12-03 14:37:42] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998878 no existe).
+[2025-12-03 14:37:42] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998885
+[2025-12-03 14:37:43] [GESTOR] Orden 70998885 cancelada quirúrgicamente.
+[2025-12-03 14:37:52] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998885 no existe).
+[2025-12-03 14:37:53] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998902
+[2025-12-03 14:37:53] [GESTOR] Orden 70998902 cancelada quirúrgicamente.
+[2025-12-03 14:38:03] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998902 no existe).
+[2025-12-03 14:38:03] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998915
+[2025-12-03 14:38:04] [GESTOR] Orden 70998915 cancelada quirúrgicamente.
+[2025-12-03 14:38:13] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998915 no existe).
+[2025-12-03 14:38:14] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70998922
+[2025-12-03 14:41:15] [GESTOR] Orden 70998922 cancelada quirúrgicamente.
+[2025-12-03 14:41:23] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70998922 no existe).
+[2025-12-03 14:41:24] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999109
+[2025-12-03 14:41:24] [GESTOR] Orden 70999109 cancelada quirúrgicamente.
+[2025-12-03 14:41:34] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999109 no existe).
+[2025-12-03 14:41:34] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999118
+[2025-12-03 14:41:35] [GESTOR] Orden 70999118 cancelada quirúrgicamente.
+[2025-12-03 14:41:45] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999118 no existe).
+[2025-12-03 14:41:46] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999137
+[2025-12-03 14:41:47] [GESTOR] Orden 70999137 cancelada quirúrgicamente.
+[2025-12-03 14:41:57] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999137 no existe).
+[2025-12-03 14:41:57] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999152
+[2025-12-03 14:41:58] [GESTOR] Orden 70999152 cancelada quirúrgicamente.
+[2025-12-03 14:42:08] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999152 no existe).
+[2025-12-03 14:42:09] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999159
+[2025-12-03 14:42:09] [GESTOR] Orden 70999159 cancelada quirúrgicamente.
+[2025-12-03 14:42:18] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999159 no existe).
+[2025-12-03 14:42:19] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999170
+[2025-12-03 14:42:19] [GESTOR] Orden 70999170 cancelada quirúrgicamente.
+[2025-12-03 14:42:29] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999170 no existe).
+[2025-12-03 14:42:30] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999185
+[2025-12-03 14:42:30] [GESTOR] Orden 70999185 cancelada quirúrgicamente.
+[2025-12-03 14:42:41] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999185 no existe).
+[2025-12-03 14:42:42] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999198
+[2025-12-03 14:42:42] [GESTOR] Orden 70999198 cancelada quirúrgicamente.
+[2025-12-03 14:42:52] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999198 no existe).
+[2025-12-03 14:42:53] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999205
+[2025-12-03 14:42:53] [GESTOR] Orden 70999205 cancelada quirúrgicamente.
+[2025-12-03 14:43:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999205 no existe).
+[2025-12-03 14:43:04] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999220
+[2025-12-03 14:43:05] [GESTOR] Orden 70999220 cancelada quirúrgicamente.
+[2025-12-03 14:43:13] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999220 no existe).
+[2025-12-03 14:43:14] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999230
+[2025-12-03 14:43:14] [GESTOR] Orden 70999230 cancelada quirúrgicamente.
+[2025-12-03 14:43:24] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999230 no existe).
+[2025-12-03 14:43:24] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999246
+[2025-12-03 14:43:25] [GESTOR] Orden 70999246 cancelada quirúrgicamente.
+[2025-12-03 14:43:34] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999246 no existe).
+[2025-12-03 14:43:34] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999251
+[2025-12-03 14:43:34] [GESTOR] Orden 70999251 cancelada quirúrgicamente.
+[2025-12-03 14:43:43] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999251 no existe).
+[2025-12-03 14:43:44] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999264
+[2025-12-03 14:43:44] [GESTOR] Orden 70999264 cancelada quirúrgicamente.
+[2025-12-03 14:43:55] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999264 no existe).
+[2025-12-03 14:43:55] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999279
+[2025-12-03 14:43:55] [GESTOR] Orden 70999279 cancelada quirúrgicamente.
+[2025-12-03 14:44:06] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999279 no existe).
+[2025-12-03 14:44:07] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999305
+[2025-12-03 14:44:07] [GESTOR] Orden 70999305 cancelada quirúrgicamente.
+[2025-12-03 14:44:17] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999305 no existe).
+[2025-12-03 14:44:18] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999320
+[2025-12-03 14:44:19] [GESTOR] Orden 70999320 cancelada quirúrgicamente.
+[2025-12-03 14:44:28] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999320 no existe).
+[2025-12-03 14:44:28] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999336
+[2025-12-03 14:44:29] [GESTOR] Orden 70999336 cancelada quirúrgicamente.
+[2025-12-03 14:44:39] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999336 no existe).
+[2025-12-03 14:44:39] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999346
+[2025-12-03 14:44:39] [GESTOR] Orden 70999346 cancelada quirúrgicamente.
+[2025-12-03 14:44:50] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999346 no existe).
+[2025-12-03 14:44:50] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999354
+[2025-12-03 14:44:51] [GESTOR] Orden 70999354 cancelada quirúrgicamente.
+[2025-12-03 14:45:01] [CONTRALOR] 👻 Fantasma detectado D0728D67. Limpiando.
+[2025-12-03 14:45:02] [CONTRALOR] 👻 Fantasma detectado 5D21EB9A. Limpiando.
+[2025-12-03 14:45:02] [GESTOR] Orden 70988501 cancelada quirúrgicamente.
+[2025-12-03 14:45:02] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999354 no existe).
+[2025-12-03 14:45:02] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999401
+[2025-12-03 14:45:03] [GESTOR] Orden 70999401 cancelada quirúrgicamente.
+[2025-12-03 14:45:12] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999401 no existe).
+[2025-12-03 14:45:12] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999411
+[2025-12-03 14:45:13] [GESTOR] Orden 70999411 cancelada quirúrgicamente.
+[2025-12-03 14:45:24] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999411 no existe).
+[2025-12-03 14:45:24] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999424
+[2025-12-03 14:45:24] [GESTOR] Orden 70999424 cancelada quirúrgicamente.
+[2025-12-03 14:45:34] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999424 no existe).
+[2025-12-03 14:45:34] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999460
+[2025-12-03 14:45:35] [GESTOR] Orden 70999460 cancelada quirúrgicamente.
+[2025-12-03 14:45:44] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999460 no existe).
+[2025-12-03 14:45:45] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999488
+[2025-12-03 14:45:45] [GESTOR] Orden 70999488 cancelada quirúrgicamente.
+[2025-12-03 14:45:57] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999488 no existe).
+[2025-12-03 14:45:57] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999497
+[2025-12-03 14:45:58] [GESTOR] Orden 70999497 cancelada quirúrgicamente.
+[2025-12-03 14:46:07] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999497 no existe).
+[2025-12-03 14:46:08] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999514
+[2025-12-03 14:46:08] [GESTOR] Orden 70999514 cancelada quirúrgicamente.
+[2025-12-03 14:46:17] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999514 no existe).
+[2025-12-03 14:46:18] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999527
+[2025-12-03 14:46:18] [GESTOR] Orden 70999527 cancelada quirúrgicamente.
+[2025-12-03 14:46:29] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999527 no existe).
+[2025-12-03 14:46:29] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999557
+[2025-12-03 14:46:30] [GESTOR] Orden 70999557 cancelada quirúrgicamente.
+[2025-12-03 14:46:39] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999557 no existe).
+[2025-12-03 14:46:40] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999581
+[2025-12-03 14:46:40] [GESTOR] Orden 70999581 cancelada quirúrgicamente.
+[2025-12-03 14:46:51] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999581 no existe).
+[2025-12-03 14:46:51] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999617
+[2025-12-03 14:46:52] [GESTOR] Orden 70999617 cancelada quirúrgicamente.
+[2025-12-03 14:47:02] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999617 no existe).
+[2025-12-03 14:47:03] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999638
+[2025-12-03 14:47:03] [GESTOR] Orden 70999638 cancelada quirúrgicamente.
+[2025-12-03 14:47:12] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999638 no existe).
+[2025-12-03 14:47:12] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999663
+[2025-12-03 14:47:13] [GESTOR] Orden 70999663 cancelada quirúrgicamente.
+[2025-12-03 14:47:24] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999663 no existe).
+[2025-12-03 14:47:24] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999682
+[2025-12-03 14:47:25] [GESTOR] Orden 70999682 cancelada quirúrgicamente.
+[2025-12-03 14:47:36] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999682 no existe).
+[2025-12-03 14:47:36] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999699
+[2025-12-03 14:47:37] [GESTOR] Orden 70999699 cancelada quirúrgicamente.
+[2025-12-03 14:47:46] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999699 no existe).
+[2025-12-03 14:47:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999722
+[2025-12-03 14:47:48] [GESTOR] Orden 70999722 cancelada quirúrgicamente.
+[2025-12-03 14:47:56] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999722 no existe).
+[2025-12-03 14:47:57] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999729
+[2025-12-03 14:47:58] [GESTOR] Orden 70999729 cancelada quirúrgicamente.
+[2025-12-03 14:48:07] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999729 no existe).
+[2025-12-03 14:48:08] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999745
+[2025-12-03 14:48:08] [GESTOR] Orden 70999745 cancelada quirúrgicamente.
+[2025-12-03 14:48:17] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999745 no existe).
+[2025-12-03 14:48:17] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999765
+[2025-12-03 14:48:18] [GESTOR] Orden 70999765 cancelada quirúrgicamente.
+[2025-12-03 14:48:29] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999765 no existe).
+[2025-12-03 14:48:30] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999788
+[2025-12-03 14:48:31] [GESTOR] Orden 70999788 cancelada quirúrgicamente.
+[2025-12-03 14:48:38] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999788 no existe).
+[2025-12-03 14:48:39] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999797
+[2025-12-03 14:48:39] [GESTOR] Orden 70999797 cancelada quirúrgicamente.
+[2025-12-03 14:48:49] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999797 no existe).
+[2025-12-03 14:48:49] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999838
+[2025-12-03 14:48:50] [GESTOR] Orden 70999838 cancelada quirúrgicamente.
+[2025-12-03 14:49:00] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999838 no existe).
+[2025-12-03 14:49:00] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999867
+[2025-12-03 14:49:01] [GESTOR] Orden 70999867 cancelada quirúrgicamente.
+[2025-12-03 14:49:11] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999867 no existe).
+[2025-12-03 14:49:11] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999891
+[2025-12-03 14:49:12] [GESTOR] Orden 70999891 cancelada quirúrgicamente.
+[2025-12-03 14:49:21] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999891 no existe).
+[2025-12-03 14:49:21] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999913
+[2025-12-03 14:49:22] [GESTOR] Orden 70999913 cancelada quirúrgicamente.
+[2025-12-03 14:49:32] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999913 no existe).
+[2025-12-03 14:49:32] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999941
+[2025-12-03 14:49:32] [GESTOR] Orden 70999941 cancelada quirúrgicamente.
+[2025-12-03 14:49:44] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999941 no existe).
+[2025-12-03 14:49:44] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999959
+[2025-12-03 14:49:45] [GESTOR] Orden 70999959 cancelada quirúrgicamente.
+[2025-12-03 14:49:54] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999959 no existe).
+[2025-12-03 14:49:54] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 70999976
+[2025-12-03 14:49:54] [GESTOR] Orden 70999976 cancelada quirúrgicamente.
+[2025-12-03 14:50:06] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 70999976 no existe).
+[2025-12-03 14:50:06] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71000013
+[2025-12-03 14:50:06] [GESTOR] Orden 71000013 cancelada quirúrgicamente.
+[2025-12-03 14:50:16] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71000013 no existe).
+[2025-12-03 14:50:17] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71000026
+[2025-12-03 14:50:18] [GESTOR] Orden 71000026 cancelada quirúrgicamente.
+[2025-12-03 14:50:27] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71000026 no existe).
+[2025-12-03 14:50:28] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71000052
+[2025-12-03 14:50:28] [GESTOR] Orden 71000052 cancelada quirúrgicamente.
+[2025-12-03 14:50:37] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71000052 no existe).
+[2025-12-03 14:50:38] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71000063
+[2025-12-03 14:50:38] [GESTOR] Orden 71000063 cancelada quirúrgicamente.
+[2025-12-03 14:50:48] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71000063 no existe).
+[2025-12-03 14:50:49] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71000093
+[2025-12-03 14:50:49] [GESTOR] Orden 71000093 cancelada quirúrgicamente.
+[2025-12-03 14:50:58] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71000093 no existe).
+[2025-12-03 14:50:58] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71000119
+[2025-12-03 15:05:30] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 15:05:30] [GESTOR] Iniciando C45E2408 (SHORT) Qty:3.8
+[2025-12-03 15:05:31] [CONTRALOR] Posición C45E2408 registrada. SL ID: 71001538
+[2025-12-03 15:20:49] [CONTRALOR] 🚨 ¡ALERTA! Posición C45E2408 DESNUDA (SL 71001538 no existe).
+[2025-12-03 15:20:59] [CONTRALOR] 👻 Fantasma detectado C45E2408. Limpiando.
+[2025-12-03 15:21:56] [GESTOR] Orden 71000119 cancelada quirúrgicamente.
+[2025-12-03 15:22:02] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71000119 no existe).
+[2025-12-03 15:22:03] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002686
+[2025-12-03 15:22:03] [GESTOR] Orden 71002686 cancelada quirúrgicamente.
+[2025-12-03 15:22:13] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002686 no existe).
+[2025-12-03 15:22:13] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002699
+[2025-12-03 15:22:14] [GESTOR] Orden 71002699 cancelada quirúrgicamente.
+[2025-12-03 15:22:24] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002699 no existe).
+[2025-12-03 15:22:24] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002708
+[2025-12-03 15:22:25] [GESTOR] Orden 71002708 cancelada quirúrgicamente.
+[2025-12-03 15:22:36] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002708 no existe).
+[2025-12-03 15:22:36] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002721
+[2025-12-03 15:22:36] [GESTOR] Orden 71002721 cancelada quirúrgicamente.
+[2025-12-03 15:22:47] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002721 no existe).
+[2025-12-03 15:22:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002728
+[2025-12-03 15:23:08] [GESTOR] Orden 71002728 cancelada quirúrgicamente.
+[2025-12-03 15:23:20] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002728 no existe).
+[2025-12-03 15:23:20] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002757
+[2025-12-03 15:23:20] [GESTOR] Orden 71002757 cancelada quirúrgicamente.
+[2025-12-03 15:23:31] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002757 no existe).
+[2025-12-03 15:23:32] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71002772
+[2025-12-03 15:27:08] [GESTOR] Orden 71002772 cancelada quirúrgicamente.
+[2025-12-03 15:27:10] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71002772 no existe).
+[2025-12-03 15:27:11] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003081
+[2025-12-03 15:27:11] [GESTOR] Orden 71003081 cancelada quirúrgicamente.
+[2025-12-03 15:27:21] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003081 no existe).
+[2025-12-03 15:27:21] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003096
+[2025-12-03 15:27:21] [GESTOR] Orden 71003096 cancelada quirúrgicamente.
+[2025-12-03 15:27:33] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003096 no existe).
+[2025-12-03 15:27:33] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003113
+[2025-12-03 15:28:11] [GESTOR] Orden 71003113 cancelada quirúrgicamente.
+[2025-12-03 15:28:15] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003113 no existe).
+[2025-12-03 15:28:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003160
+[2025-12-03 15:28:16] [GESTOR] Orden 71003160 cancelada quirúrgicamente.
+[2025-12-03 15:28:26] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003160 no existe).
+[2025-12-03 15:28:26] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003169
+[2025-12-03 15:28:26] [GESTOR] Orden 71003169 cancelada quirúrgicamente.
+[2025-12-03 15:28:38] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003169 no existe).
+[2025-12-03 15:28:38] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003186
+[2025-12-03 15:28:39] [GESTOR] Orden 71003186 cancelada quirúrgicamente.
+[2025-12-03 15:28:49] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003186 no existe).
+[2025-12-03 15:28:50] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003201
+[2025-12-03 15:28:50] [GESTOR] Orden 71003201 cancelada quirúrgicamente.
+[2025-12-03 15:28:59] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003201 no existe).
+[2025-12-03 15:29:00] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003212
+[2025-12-03 15:29:00] [GESTOR] Orden 71003212 cancelada quirúrgicamente.
+[2025-12-03 15:29:11] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003212 no existe).
+[2025-12-03 15:29:12] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003225
+[2025-12-03 15:29:12] [GESTOR] Orden 71003225 cancelada quirúrgicamente.
+[2025-12-03 15:29:22] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003225 no existe).
+[2025-12-03 15:29:23] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003240
+[2025-12-03 15:29:24] [GESTOR] Orden 71003240 cancelada quirúrgicamente.
+[2025-12-03 15:29:34] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003240 no existe).
+[2025-12-03 15:29:34] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003249
+[2025-12-03 15:29:35] [GESTOR] Orden 71003249 cancelada quirúrgicamente.
+[2025-12-03 15:29:44] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003249 no existe).
+[2025-12-03 15:29:45] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003262
+[2025-12-03 15:29:45] [GESTOR] Orden 71003262 cancelada quirúrgicamente.
+[2025-12-03 15:29:54] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003262 no existe).
+[2025-12-03 15:29:55] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003299
+[2025-12-03 15:29:55] [GESTOR] Orden 71003299 cancelada quirúrgicamente.
+[2025-12-03 15:30:05] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003299 no existe).
+[2025-12-03 15:30:06] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003311
+[2025-12-03 15:30:06] [GESTOR] Orden 71003311 cancelada quirúrgicamente.
+[2025-12-03 15:30:17] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003311 no existe).
+[2025-12-03 15:30:18] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003325
+[2025-12-03 15:30:23] [GESTOR] Orden 71003325 cancelada quirúrgicamente.
+[2025-12-03 15:30:27] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003325 no existe).
+[2025-12-03 15:30:28] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003336
+[2025-12-03 15:30:28] [GESTOR] Orden 71003336 cancelada quirúrgicamente.
+[2025-12-03 15:30:40] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003336 no existe).
+[2025-12-03 15:30:40] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003366
+[2025-12-03 15:30:40] [GESTOR] Orden 71003366 cancelada quirúrgicamente.
+[2025-12-03 15:30:51] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003366 no existe).
+[2025-12-03 15:30:52] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003377
+[2025-12-03 15:30:52] [GESTOR] Orden 71003377 cancelada quirúrgicamente.
+[2025-12-03 15:31:01] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003377 no existe).
+[2025-12-03 15:31:01] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003392
+[2025-12-03 15:31:02] [GESTOR] Orden 71003392 cancelada quirúrgicamente.
+[2025-12-03 15:31:11] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003392 no existe).
+[2025-12-03 15:31:11] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003406
+[2025-12-03 15:32:16] [GESTOR] Orden 71003406 cancelada quirúrgicamente.
+[2025-12-03 15:32:25] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003406 no existe).
+[2025-12-03 15:32:25] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003502
+[2025-12-03 15:32:30] [GESTOR] Orden 71003502 cancelada quirúrgicamente.
+[2025-12-03 15:32:34] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003502 no existe).
+[2025-12-03 15:32:35] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003513
+[2025-12-03 15:32:35] [GESTOR] Orden 71003513 cancelada quirúrgicamente.
+[2025-12-03 15:32:46] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003513 no existe).
+[2025-12-03 15:32:46] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003541
+[2025-12-03 15:32:47] [GESTOR] Orden 71003541 cancelada quirúrgicamente.
+[2025-12-03 15:32:56] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003541 no existe).
+[2025-12-03 15:32:57] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003562
+[2025-12-03 15:32:57] [GESTOR] Orden 71003562 cancelada quirúrgicamente.
+[2025-12-03 15:33:07] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003562 no existe).
+[2025-12-03 15:33:07] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003608
+[2025-12-03 15:33:08] [GESTOR] Orden 71003608 cancelada quirúrgicamente.
+[2025-12-03 15:33:19] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003608 no existe).
+[2025-12-03 15:33:19] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003646
+[2025-12-03 15:33:20] [GESTOR] Orden 71003646 cancelada quirúrgicamente.
+[2025-12-03 15:33:31] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003646 no existe).
+[2025-12-03 15:33:32] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003684
+[2025-12-03 15:33:32] [GESTOR] Orden 71003684 cancelada quirúrgicamente.
+[2025-12-03 15:33:42] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003684 no existe).
+[2025-12-03 15:33:43] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003712
+[2025-12-03 15:33:43] [GESTOR] Orden 71003712 cancelada quirúrgicamente.
+[2025-12-03 15:33:54] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003712 no existe).
+[2025-12-03 15:33:54] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003729
+[2025-12-03 15:33:55] [GESTOR] Orden 71003729 cancelada quirúrgicamente.
+[2025-12-03 15:34:05] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003729 no existe).
+[2025-12-03 15:34:05] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003755
+[2025-12-03 15:34:06] [GESTOR] Orden 71003755 cancelada quirúrgicamente.
+[2025-12-03 15:34:16] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003755 no existe).
+[2025-12-03 15:34:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003786
+[2025-12-03 15:34:17] [GESTOR] Orden 71003786 cancelada quirúrgicamente.
+[2025-12-03 15:34:26] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003786 no existe).
+[2025-12-03 15:34:26] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003809
+[2025-12-03 15:34:27] [GESTOR] Orden 71003809 cancelada quirúrgicamente.
+[2025-12-03 15:34:36] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003809 no existe).
+[2025-12-03 15:34:37] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003838
+[2025-12-03 15:34:37] [GESTOR] Orden 71003838 cancelada quirúrgicamente.
+[2025-12-03 15:34:47] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003838 no existe).
+[2025-12-03 15:34:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003862
+[2025-12-03 15:34:48] [GESTOR] Orden 71003862 cancelada quirúrgicamente.
+[2025-12-03 15:34:58] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003862 no existe).
+[2025-12-03 15:34:58] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003884
+[2025-12-03 15:34:58] [GESTOR] Orden 71003884 cancelada quirúrgicamente.
+[2025-12-03 15:35:07] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003884 no existe).
+[2025-12-03 15:35:08] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003896
+[2025-12-03 15:35:08] [GESTOR] Orden 71003896 cancelada quirúrgicamente.
+[2025-12-03 15:35:19] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003896 no existe).
+[2025-12-03 15:35:19] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003922
+[2025-12-03 15:35:19] [GESTOR] Orden 71003922 cancelada quirúrgicamente.
+[2025-12-03 15:35:30] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003922 no existe).
+[2025-12-03 15:35:30] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003950
+[2025-12-03 15:35:30] [GESTOR] Orden 71003950 cancelada quirúrgicamente.
+[2025-12-03 15:35:42] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003950 no existe).
+[2025-12-03 15:35:43] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003965
+[2025-12-03 15:35:43] [GESTOR] Orden 71003965 cancelada quirúrgicamente.
+[2025-12-03 15:35:54] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003965 no existe).
+[2025-12-03 15:35:54] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003974
+[2025-12-03 15:35:55] [GESTOR] Orden 71003974 cancelada quirúrgicamente.
+[2025-12-03 15:36:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003974 no existe).
+[2025-12-03 15:36:04] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71003983
+[2025-12-03 15:36:05] [GESTOR] Orden 71003983 cancelada quirúrgicamente.
+[2025-12-03 15:36:15] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71003983 no existe).
+[2025-12-03 15:36:15] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004002
+[2025-12-03 15:36:16] [GESTOR] Orden 71004002 cancelada quirúrgicamente.
+[2025-12-03 15:36:28] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004002 no existe).
+[2025-12-03 15:36:28] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004011
+[2025-12-03 15:36:29] [GESTOR] Orden 71004011 cancelada quirúrgicamente.
+[2025-12-03 15:36:38] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004011 no existe).
+[2025-12-03 15:36:38] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004024
+[2025-12-03 15:36:38] [GESTOR] Orden 71004024 cancelada quirúrgicamente.
+[2025-12-03 15:36:50] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004024 no existe).
+[2025-12-03 15:36:50] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004059
+[2025-12-03 15:36:51] [GESTOR] Orden 71004059 cancelada quirúrgicamente.
+[2025-12-03 15:37:01] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004059 no existe).
+[2025-12-03 15:37:02] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004084
+[2025-12-03 15:37:02] [GESTOR] Orden 71004084 cancelada quirúrgicamente.
+[2025-12-03 15:37:10] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004084 no existe).
+[2025-12-03 15:37:11] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004095
+[2025-12-03 15:37:11] [GESTOR] Orden 71004095 cancelada quirúrgicamente.
+[2025-12-03 15:37:22] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004095 no existe).
+[2025-12-03 15:37:22] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004116
+[2025-12-03 15:37:23] [GESTOR] Orden 71004116 cancelada quirúrgicamente.
+[2025-12-03 15:37:33] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004116 no existe).
+[2025-12-03 15:37:33] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004145
+[2025-12-03 15:37:34] [GESTOR] Orden 71004145 cancelada quirúrgicamente.
+[2025-12-03 15:37:43] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004145 no existe).
+[2025-12-03 15:37:43] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004166
+[2025-12-03 15:37:44] [GESTOR] Orden 71004166 cancelada quirúrgicamente.
+[2025-12-03 15:37:54] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004166 no existe).
+[2025-12-03 15:37:54] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004185
+[2025-12-03 15:37:55] [GESTOR] Orden 71004185 cancelada quirúrgicamente.
+[2025-12-03 15:38:04] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004185 no existe).
+[2025-12-03 15:38:05] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004215
+[2025-12-03 15:38:05] [GESTOR] Orden 71004215 cancelada quirúrgicamente.
+[2025-12-03 15:38:15] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004215 no existe).
+[2025-12-03 15:38:16] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004232
+[2025-12-03 15:38:16] [GESTOR] Orden 71004232 cancelada quirúrgicamente.
+[2025-12-03 15:38:25] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004232 no existe).
+[2025-12-03 15:38:26] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004256
+[2025-12-03 15:38:26] [GESTOR] Orden 71004256 cancelada quirúrgicamente.
+[2025-12-03 15:38:37] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004256 no existe).
+[2025-12-03 15:38:37] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004284
+[2025-12-03 15:38:38] [GESTOR] Orden 71004284 cancelada quirúrgicamente.
+[2025-12-03 15:38:47] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004284 no existe).
+[2025-12-03 15:38:47] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004297
+[2025-12-03 15:38:48] [GESTOR] Orden 71004297 cancelada quirúrgicamente.
+[2025-12-03 15:38:57] [CONTRALOR] 🚨 ¡ALERTA! Posición DEADFD89 DESNUDA (SL 71004297 no existe).
+[2025-12-03 15:38:57] [CONTRALOR] ✅ Protección restaurada para DEADFD89. Nuevo SL ID: 71004315
+[2025-12-03 15:45:28] [MAIN] Apagado por usuario.
+[2025-12-03 15:46:38] [API] Conectado a Binance (TESTNET)
+[2025-12-03 15:46:41] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 15:46:41] [TELEGRAM] Escuchando comandos...
+[2025-12-03 15:46:41] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 15:46:51] [CONTRALOR] 🛡️ Breakeven DEADFD89 activado en 193.43.
+[2025-12-03 15:48:54] [TELEGRAM] CMD Recibido: /report
+[2025-12-03 16:04:07] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 16:04:07] [GESTOR] Iniciando 3D71ABD3 (SHORT) Qty:3.8
+[2025-12-03 16:04:10] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 16:04:10] [GESTOR] Iniciando 42099A2C (SHORT) Qty:3.8
+[2025-12-03 16:04:14] [CONTRALOR] 🚨 Alerta: DEADFD89 DESNUDA.
+[2025-12-03 16:04:15] [CONTRALOR] ✅ Protección restaurada DEADFD89. SL: 193.43
+[2025-12-03 16:04:15] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 16:04:15] [GESTOR] Iniciando A031FB1B (SHORT) Qty:3.8
+[2025-12-03 16:04:17] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 16:04:17] [GESTOR] Iniciando B4FACFD3 (SHORT) Qty:3.8
+[2025-12-03 16:04:18] [CONTRALOR] Posición B4FACFD3 registrada.
+[2025-12-03 16:04:25] [CONTRALOR] 👻 Fantasma B4FACFD3. Limpiando.
+[2025-12-03 16:04:26] [CONTRALOR] 🚨 Alerta: DEADFD89 DESNUDA.
+[2025-12-03 16:04:26] [CONTRALOR] ✅ Protección restaurada DEADFD89. SL: 193.43
+[2025-12-03 16:04:26] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 16:04:26] [GESTOR] Iniciando 471B2106 (SHORT) Qty:3.8
+[2025-12-03 16:04:35] [CONTRALOR] 🚨 Alerta: DEADFD89 DESNUDA.
+[2025-12-03 16:04:36] [CONTRALOR] ✅ Protección restaurada DEADFD89. SL: 193.43
+[2025-12-03 16:07:04] [CONTRALOR] 👻 Fantasma DEADFD89. Limpiando.
+[2025-12-03 16:07:04] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 16:07:04] [GESTOR] Iniciando 3E7CCC9F (LONG) Qty:2.5
+[2025-12-03 16:07:05] [CONTRALOR] Posición 3E7CCC9F registrada.
+[2025-12-03 16:07:57] [CONTRALOR] 👻 Fantasma 3E7CCC9F. Limpiando.
+[2025-12-03 16:07:58] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 16:07:58] [GESTOR] Iniciando 64421A17 (LONG) Qty:2.5
+[2025-12-03 16:07:59] [CONTRALOR] Posición 64421A17 registrada.
+[2025-12-03 16:18:15] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 16:18:16] [TIRADOR] Preparando SHORT (MANUAL). Margen: 50.0 USDT
+[2025-12-03 16:18:16] [GESTOR] Iniciando EB0EE5B7 (SHORT) Qty:1.2
+[2025-12-03 16:18:17] [CONTRALOR] Posición EB0EE5B7 registrada.
+[2025-12-03 16:18:52] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 16:18:54] [TIRADOR] Preparando SHORT (MANUAL). Margen: 50.0 USDT
+[2025-12-03 16:18:54] [GESTOR] Iniciando 0B2459BE (SHORT) Qty:1.2
+[2025-12-03 16:18:55] [CONTRALOR] Posición 0B2459BE registrada.
+[2025-12-03 16:43:18] [CONTRALOR] 👻 Fantasma 64421A17. Limpiando.
+[2025-12-03 16:43:28] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 16:43:28] [GESTOR] Iniciando 937FFFAB (LONG) Qty:2.5
+[2025-12-03 16:43:29] [CONTRALOR] Posición 937FFFAB registrada.
+[2025-12-03 16:44:37] [TELEGRAM] CMD Recibido: /short
+[2025-12-03 16:57:02] [CONTRALOR] 👻 Fantasma 937FFFAB. Limpiando.
+[2025-12-03 17:00:00] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 17:00:00] [GESTOR] Iniciando E00DFA2A (LONG) Qty:2.5
+[2025-12-03 17:00:01] [CONTRALOR] Posición E00DFA2A registrada.
+[2025-12-03 18:15:24] [CONTRALOR] 🛡️ Breakeven E00DFA2A activado en 197.89.
+[2025-12-03 18:33:22] [CONTRALOR] 👻 Fantasma E00DFA2A. Limpiando.
+[2025-12-03 18:33:25] [TIRADOR] Preparando LONG (SCALP_BB). Margen: 50.0 USDT
+[2025-12-03 18:33:25] [GESTOR] Iniciando C28E4ED7 (LONG) Qty:1.2
+[2025-12-03 18:33:26] [CONTRALOR] Posición C28E4ED7 registrada.
+[2025-12-03 18:57:41] [CONTRALOR] 🛡️ Breakeven C28E4ED7 activado en 197.96.
+[2025-12-03 19:01:53] [CONTRALOR] 👻 Fantasma EB0EE5B7. Limpiando.
+[2025-12-03 19:01:53] [CONTRALOR] 👻 Fantasma 0B2459BE. Limpiando.
+[2025-12-03 19:01:54] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 19:01:54] [GESTOR] Iniciando 8FF5562F (LONG) Qty:2.5
+[2025-12-03 19:01:55] [CONTRALOR] Posición 8FF5562F registrada.
+[2025-12-03 19:11:42] [TIRADOR] Preparando SHORT (SNIPER_FVG). Margen: 150.0 USDT
+[2025-12-03 19:11:42] [GESTOR] Iniciando 3FF03FAD (SHORT) Qty:3.7
+[2025-12-03 19:11:44] [CONTRALOR] Posición 3FF03FAD registrada.
+[2025-12-03 19:35:28] [CONTRALOR] 🛡️ Breakeven 3FF03FAD activado en 199.76.
+[2025-12-03 19:59:09] [CONTRALOR] 👻 Fantasma C28E4ED7. Limpiando.
+[2025-12-03 19:59:09] [CONTRALOR] 👻 Fantasma 8FF5562F. Limpiando.
+[2025-12-03 20:56:14] [API] Conectado a Binance (TESTNET)
+[2025-12-03 20:56:15] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 20:56:15] [TELEGRAM] Escuchando comandos...
+[2025-12-03 20:56:15] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 21:15:30] [TELEGRAM] CMD Recibido: /report
+[2025-12-03 21:21:52] [TIRADOR] Preparando LONG (TREND_FOLLOWING). Margen: 100.0 USDT
+[2025-12-03 21:21:52] [GESTOR] Iniciando BEA17829 (LONG) Qty:2.5
+[2025-12-03 21:21:53] [CONTRALOR] Posición BEA17829 registrada.
+[2025-12-03 21:26:24] [API] Conectado a Binance (TESTNET)
+[2025-12-03 21:26:25] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 21:26:25] [TELEGRAM] Escuchando comandos...
+[2025-12-03 21:26:25] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 22:33:01] [MAIN] Apagado por usuario.

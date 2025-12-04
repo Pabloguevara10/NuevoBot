@@ -1,0 +1,50 @@
+{
+    "3FF03FAD": {
+        "data": {
+            "id": "3FF03FAD",
+            "side": "SHORT",
+            "mode": "SNIPER_FVG",
+            "qty": 2.59,
+            "sl_price": 199.76,
+            "tps": [
+                197.20685,
+                194.2037,
+                188.1974
+            ],
+            "leverage": 5,
+            "timestamp": 1764803502.9528942,
+            "entry_price": 199.96,
+            "sl_order_id": 71022254,
+            "status": "OPEN"
+        },
+        "tp_level_index": 1,
+        "be_active": true,
+        "sl_order_id": 71024027,
+        "status": "RUNNING",
+        "pnl_actual": 5.982900000000005
+    },
+    "BEA17829": {
+        "data": {
+            "id": "BEA17829",
+            "side": "LONG",
+            "mode": "TREND_FOLLOWING",
+            "qty": 2.5,
+            "sl_price": 193.7,
+            "tps": [
+                200.61475,
+                203.57950000000002,
+                209.50900000000001
+            ],
+            "leverage": 5,
+            "timestamp": 1764811312.0907319,
+            "entry_price": 198.56,
+            "sl_order_id": 71032163,
+            "status": "OPEN"
+        },
+        "tp_level_index": 0,
+        "be_active": false,
+        "sl_order_id": 71032163,
+        "status": "RUNNING",
+        "pnl_actual": 0.0
+    }
+}
