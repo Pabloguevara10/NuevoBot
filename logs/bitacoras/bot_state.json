@@ -1,49 +1,65 @@
 {
-    "3FF03FAD": {
+    "REC_1764895116": {
         "data": {
-            "id": "3FF03FAD",
+            "id": "REC_1764895116",
             "side": "SHORT",
-            "mode": "SNIPER_FVG",
-            "qty": 2.59,
-            "sl_price": 199.76,
-            "tps": [
-                197.20685,
-                194.2037,
-                188.1974
-            ],
-            "leverage": 5,
-            "timestamp": 1764803502.9528942,
+            "qty": 1.9,
             "entry_price": 199.96,
-            "sl_order_id": 71022254,
-            "status": "OPEN"
+            "sl_price": 199.76,
+            "mode": "MANUAL",
+            "tps": []
         },
-        "tp_level_index": 1,
+        "tp_level_index": 0,
         "be_active": true,
-        "sl_order_id": 71024027,
+        "sl_order_id": 71141053,
         "status": "RUNNING",
-        "pnl_actual": 5.982900000000005
+        "pnl_actual": 17.537000000000035
     },
-    "BEA17829": {
+    "1A24D8E5": {
         "data": {
-            "id": "BEA17829",
+            "id": "1A24D8E5",
             "side": "LONG",
             "mode": "TREND_FOLLOWING",
-            "qty": 2.5,
-            "sl_price": 193.7,
+            "qty": 2.6,
+            "sl_price": 186.32,
             "tps": [
-                200.61475,
-                203.57950000000002,
-                209.50900000000001
+                193.96649999999997,
+                196.833,
+                202.566
             ],
             "leverage": 5,
-            "timestamp": 1764811312.0907319,
-            "entry_price": 198.56,
-            "sl_order_id": 71032163,
+            "timestamp": 1764895237.913131,
+            "entry_price": 191.28,
+            "sl_order_id": 71141173,
             "status": "OPEN"
         },
         "tp_level_index": 0,
         "be_active": false,
-        "sl_order_id": 71032163,
+        "sl_order_id": 71141173,
+        "status": "RUNNING",
+        "pnl_actual": -1.4300000000000297
+    },
+    "0A6AEB8D": {
+        "data": {
+            "id": "0A6AEB8D",
+            "side": "SHORT",
+            "mode": "MANUAL",
+            "qty": 1.3,
+            "sl_price": 194.54,
+            "tps": [
+                187.86905,
+                185.00809999999998,
+                179.28619999999998
+            ],
+            "leverage": 5,
+            "timestamp": 1764895823.754719,
+            "entry_price": 190.3469,
+            "sl_order_id": 71141682,
+            "status": "OPEN"
+        },
+        "tp_level_index": 0,
+        "be_active": false,
+        "sl_order_id": 71141682,
         "status": "RUNNING",
         "pnl_actual": 0.0
     }

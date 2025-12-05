@@ -2267,3 +2267,65 @@
 [2025-12-03 21:26:25] [TELEGRAM] Escuchando comandos...
 [2025-12-03 21:26:25] [MAIN] Sistema Iniciado correctamente.
 [2025-12-03 22:33:01] [MAIN] Apagado por usuario.
+[2025-12-03 23:42:45] [API] Conectado a Binance (TESTNET)
+[2025-12-03 23:42:47] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-03 23:42:47] [TELEGRAM] Escuchando comandos...
+[2025-12-03 23:42:47] [MAIN] Sistema Iniciado correctamente.
+[2025-12-03 23:51:12] [MAIN] Apagado por usuario.
+[2025-12-04 00:32:27] [API] Conectado a Binance (TESTNET)
+[2025-12-04 00:32:29] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 00:32:29] [TELEGRAM] Escuchando comandos...
+[2025-12-04 00:32:29] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 01:29:02] [MAIN] Apagado por usuario.
+[2025-12-04 02:13:37] [API] Conectado a Binance (TESTNET)
+[2025-12-04 02:13:39] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 02:13:39] [TELEGRAM] Escuchando comandos...
+[2025-12-04 02:13:39] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 02:13:42] [CONTRALOR] 👻 Fantasma BEA17829. Limpiando.
+[2025-12-04 02:17:45] [MAIN] Apagado por usuario.
+[2025-12-04 02:22:10] [API] Conectado a Binance (TESTNET)
+[2025-12-04 02:22:11] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 02:22:12] [TELEGRAM] Escuchando comandos...
+[2025-12-04 02:22:12] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 03:00:06] [TIRADOR] 🎯 TPs Dinámicos hacia Estructura 4H: 207.16
+[2025-12-04 03:00:06] [GESTOR] Iniciando 5D8C1364 (LONG) Qty:2.5
+[2025-12-04 03:00:06] [CONTRALOR] Posición 5D8C1364 registrada.
+[2025-12-04 12:29:41] [TELEGRAM] CMD Recibido: /report
+[2025-12-04 13:06:17] [GESTOR] Iniciando 2ADD859B (LONG) Qty:1.2
+[2025-12-04 13:06:19] [CONTRALOR] Posición 2ADD859B registrada.
+[2025-12-04 14:21:22] [MAIN] Apagado por usuario.
+[2025-12-04 15:38:04] [API] Conectado a Binance (TESTNET)
+[2025-12-04 15:38:06] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 15:38:06] [TELEGRAM] Escuchando comandos...
+[2025-12-04 15:38:06] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 15:38:08] [CONTRALOR] 👻 Fantasma 5D8C1364. Limpiando.
+[2025-12-04 15:38:09] [CONTRALOR] 👻 Fantasma 2ADD859B. Limpiando.
+[2025-12-04 15:45:35] [MAIN] Apagado por usuario.
+[2025-12-04 19:10:47] [API] Conectado a Binance (TESTNET)
+[2025-12-04 19:10:48] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 19:10:49] [TELEGRAM] Escuchando comandos...
+[2025-12-04 19:10:49] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 19:10:49] [TELEGRAM] CMD Recibido: /report
+[2025-12-04 20:38:33] [API] Conectado a Binance (TESTNET)
+[2025-12-04 20:38:34] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 20:38:34] [TELEGRAM] Escuchando comandos...
+[2025-12-04 20:38:34] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 20:38:36] [CONTRALOR] ⚠️ Huérfana SHORT. Adoptando...
+[2025-12-04 20:38:36] [CONTRALOR] Posición REC_1764895116 registrada.
+[2025-12-04 20:38:36] [CONTRALOR] 🚨 Alerta: REC_1764895116 DESNUDA.
+[2025-12-04 20:38:37] [CONTRALOR] ✅ Protección restaurada REC_1764895116. SL: 203.96
+[2025-12-04 20:38:38] [CONTRALOR] 🛡️ Breakeven REC_1764895116 activado en 199.76.
+[2025-12-04 20:40:33] [API] Conectado a Binance (TESTNET)
+[2025-12-04 20:40:35] [GESTOR] Calibrado: Qty=1, Price=2
+[2025-12-04 20:40:35] [TELEGRAM] Escuchando comandos...
+[2025-12-04 20:40:35] [MAIN] Sistema Iniciado correctamente.
+[2025-12-04 20:40:37] [GESTOR] Iniciando 1A24D8E5 (LONG) Qty:2.6
+[2025-12-04 20:40:39] [CONTRALOR] Posición 1A24D8E5 registrada.
+[2025-12-04 20:48:44] [TELEGRAM] CMD Recibido: /report
+[2025-12-04 20:49:08] [TELEGRAM] CMD Recibido: /panic
+[2025-12-04 20:49:45] [TELEGRAM] CMD Recibido: /report
+[2025-12-04 20:50:22] [TELEGRAM] CMD Recibido: /short
+[2025-12-04 20:50:23] [GESTOR] Iniciando 0A6AEB8D (SHORT) Qty:1.3
+[2025-12-04 20:50:24] [CONTRALOR] Posición 0A6AEB8D registrada.
+[2025-12-04 20:50:37] [TELEGRAM] CMD Recibido: /report
+[2025-12-04 21:36:14] [MAIN] Apagado por usuario.

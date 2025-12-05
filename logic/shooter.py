@@ -1,12 +1,8 @@
 import uuid
 import time
+# Opcional: from tools.precision_lab import PrecisionLab as Lab
 
 class Shooter:
-    """
-    TIRADOR (SHOOTER) - Módulo de Ejecución Táctica
-    Responsabilidad: Validar riesgo, calcular tamaño de posición y emitir orden de ejecución.
-    Transforma una 'Señal' (del Brain) en un 'Plan de Tiro' (para el OrderManager).
-    """
     def __init__(self, config, financials, order_manager, comptroller, logger):
         self.cfg = config
         self.fin = financials
@@ -15,86 +11,61 @@ class Shooter:
         self.log = logger
 
     def ejecutar_senal(self, senal):
-        """
-        Recibe una señal {side, mode, price, [sl_ref]} y coordina la ejecución.
-        """
         mode = senal['mode']
         side = senal['side']
         price = senal['price']
         
-        # 1. VERIFICACIÓN DE SLOTS (¿Tengo cupo?)
-        # Evitamos abrir múltiples operaciones del mismo tipo
-        active_modes = [p['data']['mode'] for p in self.comp.positions.values()]
-        
+        # 1. Validaciones
         if len(self.comp.positions) >= self.cfg.MAX_OPEN_POSITIONS:
-            return "⛔ Máximo de posiciones alcanzado."
+            return "⛔ Max Posiciones."
+        active = [p['data']['mode'] for p in self.comp.positions.values()]
+        if mode in active and mode != 'MANUAL': return f"⛔ Modo {mode} ocupado."
         
-        if mode in active_modes and mode != 'MANUAL':
-            return f"⛔ Ya existe una operación {mode} activa."
+        ok, msg = self.fin.puedo_operar()
+        if not ok and mode != 'MANUAL': return msg
 
-        # 2. VERIFICACIÓN DE CAPITAL (Financials)
-        ok_fin, msg_fin = self.fin.puedo_operar()
-        if not ok_fin and mode != 'MANUAL':
-            return f"⛔ Capital insuficiente: {msg_fin}"
-
-        # 3. CÁLCULO DE TAMAÑO (RISK MANAGEMENT)
-        # Obtenemos la configuración específica para este modo
+        # 2. Configuración
         mode_cfg = self.cfg.ShooterConfig.MODES.get(mode, self.cfg.ShooterConfig.MODES['MANUAL'])
+        capital = self.fin.obtener_capital_total()
+        margin = capital * mode_cfg['wallet_pct']
+        qty = round((margin * self.cfg.LEVERAGE) / price, 3)
         
-        capital_total = self.fin.obtener_capital_total()
-        margin_usdt = capital_total * mode_cfg['wallet_pct']
-        
-        # Ajuste de cantidad por apalancamiento
-        # Qty = (Margen * Leverage) / Precio
-        raw_qty = (margin_usdt * self.cfg.LEVERAGE) / price
-        
-        # Redondear cantidad a la precisión soportada (simplificado a 3 decimales, idealmente dinámico)
-        qty_asset = round(raw_qty, 3)
-        
-        if qty_asset <= 0: return "⛔ Cantidad calculada cero."
+        if qty <= 0: return "⛔ Cantidad 0."
 
-        self.log.log_operational("TIRADOR", f"Preparando {side} ({mode}). Margen: {margin_usdt:.1f} USDT")
+        # 3. Stop Loss
+        sl_price = senal.get('sl_ref', 0.0)
+        if sl_price == 0.0:
+            pct = mode_cfg['stop_loss_pct']
+            sl_price = price * (1 - pct) if side == 'LONG' else price * (1 + pct)
 
-        # 4. DEFINICIÓN DE STOP LOSS Y TAKE PROFIT
-        # Si la estrategia provee un nivel de referencia (ej. FVG Bottom), lo usamos.
-        # Si no, usamos porcentaje fijo.
-        sl_price = 0.0
-        
-        if 'sl_ref' in senal:
-            # SL Estructural
-            sl_price = senal['sl_ref']
-        else:
-            # SL Porcentual
-            dist_pct = mode_cfg['stop_loss_pct']
-            sl_dist = price * dist_pct
-            sl_price = (price - sl_dist) if side == 'LONG' else (price + sl_dist)
-
-        # Cálculo de TPs (Objetivos fijos para el Contralor)
+        # 4. Take Profit Inteligente (Laddering)
         tps = []
-        mult = 1 if side == 'LONG' else -1
-        for dist in self.cfg.ShooterConfig.TP_DISTANCES:
-            tp_price = price * (1 + (dist * mult))
-            tps.append(tp_price)
+        target_final = senal.get('structural_target')
+        
+        if target_final and mode == 'TREND_FOLLOWING':
+            # Si hay objetivo estructural, construimos escalera hacia él
+            dist = abs(target_final - price)
+            if dist/price > 0.005: # Solo si vale la pena (>0.5%)
+                tp1 = price + ((target_final - price) * 0.33)
+                tp2 = price + ((target_final - price) * 0.66)
+                tps = [tp1, tp2, target_final]
+            else:
+                tps = [price * (1 + (d * (1 if side=='LONG' else -1))) for d in self.cfg.ShooterConfig.TP_DISTANCES]
+        else:
+            # Fallback a fijos
+            mult = 1 if side == 'LONG' else -1
+            tps = [price * (1 + (d * mult)) for d in self.cfg.ShooterConfig.TP_DISTANCES]
 
-        # 5. CONSTRUCCIÓN DEL PLAN DE TIRO
+        # 5. Ejecutar
         plan = {
             'id': str(uuid.uuid4())[:8].upper(),
-            'side': side,
-            'mode': mode,
-            'qty': qty_asset,
-            'sl_price': sl_price,  # El OrderManager necesita esto para la orden de protección
-            'tps': tps,            # El Comptroller necesita esto para gestionar salidas
-            'leverage': self.cfg.LEVERAGE,
-            'timestamp': time.time()
+            'side': side, 'mode': mode, 'qty': qty,
+            'sl_price': sl_price, 'tps': tps,
+            'leverage': self.cfg.LEVERAGE, 'timestamp': time.time()
         }
-
-        # 6. TRANSFERENCIA DE MANDO AL GESTOR (HANDOVER)
-        # Llamamos al OrderManager para que ejecute la 'Regla de Oro'
-        exito, resultado = self.om.ejecutar_estrategia(plan)
         
-        if exito:
-            # Si el gestor tuvo éxito, registramos la posición en el Contralor
-            self.comp.registrar_posicion(resultado)
-            return f"✅ EJECUTADO: {resultado['id']}"
-        else:
-            return f"❌ FALLO EJECUCIÓN: {resultado}"
+        ok, res = self.om.ejecutar_estrategia(plan)
+        if ok:
+            self.comp.registrar_posicion(res)
+            return f"✅ ORDEN {res['id']} EJECUTADA"
+        return f"❌ {res}"

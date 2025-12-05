@@ -18,7 +18,6 @@ class OrderManager:
         self._configurar_cuenta()
         self._calibrar_precision_simbolo()
 
-    # ... (Mantener _verificar_archivo_ordenes y _configurar_cuenta igual) ...
     def _verificar_archivo_ordenes(self):
         try:
             with open(self.cfg.FILE_ORDERS, 'a') as f: pass
@@ -51,27 +50,71 @@ class OrderManager:
                     self.log.log_operational("GESTOR", f"Calibrado: Qty={self.qty_precision}, Price={self.price_precision}")
         except: pass
 
-    # --- MÉTODOS PÚBLICOS DE FORMATO (NUEVO) ---
+    # --- FORMATO ---
     def formatear_precio(self, price):
-        """Redondea el precio a los decimales permitidos por Binance."""
         return round(price, self.price_precision)
 
     def formatear_cantidad(self, qty):
-        """Ajusta la cantidad a los decimales permitidos (floor)."""
         factor = 10 ** self.qty_precision
         return math.floor(qty * factor) / factor
 
-    # --- MÉTODOS DE GESTIÓN ---
+    # --- GESTIÓN ---
     def cancelar_orden_por_id(self, order_id):
         if self.cfg.MODE == 'SIMULATION': return True
         try:
             self.conn.client.futures_cancel_order(symbol=self.cfg.SYMBOL, orderId=order_id)
             return True
         except Exception as e:
-            # Ignoramos error si la orden ya no existe (Unknown order)
-            if "-2011" not in str(e):
-                self.log.log_error("GESTOR", f"Fallo cancelando {order_id}: {e}")
+            if "-2011" not in str(e): self.log.log_error("GESTOR", f"Fallo cancelando {order_id}: {e}")
             return False
+
+    def _colocar_take_profits_duros(self, side, pos_side, qty_total, tps, tp_split):
+        """
+        Coloca órdenes LIMIT reduceOnly en Binance para asegurar la salida.
+        """
+        if self.cfg.MODE == 'SIMULATION': return []
+        
+        ids_tps = []
+        qty_acumulada = 0
+        
+        for i, precio_obj in enumerate(tps):
+            # Calcular cantidad para este escalón
+            pct = tp_split[i]
+            qty_escalon = self.formatear_cantidad(qty_total * pct)
+            
+            # Ajuste final para no dejar residuos por redondeo en el último TP
+            if i == len(tps) - 1:
+                qty_escalon = self.formatear_cantidad(qty_total - qty_acumulada)
+            
+            if qty_escalon <= 0: continue
+            
+            qty_acumulada += qty_escalon
+            precio_final = self.formatear_precio(precio_obj)
+            
+            try:
+                # Orden LIMIT (Maker) para salir
+                params = {
+                    'symbol': self.cfg.SYMBOL,
+                    'side': side,           # SELL si es Long, BUY si es Short
+                    'positionSide': pos_side,
+                    'type': 'LIMIT',
+                    'timeInForce': 'GTC',   # Good Till Cancel
+                    'quantity': qty_escalon,
+                    'price': str(precio_final),
+                    'reduceOnly': False     # En Hedge Mode no se usa reduceOnly explícito, la dirección lo define
+                }
+                # NOTA: En Hedge Mode, vender sobre una posición LONG cierra la posición.
+                # No se requiere reduceOnly=True si positionSide es correcto, pero por seguridad binance a veces lo pide.
+                # Probaremos sin reduceOnly primero ya que en Hedge la API suele rechazarlo si se combina con positionSide.
+                
+                order = self.conn.client.futures_create_order(**params)
+                ids_tps.append(order['orderId'])
+                self.log.log_operational("GESTOR", f"TP Hard colocado: {qty_escalon} @ {precio_final}")
+                
+            except Exception as e:
+                self.log.log_error("GESTOR", f"Fallo colocando TP {i+1}: {e}")
+                
+        return ids_tps
 
     def ejecutar_estrategia(self, plan_de_tiro):
         if not self.lock.acquire(blocking=False): return False, "Gestor ocupado"
@@ -79,13 +122,12 @@ class OrderManager:
             order_id = plan_de_tiro['id']
             pos_side = plan_de_tiro['side']
             
-            # Usamos los métodos de formato
             qty = self.formatear_cantidad(plan_de_tiro['qty'])
             sl_price = self.formatear_precio(plan_de_tiro['sl_price'])
             
             self.log.log_operational("GESTOR", f"Iniciando {order_id} ({pos_side}) Qty:{qty}")
 
-            # 1. ENTRY
+            # 1. ENTRY (MARKET)
             action_side = 'BUY' if pos_side == 'LONG' else 'SELL'
             ok_entry, resp_entry = self.conn.place_market_order(action_side, pos_side, qty)
             if not ok_entry: return False, f"Error Entrada: {resp_entry}"
@@ -97,7 +139,7 @@ class OrderManager:
 
             self._registrar_en_csv(order_id, pos_side, "ENTRY", real_entry_price, real_qty, "FILLED")
 
-            # 2. STOP LOSS
+            # 2. STOP LOSS (MARKET PROTECCION)
             sl_action_side = 'SELL' if pos_side == 'LONG' else 'BUY'
             ok_sl, resp_sl = self.conn.place_stop_loss(sl_action_side, pos_side, sl_price)
 
@@ -108,11 +150,20 @@ class OrderManager:
             sl_order_id = resp_sl.get('orderId')
             self._registrar_en_csv(order_id, sl_action_side, "STOP_LOSS", sl_price, real_qty, "NEW")
             
+            # 3. TAKE PROFITS (HARD LIMIT ORDERS)
+            # Colocamos las órdenes en el libro de Binance inmediatamente
+            tps_prices = plan_de_tiro.get('tps', [])
+            tp_split = self.cfg.ShooterConfig.TP_SPLIT
+            
+            tp_ids = self._colocar_take_profits_duros(sl_action_side, pos_side, real_qty, tps_prices, tp_split)
+            
+            # Paquete de retorno
             paquete = plan_de_tiro.copy()
             paquete['entry_price'] = real_entry_price
             paquete['qty'] = real_qty
             paquete['sl_price'] = sl_price
             paquete['sl_order_id'] = sl_order_id
+            paquete['tp_order_ids'] = tp_ids # Guardamos los IDs de los TPs
             paquete['status'] = 'OPEN'
             
             return True, paquete
@@ -147,6 +198,7 @@ class OrderManager:
         except: pass
 
     def ejecutar_cierre_parcial(self, pos_data, pct_cierre):
+        # NOTA: Con TPs duros, esta función se usa menos, pero sirve para salidas manuales o ajustes.
         if not self.lock.acquire(blocking=False): return False
         try:
             qty = self.formatear_cantidad(pos_data['qty'] * pct_cierre)

@@ -956,3 +956,841 @@ Timestamp,Modulo,Mensaje
 2025-12-03 21:24:18,API_PRICE,"Fallo obteniendo precio: HTTPSConnectionPool(host='testnet.binancefuture.com', port=443): Max retries exceeded with url: /fapi/v1/ticker/price?symbol=AAVEUSDT (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x000001E463FD2990>: Failed to resolve 'testnet.binancefuture.com' ([Errno 11001] getaddrinfo failed)""))"
 2025-12-03 21:24:18,SUPERVISOR,Error Crítico #5: Fallo obteniendo precio real.
 2025-12-03 21:24:18,SUPERVISOR,🚨 LÍMITE DE ERRORES ALCANZADO. APAGADO DE EMERGENCIA.
+2025-12-04 05:59:15,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 09:59:14</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 05:59:24,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 09:59:23</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 05:59:35,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 09:59:34</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 05:59:45,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 09:59:44</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 05:59:56,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 09:59:55</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:00:08,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:00:07</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:00:18,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:00:17</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:00:29,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:00:28</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:00:39,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:00:38</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:00:50,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:00:49</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:01:00,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:00:59</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:01:11,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:01:10</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:01:21,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:01:20</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:01:32,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:01:31</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:01:43,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:01:42</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:01:54,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:01:53</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:02:05,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:02:04</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:02:16,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:02:15</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:02:27,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:02:25</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:02:36,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:02:35</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:02:47,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:02:46</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:02:57,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:02:56</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:03:08,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:03:07</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:03:18,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:03:17</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:03:29,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:03:28</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:03:39,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:03:38</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:03:50,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:03:49</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:04:01,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:04:00</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:04:11,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:04:10</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:04:21,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:04:20</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:04:31,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tk_prod_dispatcher_pg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:04:30</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 06:04:43,API_DATA,"Error Binance: APIError(code=0): Invalid JSON error message from Binance: <!DOCTYPE HTML PUBLIC ""-//IETF//DTD HTML 2.0//EN"">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>http://testnet.binancefuture.com/fapi/v1/klines?interval=1m&amp;limit=1000&amp;startTime=1764842280000&amp;symbol=AAVEUSDT</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>tf_futures_testnet_nginx1_ec2</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2025/12/04 10:04:42</td>
+</tr>
+</table>
+<hr/>Powered by Bengine<hr><center>tengine</center>
+</body>
+</html>
+"
+2025-12-04 19:10:51,SUPERVISOR,Error Crítico #1: type object 'PrecisionLab' has no attribute 'analizar_medias'
+2025-12-04 19:10:57,SUPERVISOR,Error Crítico #2: type object 'PrecisionLab' has no attribute 'analizar_medias'
+2025-12-04 19:11:06,SUPERVISOR,Error Crítico #3: type object 'PrecisionLab' has no attribute 'analizar_medias'
+2025-12-04 19:11:12,SUPERVISOR,Error Crítico #4: type object 'PrecisionLab' has no attribute 'analizar_medias'
+2025-12-04 20:38:38,SUPERVISOR,Error Crítico #1: type object 'PrecisionLab' has no attribute 'analizar_stoch'
+2025-12-04 20:38:45,SUPERVISOR,Error Crítico #2: type object 'PrecisionLab' has no attribute 'analizar_stoch'
