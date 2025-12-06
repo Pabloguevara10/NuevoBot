@@ -4,7 +4,7 @@ from datetime import datetime
 
 class Financials:
     """
-    MÓDULO FINANCIERO CON INTERÉS COMPUESTO
+    MÓDULO FINANCIERO CON INTERÉS COMPUESTO (CORREGIDO FINAL)
     Gestiona el capital de trabajo y registra Ganancias/Pérdidas (PnL).
     """
     def __init__(self, config, api_conn):
@@ -25,18 +25,28 @@ class Financials:
             try:
                 with open(self.cfg.FILE_WALLET, 'r') as f:
                     data = json.load(f)
-                    self.virtual_wallet = data.get('capital', self.cfg.FIXED_CAPITAL_AMOUNT)
-                    self.daily_pnl = data.get('daily_pnl', 0.0)
+                    # Cargar datos guardados
+                    self.virtual_wallet = float(data.get('capital', self.cfg.FIXED_CAPITAL_AMOUNT))
+                    self.daily_pnl = float(data.get('daily_pnl', 0.0))
                     self.last_reset_date = data.get('date', self.last_reset_date)
                     
-                    # Verificar si es un nuevo día para resetear solo el contador visual de PnL Diario
+                    # Lógica de cambio de día:
+                    # Solo reseteamos el PnL Diario visual, NUNCA el capital acumulado.
                     hoy = datetime.now().strftime("%Y-%m-%d")
                     if hoy != self.last_reset_date:
                         self.daily_pnl = 0.0
                         self.last_reset_date = hoy
                         self._guardar_billetera()
-            except:
+                    
+                    # Protección contra corrupción: Si por error lee 0, restaurar base.
+                    if self.virtual_wallet < 10.0:
+                        print("⚠️ Capital corrupto detectado. Restaurando base.")
+                        self.virtual_wallet = self.cfg.FIXED_CAPITAL_AMOUNT
+                        
+            except Exception as e:
+                print(f"⚠️ Error cargando wallet ({e}). Iniciando nuevo.")
                 self.virtual_wallet = self.cfg.FIXED_CAPITAL_AMOUNT
+                self._guardar_billetera()
         else:
             # Primera vez: Inicializamos con el capital fijo config
             self.virtual_wallet = self.cfg.FIXED_CAPITAL_AMOUNT

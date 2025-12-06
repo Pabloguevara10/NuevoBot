@@ -3,9 +3,9 @@ import numpy as np
 
 class PrecisionLab:
     """
-    LABORATORIO DE PRECISIÓN (TOOLKIT ATÓMICO V3)
+    LABORATORIO DE PRECISIÓN (TOOLKIT ATÓMICO V3.2)
     Funciones independientes para disecar indicadores específicos.
-    Incluye: RSI, ADX, StochRSI, MACD, Bollinger, EMAs y Divergencias.
+    Incluye: RSI, ADX, StochRSI, MACD, Bollinger, EMAs (con Cruce) y Divergencias.
     """
 
     # --- UTILITARIOS ---
@@ -54,7 +54,6 @@ class PrecisionLab:
     @staticmethod
     def analizar_stoch(df, rango=3):
         """Analiza el oscilador estocástico."""
-        # Si no existe la columna, devolvemos un valor neutro para evitar crash
         if 'STOCH_RSI' not in df.columns: 
             return {'valor': 50, 'zona': 'NEUTRAL', 'posible_giro': False}
             
@@ -67,8 +66,8 @@ class PrecisionLab:
         
         # Detectar giro potencial
         giro = False
-        if zona == 'TECHO' and pendiente < 0: giro = True # Empieza a caer
-        if zona == 'SUELO' and pendiente > 0: giro = True # Empieza a subir
+        if zona == 'TECHO' and pendiente < 0: giro = True 
+        if zona == 'SUELO' and pendiente > 0: giro = True 
         
         return {
             'tipo': 'STOCH',
@@ -81,7 +80,6 @@ class PrecisionLab:
     @staticmethod
     def analizar_macd(df):
         if 'MACD_HIST' not in df.columns:
-            # Calculo de emergencia si falta
             k = df['close'].ewm(span=12, adjust=False).mean()
             d = df['close'].ewm(span=26, adjust=False).mean()
             dif = k - d
@@ -118,11 +116,11 @@ class PrecisionLab:
             'rango_precio': round(up - low, 2)
         }
 
-    # --- 6. EMAs (Tendencia) ---
+    # --- 6. EMAs (Tendencia & CRUCE) ---
     @staticmethod
     def analizar_medias(df, rapida='EMA_7', lenta='EMA_25'):
         """Analiza el cruce y estado de dos medias móviles."""
-        # Calcular si no existen en el DF
+        # Calcular si no existen
         if rapida not in df.columns:
             span = int(rapida.split('_')[1])
             serie_rapida = df['close'].ewm(span=span, adjust=False).mean()
@@ -134,33 +132,41 @@ class PrecisionLab:
             serie_lenta = df['close'].ewm(span=span, adjust=False).mean()
         else:
             serie_lenta = df[lenta]
-            
+        
+        if len(serie_rapida) < 2 or len(serie_lenta) < 2:
+             return {'indicador': 'EMAS', 'estado': 'NEUTRO', 'spread': 0, 'cruce': False}
+
+        # Valores actuales
         val_r = serie_rapida.iloc[-1]
         val_l = serie_lenta.iloc[-1]
         
+        # Valores previos (para detectar cruce)
+        prev_r = serie_rapida.iloc[-2]
+        prev_l = serie_lenta.iloc[-2]
+        
+        estado_actual = 'ALCISTA' if val_r > val_l else 'BAJISTA'
+        estado_previo = 'ALCISTA' if prev_r > prev_l else 'BAJISTA'
+        
+        # Hay cruce si el estado cambió en la última vela
+        hay_cruce = (estado_actual != estado_previo)
+        
         return {
             'indicador': 'EMAS',
-            'estado': 'ALCISTA' if val_r > val_l else 'BAJISTA',
-            'spread': round(abs(val_r - val_l), 4)
+            'estado': estado_actual,
+            'spread': round(abs(val_r - val_l), 4),
+            'cruce': hay_cruce # <--- FIX: Clave requerida por Brain
         }
 
     # --- 7. DIVERGENCIAS (Gatillo Sniper) ---
     @staticmethod
     def detectar_divergencia(df, ventana=10):
-        """
-        Busca divergencias Regulares entre Precio y RSI.
-        Retorna: 'BULLISH_DIV', 'BEARISH_DIV' o None.
-        """
         if len(df) < ventana or 'RSI' not in df.columns: return None
         
         subset = df.tail(ventana)
-        
-        # Datos actuales (Vela 0, la más reciente)
         curr_high = subset.iloc[-1]['high']
         curr_low = subset.iloc[-1]['low']
         curr_rsi = subset.iloc[-1]['RSI']
         
-        # Datos previos (excluyendo la vela actual)
         prev_subset = subset.iloc[:-1]
         if prev_subset.empty: return None
         
@@ -169,11 +175,9 @@ class PrecisionLab:
         max_rsi_prev = prev_subset['RSI'].max()
         min_rsi_prev = prev_subset['RSI'].min()
         
-        # Divergencia Bajista (Precio sube, RSI baja)
         if curr_high >= max_price_prev and curr_rsi < max_rsi_prev * 0.98:
             return 'BEARISH_DIV'
                 
-        # Divergencia Alcista (Precio baja, RSI sube)
         if curr_low <= min_price_prev and curr_rsi > min_rsi_prev * 1.02:
             return 'BULLISH_DIV'
             

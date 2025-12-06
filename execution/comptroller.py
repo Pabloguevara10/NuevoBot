@@ -131,7 +131,19 @@ class Comptroller:
                   (side == 'SHORT' and current_price <= target)
             if hit:
                 pct = self.cfg.ShooterConfig.TP_SPLIT[idx]
+                
+                # --- [FIX CRÍTICO INTERÉS COMPUESTO] ---
+                # 1. Calcular PnL Realizado
+                qty_cerrada = plan['qty'] * pct
+                pnl_realizado = (target - plan['entry_price']) * qty_cerrada if side == 'LONG' else (plan['entry_price'] - target) * qty_cerrada
+                
+                # 2. Ejecutar cierre en Exchange
                 if self.om.ejecutar_cierre_parcial(plan, pct):
+                    # 3. Registrar Ganancia en Billetera (Aquí estaba el fallo)
+                    self.fin.registrar_pnl(pnl_realizado)
+                    self.log.log_operational("CONTRALOR", f"💰 PnL Registrado y Sumado: ${pnl_realizado:.2f}")
+                    
+                    # 4. Actualizar memoria
                     record['tp_level_index'] += 1
                     plan['qty'] *= (1 - pct)
                     self._guardar_estado()

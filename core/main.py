@@ -1,7 +1,7 @@
 import time
 import sys
 import os
-import threading
+import pandas as pd  # Necesario para validación de tipos
 
 # Ajuste de path para importaciones absolutas
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -16,8 +16,8 @@ from execution.comptroller import Comptroller
 from logic.shooter import Shooter
 from logic.brain import Brain
 from interfaces.dashboard import Dashboard
-from interfaces.human_input import HumanInput
 from interfaces.telegram_bot import TelegramBot
+from tools.data_miner import DataMiner
 
 class BotSupervisor:
     """
@@ -39,7 +39,6 @@ class BotSupervisor:
             self._protocolo_emergencia()
 
     def reportar_exito(self):
-        # Si un ciclo se completa bien, reseteamos el contador
         if self.error_count > 0:
             self.error_count = 0
 
@@ -51,109 +50,125 @@ class BotSupervisor:
         except: pass
         sys.exit(1)
 
-def main():
-    print("Iniciando SENTINEL AI PRO (V2.0 Refactored)...")
+def _verificar_y_generar_historia(cfg, log):
+    """
+    Verifica si existen los datos históricos. Si faltan, ejecuta el DataMiner.
+    """
+    data_path = os.path.join(cfg.BASE_DIR, 'logs', 'data_lab')
+    required_files = [
+        f"history_{cfg.SYMBOL}_1m.csv",
+        f"history_{cfg.SYMBOL}_5m.csv",
+        f"history_{cfg.SYMBOL}_15m.csv",
+        f"history_{cfg.SYMBOL}_1h.csv",
+        f"history_{cfg.SYMBOL}_4h.csv"
+    ]
     
-    # 1. INICIALIZACIÓN DE MÓDULOS
+    missing = False
+    for f in required_files:
+        if not os.path.exists(os.path.join(data_path, f)):
+            missing = True
+            break
+            
+    if missing:
+        print("\n⚠️  ALERTA: No se encontraron métricas históricas.")
+        print("⚙️  Iniciando Protocolo de Generación Automática (90 Días)...")
+        log.log_operational("SYSTEM", "Iniciando DataMiner por falta de historia.")
+        
+        try:
+            miner = DataMiner()
+            raw_data = miner.descargar_historia_masiva(dias=90)
+            miner.generar_dataset_maestro(raw_data)
+            print("✅ Datos Históricos Generados Exitosamente.\n")
+        except Exception as e:
+            print(f"❌ Error Crítico en DataMiner: {e}")
+            log.log_error("SYSTEM", f"Fallo DataMiner: {e}")
+            sys.exit(1)
+    else:
+        print("✅ Métricas Históricas Detectadas. Sistema listo para operar.")
+
+def main():
+    print("Iniciando SENTINEL AI PRO (V2.3 Robustez Total)...")
+    
     cfg = Config()
     log = SystemLogger()
-    dash = Dashboard()
     
-    # Conexión Blindada
+    # Auto-verificación de datos
+    _verificar_y_generar_historia(cfg, log)
+
+    dash = Dashboard()
     conn = APIManager(cfg, log)
     
-    # Núcleo de Datos y Finanzas
     metrics_mgr = MetricsManager(cfg, conn)
     financials = Financials(cfg, conn)
-    
-    # Núcleo de Ejecución (La Fortaleza)
     order_mgr = OrderManager(cfg, conn, log)
     comptroller = Comptroller(cfg, order_mgr, financials, log)
-    
-    # Lógica Estratégica
     shooter = Shooter(cfg, financials, order_mgr, comptroller, log)
     brain = Brain(cfg, shooter, log)
-    
-    # Supervisor
     supervisor = BotSupervisor(order_mgr, log)
 
-    # 2. INTERFACES EN HILOS SECUNDARIOS
-    # Telegram
     tele = TelegramBot(cfg, shooter, comptroller, order_mgr, log)
     tele.iniciar()
-    
-    # Input Humano (Opcional, si se usa en consola)
-    # human = HumanInput(cfg, shooter, order_mgr, comptroller, log)
-    # human.iniciar()
 
-    # Variables de Control de Ciclos
     last_slow_cycle = 0
     mtf_data = {}
     daily_stats = {}
-    session_stats = {'wins': 0, 'losses': 0, 'total_ops': 0} # Placeholder para dashboard
+    session_stats = {'wins': 0, 'losses': 0, 'total_ops': 0}
 
-    dash.add_log("Sistema Online. Arquitectura Blindada V2.")
+    dash.add_log("Sistema Online. Arquitectura Blindada V2.3.")
     log.log_operational("MAIN", "Sistema Iniciado correctamente.")
 
     # ==================================================================
-    # MAIN LOOP (CICLO INFINITO)
+    # MAIN LOOP
     # ==================================================================
     while True:
         try:
             start_time = time.time()
             
-            # A. OBTENCIÓN DE DATOS CRÍTICOS (Síncrono)
+            # A. DATOS CRÍTICOS
             price = conn.get_real_price()
             if price is None:
-                # Si no hay precio, no podemos hacer NADA. Esperamos y reintentamos.
                 supervisor.reportar_error("Fallo obteniendo precio real.")
                 time.sleep(cfg.REQUEST_TIMEOUT)
                 continue
 
             con_status = conn.check_heartbeat()
 
-            # B. CICLO LENTO (Sincronización y Cálculos Pesados)
-            # Frecuencia: Config.SYNC_CYCLE_SLOW (10s)
+            # B. CICLO LENTO (Sincronización)
             if start_time - last_slow_cycle > cfg.SYNC_CYCLE_SLOW:
                 dash.add_log("Sincronizando...", "DEBUG")
-                
-                # 1. Actualizar Indicadores MTF
                 mtf_data, daily_stats = metrics_mgr.sincronizar_y_calcular()
-                
-                # 2. Auditoría de Posiciones (Huérfanas/Fantasmas)
                 comptroller.sincronizar_estado_externo()
-                
                 last_slow_cycle = start_time
 
-            # C. CICLO RÁPIDO (Ejecución Táctica)
-            # Frecuencia: Cada iteración (aprox 1s)
+            # C. CICLO RÁPIDO
+            metrics_1m = mtf_data.get('1m')
             
-            # 1. Auditoría Local (TP/SL/Trailing)
-            # El Comptroller decide si cierra algo basado en el precio actual
-            metrics_1m = mtf_data.get('1m', {})
-            comptroller.auditar_memoria(price, metrics_1m)
-
-            # 2. Cerebro (Análisis y Señales)
-            # Solo procesamos si tenemos datos frescos
+            # 1. Auditoría Local (TP/SL)
+            # Validación de Tipo: Solo pasamos si es DataFrame válido
+            if isinstance(metrics_1m, pd.DataFrame) and not metrics_1m.empty:
+                comptroller.auditar_memoria(price, metrics_1m)
+            
+            # 2. Cerebro
             brain_msg = ""
-            if metrics_1m:
+            # --- CORRECCIÓN DEL ERROR CRÍTICO ---
+            # Validamos explícitamente que sea un DataFrame antes de preguntar .empty
+            if isinstance(metrics_1m, pd.DataFrame) and not metrics_1m.empty:
                 resultado_brain = brain.procesar_mercado(mtf_data, price)
                 
                 if isinstance(resultado_brain, str):
-                    # Es un mensaje de estado (ej. "Esperando...")
                     brain_msg = resultado_brain
                 else:
-                    # Es una confirmación de ejecución (ej. "✅ EJECUTADO...")
                     brain_msg = resultado_brain
                     dash.add_log(brain_msg)
                     session_stats['total_ops'] += 1
+            else:
+                brain_msg = "Esperando Datos (Cargando)..."
 
-            # D. REPORTAR SALUD Y RENDERIZAR
+            # D. RENDER
             supervisor.reportar_exito()
             dash.render(price, mtf_data, daily_stats, comptroller.positions, financials, con_status, brain_msg, session_stats)
 
-            # E. CONTROL DE TIEMPO (Sleep Dinámico)
-            # Asegura que el ciclo dure al menos 1s para no saturar CPU/API
+            # E. SLEEP DINÁMICO
             elapsed = time.time() - start_time
             sleep_time = max(0, cfg.SYNC_CYCLE_FAST - elapsed)
             time.sleep(sleep_time)
@@ -164,9 +179,8 @@ def main():
             break
             
         except Exception as e:
-            # Captura cualquier error no previsto en los módulos
             supervisor.reportar_error(e)
-            time.sleep(5) # Pausa de seguridad antes de reiniciar ciclo
+            time.sleep(5)
 
 if __name__ == "__main__":
     main()

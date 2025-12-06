@@ -5,7 +5,8 @@ load_dotenv()
 
 class Config:
     """
-    Configuración Sentinel AI Pro V3.2 (Ajuste Fino).
+    Configuración Sentinel AI Pro V5.0 (Estrategia Limit + Prioridad Sniper).
+    Ajuste de Alto Rendimiento: SL Amplios, TP Ambiciosos y Entradas Limit.
     """
     
     # CREDENCIALES
@@ -26,13 +27,17 @@ class Config:
     LEVERAGE = 5          
     LOG_LEVEL = 'INFO'
 
-    # GESTIÓN DE CAPITAL
+    # GESTIÓN DE CAPITAL (Nuevos Límites V5)
     USE_FIXED_CAPITAL = True
     FIXED_CAPITAL_AMOUNT = 1000.0 
     ENABLE_COMPOUND_INTEREST = True  
     
-    MAX_DAILY_LOSS_PCT = 0.04
-    DAILY_TARGET_PCT = 0.06
+    # Límites de Seguridad Diaria (Ajustados al nuevo riesgo)
+    # Riesgo Sniper por tiro: 25% * 5% SL = 1.25% de la cuenta.
+    # Max Loss 5% permite aprox 4 pérdidas consecutivas de Sniper.
+    MAX_DAILY_LOSS_PCT = 0.05
+    DAILY_TARGET_PCT = 0.08
+
     MAX_OPEN_POSITIONS = 3
 
     # CONFIGURACIÓN CEREBRO
@@ -45,42 +50,50 @@ class Config:
     # CONFIGURACIÓN TIRADOR
     class ShooterConfig:
         MODES = {
-            # Modo Principal (Aumentado a 15%)
+            # --- TREND FOLLOWING (El Soporte) ---
+            # Riesgo bajo (0.45% por tiro), TP Moderado (8%)
             'TREND_FOLLOWING': {
                 'wallet_pct': 0.15,   
-                'stop_loss_pct': 0.025, 
-                'take_profit_type': 'LADDER' 
+                'stop_loss_pct': 0.03,      # 3% SL
+                'take_profit_pct': 0.08,    # 8% TP
+                'entry_offset_pct': 0.01,   # Entrada Limit (-1%)
+                'take_profit_type': 'FIXED_LEVELS' 
             },
-            # Modo Oportunista
+            
+            # --- SNIPER FVG (La Estrella) ---
+            # Riesgo medio (1.25% por tiro), TP Alto (12%)
             'SNIPER_FVG': {
-                'wallet_pct': 0.15,
-                'stop_loss_pct': 0.0, # Se calcula dinámico (Estructural)
+                'wallet_pct': 0.25,
+                'stop_loss_pct': 0.05,      # 5% SL (Holgura máxima)
+                'take_profit_pct': 0.12,    # 12% TP
+                'entry_offset_pct': 0.01,   # Entrada Limit (-1%)
                 'take_profit_type': 'FIXED_LEVELS'
             },
-            # Modo Rango (Scalping)
+            
+            # --- MODOS SECUNDARIOS ---
             'SCALP_BB': {
                 'wallet_pct': 0.05,
                 'stop_loss_pct': 0.015,
+                'take_profit_pct': 0.015,
+                'entry_offset_pct': 0.0,
                 'take_profit_type': 'DYNAMIC_BB'
             },
             'MANUAL': {
                 'wallet_pct': 0.05,
                 'stop_loss_pct': 0.02,
+                'take_profit_pct': 0.04,
+                'entry_offset_pct': 0.0,
                 'take_profit_type': 'FIXED_LEVELS'
             }
         }
         
-        # Salidas Escalonadas (Nueva Configuración: 30/40/30)
-        TP_DISTANCES = [0.015, 0.030, 0.060] 
-        TP_SPLIT = [0.30, 0.40, 0.30] 
+        # Configuración General
+        BE_TRIGGER_PCT = 0.015 # Breakeven se activa al +1.5%
 
-        # Breakeven
-        BE_TRIGGER_PCT = 0.008
-
-        DCA_ENABLED = True
-        DCA_MAX_ADDS = 1
-        DCA_TRIGGER_DIST_PCT = 0.015
-        DCA_MULTIPLIER = 1.5
+        DCA_ENABLED = False # Desactivado en V5 para pureza de entradas
+        DCA_MAX_ADDS = 0
+        DCA_TRIGGER_DIST_PCT = 0.0
+        DCA_MULTIPLIER = 1.0
 
     # RUTAS
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
